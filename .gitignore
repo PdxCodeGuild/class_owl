@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Misc
+token.txt
+uploaded_files/
+node_modules
+.vscode/
