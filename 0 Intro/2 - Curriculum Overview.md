@@ -105,16 +105,16 @@ A program is a series of instructions given to a computer which perform operatio
 
 ## (Rough) Timeline
 
-**Weeks 1, 2, 3, 4:** Python
+**Weeks 1, 2, 3, 4, 5:** Python
 
-**Weeks 4, 5:** HTML/CSS
+**Weeks 6, 7:** HTML/CSS
 
-**Weeks 6, 7, 8:** Django
+**Weeks 8, 9, 10, 11:** Django
 
-**Weeks 8, 9:** Basic JavaScript
+**Weeks 12, 13:** Basic JavaScript
 
-**Weeks 10, 11:** Vue, Django Rest Framework, capstone proposal
+**Weeks 14, 15:** Vue, Django Rest Framework, capstone proposal
 
-**Weeks 12, 13, 14:** Capstone project
+**Weeks 16, 17, 18:** Capstone project
 
 **Post Class Weeks 1, 2:** Capstone revisions/additions/polish, job search
