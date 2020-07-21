@@ -133,3 +133,5 @@ token.txt
 uploaded_files/
 node_modules
 .vscode/
+secrets.*
+.DS_Store
