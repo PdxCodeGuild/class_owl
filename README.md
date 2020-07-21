@@ -14,6 +14,9 @@ Thanksgiving -- Nov 26, 2020
   - anthony@pdxcodeguild.com
 - TBD, TA
   - TBD
+  
+## Python labs assigned
+Lab 02 -- Madlib
 
 
 ## Odds and Ends
