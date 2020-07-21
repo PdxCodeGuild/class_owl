@@ -7,13 +7,13 @@
 - Create a Slack account (I'll send you an invite)
 - Install Git
 - Create GitHub account
-- Install Anaconda or Python
+- Install Python
 - Install an IDE or other text editor
 
 
 ## Slack
 
-Please send an email to `eunika@pdxcodeguild.com`, so I have your email address. I'll then send you an invitation to Slack. Slack is an instant-messaging app we'll use to communicate. You can install the Slack desktop app rather than use a browser tab if that's easier for you.
+Please send an email to `anthony@pdxcodeguild.com`, so I have your email address. I'll then send you an invitation to Slack. Slack is an instant-messaging app we'll use to communicate. You can install the Slack desktop app rather than use a browser tab if that's easier for you.
 
 
 ## Version Control: Git & GitHub
@@ -25,10 +25,6 @@ Download and install Git and create a GitHub account. In GitHub, create a new re
 
 
 ## Python and Anaconda
-
-#### Anaconda
-
-[Anaconda](https://www.continuum.io/downloads) contains the python interpreter and many other packages we'll be using, including Jupyter Notebook.
 
 
 #### Python and Pip
@@ -49,16 +45,16 @@ You can use any text editor for writing source code, but some text editors have 
 
 The more features a program has, the more cluttered its interface will be, the longer it'll take to open and close, etc. Many people prefer using a more 'lightweight' text editor, and then executing their python in a terminal by typing `python source_file.py`.
 
+- Visual Studio Code
+  - https://code.visualstudio.com/
+  - extremely easy version control
+  - plugins for executing python
 - PyCharm
   - https://www.jetbrains.com/pycharm/download/
   - a full-fledged IDE
 - Atom
   - https://atom.io/
   - a more lightweight, modular IDE
-- Visual Studio Code
-  - https://code.visualstudio.com/
-  - extremely easy version control
-  - plugins for executing python
 - Sublime Text
   - https://www.sublimetext.com/
 - Brackets
