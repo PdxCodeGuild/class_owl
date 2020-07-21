@@ -11,4 +11,4 @@ while print(f'Hello and welcome to madlibs! Please follow the instructions or en
     print(f'Hello TotallyNotEvilCorp is looking for a {random.choice(userlist)} evasion inspector. Must be willing to relocation to {random.choice(userlist)} for work or pay for travel expenses out of pocket. Please be aware any aversion to {random.choice(userlist)} will result in extreme discomfort but no additional job aids.')
     while print(input('Type done to leave, update to change your words, and enter to shake up the madlib')) != 'done':
         for words in userlist:
-            userlist = input()
+            words = input()
