@@ -24,7 +24,7 @@ Please send an email to `anthony@pdxcodeguild.com`, so I have your email address
 Download and install Git and create a GitHub account. In GitHub, create a new repository to hold your files for the files you'll create in class.
 
 
-## Python and Anaconda
+## Python
 
 
 #### Python and Pip
