@@ -27,7 +27,7 @@ def user_inputs():
     verb03 = input('Please enter a past tense verb: ')
     adjective04 = input('Please enter an adjective: ')
 
-    madlib = """Today I went to the zoo. I saw a 
+    madlib = f"""Today I went to the zoo. I saw a 
         {adjective01} {noun01} jumping up and down in its tree.
         He {verb01} {adverb01}
         through the large tunnel that led to its {adjective02} 
@@ -43,8 +43,7 @@ def user_inputs():
     return madlib
 
 def main():
-    user_inputs()
-    answer = madlib 
+    answer = user_inputs()
     print(answer)
 
 
