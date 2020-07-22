@@ -17,7 +17,7 @@ Thanksgiving -- Nov 26, 2020
   
 ## Python labs assigned
 Lab 02 -- Madlib
-
+Lab 03 -- Grading
 
 ## Odds and Ends
 An Illustrated (and Musical) Guide to Map, Reduce, and Filter Array Methods  
