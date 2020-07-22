@@ -18,6 +18,8 @@ Thanksgiving -- Nov 26, 2020
 ## Python labs assigned
 * Lab 02 -- Madlib
 * Lab 03 -- Grading
+* Lab 04 -- Magic 8ball
+* Lab 05 -- Random Emoticon Generator
 
 ## Odds and Ends
 An Illustrated (and Musical) Guide to Map, Reduce, and Filter Array Methods  
