@@ -12,8 +12,8 @@ Thanksgiving -- Nov 26, 2020
 ### Staff
 - Anthony Wallace, Instructor
   - anthony@pdxcodeguild.com
-- TBD, TA
-  - TBD
+- Irron Williams, TA
+- Brandon Gonzalex, TA
   
 ## Python labs assigned
 Lab 02 -- Madlib
