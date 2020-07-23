@@ -1,7 +1,5 @@
 import random
 print("Welcome to Madame Maxine's Magic Ball")
-question = input("Ask the Magic 8 Ball a Question, any will do! ")
-print("You asked " + question + "?")
 
 predictions = [
     "It is certain",
@@ -17,5 +15,12 @@ predictions = [
     "Better Call Saul",
 ]
 
-answer = random.choice(predictions)
-print("Maxine was all shook up and says  " + answer)
+while True:
+    question = input("Ask the Magic 8 Ball a Question, any will do! ")
+    
+    if question == 'done':
+            break
+
+    print("You asked " + question + "?")
+    answer = random.choice(predictions)
+    print("Maxine was all shook up and says  " + answer)
