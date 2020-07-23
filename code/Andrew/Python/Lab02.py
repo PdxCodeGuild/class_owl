@@ -1,6 +1,8 @@
 # Write a simple program that prompts the user for several
 #  inputs then prints a Mad Lib as the result.
 def Madlib():
+    """I forgot about Doc Strings
+    """
     adj1 = input('Enter an Adjective: ')
     animal1 = input('Enter an Animal: ')
     verb_past = input('Enter a past tense verb: ')
@@ -14,6 +16,7 @@ def Madlib():
 
 
 if __name__ == "__main__":
+    
     Madlib()
 
 
