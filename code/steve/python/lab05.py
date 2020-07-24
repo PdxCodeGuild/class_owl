@@ -1,5 +1,6 @@
 import random
 
+
 def emoticon():
     eyes = [';', ':', '>', '%', '!', 'O']
     nose = ['>', '-', '+', '=', '@', '<', '~']
