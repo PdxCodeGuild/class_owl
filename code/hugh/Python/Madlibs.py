@@ -20,4 +20,4 @@ while input('Hit enter to continue, done to exit') != 'done':
             input('Please enter an adverb: '),
             input('Please enter a verb: ')
             ]
-        print(f'Hello TotallyNotEvilCorp is looking for a {random.choice(userlist)} evasion inspector. Must be willing to relocation to {random.choice(userlist)} for work or pay for travel expenses out of pocket. Please be aware any aversion to {random.choice(userlist)} will result in extreme discomfort but no additional job aids.')
+            print(f'Hello TotallyNotEvilCorp is looking for a {random.choice(userlist)} evasion inspector. Must be willing to relocation to {random.choice(userlist)} for work or pay for travel expenses out of pocket. Please be aware any aversion to {random.choice(userlist)} will result in extreme discomfort but no additional job aids.')

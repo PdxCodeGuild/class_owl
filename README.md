@@ -20,6 +20,9 @@ Thanksgiving -- Nov 26, 2020
 * Lab 03 -- Grading
 * Lab 04 -- Magic 8ball
 * Lab 05 -- Random Emoticon Generator
+* Lab 06 -- Random Password
+* Lab 07 -- Rock Paper Scissors
+* Lab 08 -- Make Change
 
 ## Odds and Ends
 An Illustrated (and Musical) Guide to Map, Reduce, and Filter Array Methods  
