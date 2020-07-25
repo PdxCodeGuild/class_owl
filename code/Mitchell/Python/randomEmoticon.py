@@ -26,5 +26,10 @@ mouth = [
 ]
 
 import random
-face = [random.choice(eyes) + random.choice(nose) + random.choice(mouth)]
-print(face)
+
+face = random.choice(eyes) + random.choice(nose) + random.choice(mouth)
+count = int(input("How many faces do you want to generate?"))
+while count > 0:
+    face = random.choice(eyes) + random.choice(nose) + random.choice(mouth)
+    print(face)
+    count -= 1
