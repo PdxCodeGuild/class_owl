@@ -23,6 +23,7 @@ Thanksgiving -- Nov 26, 2020
 * Lab 06 -- Random Password
 * Lab 07 -- Rock Paper Scissors
 * Lab 08 -- Make Change
+* Lab 09 -- Unit Converter
 
 ## Odds and Ends
 An Illustrated (and Musical) Guide to Map, Reduce, and Filter Array Methods  
