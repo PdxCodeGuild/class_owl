@@ -33,7 +33,7 @@ while True:
         total = 0
         for num in numlist:
             total += num
-        print(f"The average of numbers is {total/len(numlist)")
+        print(f"The average of numbers is {total/len(numlist)}")
         break
        
     
