@@ -16,8 +16,6 @@ def makelist(nums):
             num1 = int(num1)
             nums.append(num1)
             
-
-
 """
 This function grabs the  length of the nums list
 """
