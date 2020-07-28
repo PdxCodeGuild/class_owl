@@ -13,6 +13,4 @@ def password_generator():
     password = ''.join(random.choice(letters) for i in range(length))
     print("Your password is " + password)
 
-
-
 password_generator()

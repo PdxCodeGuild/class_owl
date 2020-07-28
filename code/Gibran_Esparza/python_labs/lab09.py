@@ -12,7 +12,7 @@ def main():
 
     distance = int(input("What is the distance : "))
     while True:
-        unit = input("What is the unit: mi, km, m ,ft, yd, in, in you want in meters? ").lower()
+        unit = input("What is the unit: mi, km, m ,ft, yd, in, you want in meters? ").lower()
         
         if unit not in units:
             print('Not a valid choice')
