@@ -38,8 +38,59 @@ def opposite(a, b):
     return (a > 0 and b < 0) or (b > 0 and a < 0)
 
 
-print(opposite(10, -1)) # True
-print(opposite(2, 3)) # False
-print(opposite(-1, -1)) # False
-print(opposite(-1, 4)) # True
+# print(opposite(10, -1)) # True
+# print(opposite(2, 3)) # False
+# print(opposite(-1, -1)) # False
+# print(opposite(-1, 4)) # True
 
+
+# Problem 3
+# Write a function that returns True if a number within 10 of 100.
+
+def near_100b(num):
+    if num >= 90 and num <= 110:
+        return True
+    else:
+        return False
+
+def near_100(num):
+    return num >= 90 and num <= 110
+
+
+# print(near_100(50)) # False
+# print(near_100(99)) # True
+# print(near_100(105)) # True
+
+# Problem 4
+# Write a function that returns the maximum of 3 parameters.
+
+def maximum_of_three2(a, b, c):
+    z = max(a, b, c)
+    return z
+
+def maximum_of_three3(a, b, c):
+    if a > b:
+        if a > c:
+            return a
+        else:
+            return c
+    elif b > c:
+        return b
+    else:
+        return c
+
+def maximum_of_three4(a, b, c):
+    z = [a, b, c]
+    z.sort()
+    return z[-1]
+
+def maximum_of_three(a, b, c):
+    z = [a, b, c]
+    max = a
+    for num in z:
+        if num > max:
+            max = num
+    return max
+
+print(maximum_of_three(5,6,2)) # 6
+print(maximum_of_three(-4,3,10)) # 10
