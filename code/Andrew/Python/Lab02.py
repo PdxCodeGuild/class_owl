@@ -1,6 +1,6 @@
 # Write a simple program that prompts the user for several
 #  inputs then prints a Mad Lib as the result.
-def Madlib():
+def madlib():
     """I forgot about Doc Strings
     """
     adj1 = input('Enter an Adjective: ')
@@ -17,7 +17,7 @@ def Madlib():
 
 if __name__ == "__main__":
     
-    Madlib()
+    madlib()
 
 
 
