@@ -1,8 +1,10 @@
 
+# Function that converts to meters
 
 def unit_converter(type, value):
-    unit_dict_TO_METERS = {'feet': 0.3048, 'miles': 1609.34, 'kilometers' : 1000, 'yards': 0.9144 , 'inches': 0.0254}
+    # Dictionary of units
 
+    unit_dict_TO_METERS = {'feet': 0.3048, 'miles': 1609.34, 'kilometers' : 1000, 'yards': 0.9144 , 'inches': 0.0254}
     meter_conv = unit_dict_TO_METERS[type] * value
 
     return meter_conv
