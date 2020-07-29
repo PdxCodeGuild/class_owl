@@ -17,4 +17,4 @@ while True:
     elif guess < x:
         print("Your guess is to low")
     elif guess > x:
-        print*"Your guess is too high"
+        print("Your guess is too high")
