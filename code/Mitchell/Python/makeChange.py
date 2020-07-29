@@ -16,7 +16,7 @@ def change_calc(penniesresult):
     nickels = penniesresult // 5
     penniesresult = penniesresult - (nickels * 5)
     penny = penniesresult // 1
-    penniesresult = penniesresult - (penny* 1)
+    penniesresult = penniesresult - (penny * 1)
     print('You have', quarters, 'quarters, ', nickels, 'nickels, ', dimes, 'dimes, and ', penny, 'pennies')
        
 
