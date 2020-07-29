@@ -1,10 +1,11 @@
+#Imported my module
 import random
-
+#Picking a random number
 x = random.randint(1,10)
-
+#Setting guesses
 guesses = 0
 
-
+#Looping infinite amount until user guesses correctly
 while True:
     guess= int(input('What is your guess: '))
 
