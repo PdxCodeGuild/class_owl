@@ -9,7 +9,7 @@ def rot13er():
     
     # Main loop
     while True:
-        # Ask for the message to be encrypted
+        # Ask for the message to be encrypted and how far to shift 
         user_input = input("Enter the message you wish to encrypt via ROT! ")
         rotter = input("How far did you want to rotate the string?(1-25) ").strip()
 
