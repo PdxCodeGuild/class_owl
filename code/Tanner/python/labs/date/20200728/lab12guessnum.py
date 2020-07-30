@@ -8,7 +8,6 @@ count = 1
 while user != x:
     print("nope")
     user = int(input("Guess again?: "))
-    print(user)
     count += 1
     print(f'your count is {count}.')
     if user == x:
@@ -16,9 +15,6 @@ while user != x:
         break
     elif user >= x:
         print("too high")
-        count += 1
     elif user <= x:
         print("too low")
 
-    count += 1
-    print(count)
