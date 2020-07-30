@@ -13,6 +13,9 @@ dimes_output = quarters_remainder // dimes
 dimes_remainder = quarters_remainder % dimes
 nickels_output = dimes_remainder // nickles
 nickels_remainder = dimes_remainder % nickles
+if nickels_remainder = 0:
+    pennies_output = dimes_remainder
+else:
 pennies_output = nickels_remainder
 
 

@@ -1,7 +1,4 @@
 
-
-
-
 """
 This function creates the nums list 
 """
@@ -9,6 +6,7 @@ def makelist(nums):
 
     while True:
         num1 = input('Please enter a number to add to the list, enter done when finished adding numbers: ')
+
         if num1 == 'done':
             print('You have finished entering numbers.')
             break
