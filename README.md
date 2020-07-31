@@ -29,6 +29,7 @@ Thanksgiving -- Nov 26, 2020
 * Lab 12 -- Guess the Number
 * Lab 13 -- ROT13
 * Lab 14 -- Pick 6
+* Lab 15 -- Number to Phrase
 
 ## Odds and Ends
 An Illustrated (and Musical) Guide to Map, Reduce, and Filter Array Methods  
