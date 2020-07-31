@@ -59,8 +59,11 @@ def payout(result):
 
     return winnings
 
-
-
+'''
+This main function will track all the earnings/expenses and ROI. It has the loop to play
+the game 100000 times. It's responsible for calling the other functions,
+and printing the output. 
+'''
 def main():
     balance = 0
     expenses = 0
@@ -83,5 +86,5 @@ def main():
     print(f'Making your ROI for the game ${roi}.')
     print('Please play a better game!')
 
-    
+
 main()
