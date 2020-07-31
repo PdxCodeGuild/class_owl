@@ -63,19 +63,25 @@ def payout(result):
 
 def main():
     balance = 0
+    expenses = 0
+    earnings = 0
     i = 0 
     computer_ticket = ticket_generator()
     while i <= 99999:
             balance = balance - 2
+            expenses = expenses - 2
             player_ticket = ticket_generator()
             result = compare_tickets(computer_ticket, player_ticket)
             winnings = payout(result) 
+            earnings = earnings + winnings
             balance = balance + winnings
             i = i + 1
-        
-    print(f'This is your final balance after playing: {balance}')
 
+    roi = (earnings - expenses) / expenses   
+    print(f'This is your final balance after playing: {balance}')
+    print(f'You total earnings for the game is ${earnings}. Your total expenses ${expenses}.')
+    print(f'Making your ROI for the game ${roi}.')
+    print('Please play a better game!')
 
     
-
 main()
