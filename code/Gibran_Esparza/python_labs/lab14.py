@@ -37,7 +37,6 @@ def main():
     ticket_cost = 2
     balance = 0
     earnings = 0
-    expenses = 0
 
     ticket_count = 0
 
