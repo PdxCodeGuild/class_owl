@@ -38,21 +38,21 @@ def main():
     balance = 0
     earnings = 0
 
-    ticket_count = 0
+    x= 0
 
     # Loop 100,000 times, for each loop:
-    while ticket_count < 100000:
+    while x < 100000:
         ticket = pick6_generate()
-
         balance -= 2
-        ticket_count += 1
-
+        x += 1
         matches = matching_nums(winner, ticket)
+        
+        
         #Checking our Matches to Payouts and adding it to our Earnings
         payout = calculatepayout(matches)
         earnings += payout
 
-    expenses = ticket_count * ticket_cost
+    expenses = x * ticket_cost
     balance = earnings - expenses
     #ROI Calculation
     roi = (f'{(earnings - expenses) / expenses* 100}%')
