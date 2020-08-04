@@ -2,16 +2,20 @@
 # Verion 2 is also included
 import string
 
-
+'''
+The palindrome function takes the word, makes sure it's lower case
+then reverses the word in another variable. Finally it compares 
+them. If they match. Then 
+'''
 def palindrome(word):
     word1 = word.lower()
     
     word2 = word1[::-1]
 
     if word1 == word2:
-        answer = 'a'
+        answer = True
     else:
-        answer = 'not a'
+        answer = False
     
     return answer
 
@@ -45,7 +49,11 @@ def user_input2():
 def main():
     word = input('Please enter a word to check if it\'s a palindrome: ')
     answer1 = palindrome(word)
-    print (f'Your word \'{word}\', is {answer1} palindrome.')
+    if answer1 == True:
+        print (f'Your word \'{word}\', is a palindrome.')
+    else:   
+        print (f'Your word \'{word}\', is NOT palindrome.')
+
     print('Now let\'s see if two words are anagrams.')
     word_check1 = user_input1()
     word_check2 = user_input2()
