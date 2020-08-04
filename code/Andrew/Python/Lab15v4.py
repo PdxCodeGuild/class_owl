@@ -30,10 +30,10 @@ following form HH:MM:SS AM/PM or in 24 hr format: ")
         mod = user_time[2][2:]
         print(hours,mins,secs,mod)
 
-    a = hour_list[hours]
+    # a = hour_list[hours]
     
-    if b in mins_list:
-        mins_list[b]
+    # if b in mins_list:
+    #     mins_list[b]
 
 
 

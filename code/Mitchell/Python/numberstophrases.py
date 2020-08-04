@@ -1,14 +1,14 @@
 # Input a number
 phrase = {
     1: "teen",
-    2: 'twenty-',
-    3: 'thirty-',
-    4: 'forty-',
-    5: 'fifty-',
-    6: 'sixty-',
-    7: 'seventy-',
-    8: 'eighty-',
-    9: 'ninety-',
+    2: 'twenty ',
+    3: 'thirty ',
+    4: 'forty ',
+    5: 'fifty ',
+    6: 'sixty ',
+    7: 'seventy ',
+    8: 'eighty ',
+    9: 'ninety ',
 }
 ones_digit_phrase = {
     1: "one",

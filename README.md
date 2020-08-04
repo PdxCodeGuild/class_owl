@@ -30,6 +30,10 @@ Thanksgiving -- Nov 26, 2020
 * Lab 13 -- ROT13
 * Lab 14 -- Pick 6
 * Lab 15 -- Number to Phrase
+* Lab 16 -- Image Manipulation (In class)
+* Lab 17 -- Palindrome Anagram
+* Lab 18 -- Peaks and Valleys (Optional)
+* Lab 19 -- Blackjack Advice
 
 ## Odds and Ends
 An Illustrated (and Musical) Guide to Map, Reduce, and Filter Array Methods  

@@ -10,7 +10,8 @@ while True:
     random_choice = random.randint(0, 99)
     #print(random_choice)
     user_guess = int(input('Enter a number between 0-99'))
-
+    usercount = []
+    
 
     if user_guess == random_choice:
         print("You Guessed the number {random_choice} correctly")
