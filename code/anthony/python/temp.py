@@ -1,9 +1,6 @@
-def missing_char(message):
-    strings = []
-    for i in range(len(message)):
-        strings.append(message[:i] + message[i+1:])
+creditcard = list(map(int, input("\n\t\t Enter Your 16 digit Credit Card Number:  ")))
+finalnumber = creditcard.pop(15)
+creditcard = list(reversed(creditcard))
 
-
-    return strings
-
-print(missing_char('kitten'))
+for i in range(1, len(creditcard), 2):
+    creditcard[i] = creditcard[i] * 2
