@@ -92,5 +92,11 @@ def maximum_of_three(a, b, c):
             max = num
     return max
 
-print(maximum_of_three(5,6,2)) # 6
-print(maximum_of_three(-4,3,10)) # 10
+print(maximum_of_three(5,6,2)) # 6÷
+
+
+# Problem 5
+# Print out the powers of 2 from 2^0 to 2^20
+
+for x in range(21):
+    print(f"{2}^{x} = {2 ** x}")
