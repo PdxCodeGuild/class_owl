@@ -1,5 +1,7 @@
-
+# Imports math module so we can use math.ceil
 import math
+
+# Global dictionary
 
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
@@ -18,33 +20,60 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
+# Opening book function
+def get_book(book):
+    
+    # Read returns strings, readlines returns a list and readline reads only the first line
+    with open(book) as book:
+        lines = book.read()
 
-with open("book.txt",'r') as book:
-    lines = book.read()
-
-
-no_ex = lines.replace('!', ".")
-no_ques = no_ex.replace("?", ".")
-
-sentences = len(no_ques.split('.'))
-
-chars = len(lines.replace(' ', ""))
-
-words = len(lines.split(' '))
+    return lines
 
 
+def main():
+    
 
-chunk_1 = 4.71*(chars/words) 
-chunk_2 = chunk_1 + (.5 * (words/sentences)) 
-chunk_3 = math.ceil(chunk_2 - 21.43)
+    # Passes book title to the open function and retrieves the info as a string
+    lines = get_book('book.txt')
+
+    # s = {"?" : ".",
+    #       "!": "."}
+    # w = str.maketrans(s)
+    # d = lines.translate(w)
+
+    # Remove the '?' and '!' from the text. Alternate version is above and commented out
+    no_ex = lines.replace('!', ".")
+    no_ques = no_ex.replace("?", ".")
+
+    # Gets the amount of sentences in the book
+    sentences = len(no_ques.split('.'))
+
+    # gets rid of the spaces and counts the letters
+    chars = len(lines.replace(' ', ""))
+
+    # Splits on spaces and counts the words
+    words = len(lines.split(' '))
 
 
-result_dict = ari_scale.get(chunk_3)
+    # Does the math equation 
+    chunk_1 = 4.71*(chars/words) 
+    chunk_2 = chunk_1 + (.5 * (words/sentences)) 
+    chunk_3 = math.ceil(chunk_2 - 21.43)
 
 
+    # Takes the resultant and gets the 1st layer dictionary
+    result_dict = ari_scale.get(chunk_3)
 
-print(f"""
+
+    # Prints the result and the info from the second layer of the dictionary
+
+    print(f"""
 The ARI for book.txt is {chunk_3}
 This corresponds to a {result_dict['grade_level']} of difficulty
 that is suitable for an average person {result_dict['ages']} years old.
 """)
+
+# Adding Lab22 by: Andrew, Duncan and Hugh!
+
+if __name__ == "__main__":
+    main()
