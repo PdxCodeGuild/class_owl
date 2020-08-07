@@ -1,34 +1,61 @@
 
 # Create dictionary for username: {password: , security question: , answer: }
-users = {
-    "bradpitt57": {
-        "password": "password123",
-        "question": "What is Brad's last name?",
-        "answer": "Pitt"
-    },
-    "soccervansarecool2": {
-        "password": "owen87",
-        "question": "Year of birth?",
-        "answer": "1987"
-    }
-}
+def get_users():
+    with open("users.csv") as file:
+        text = file.read().split('\n')
+
+    headers = text[0]
+    data = text[1:]
+
+    headers = headers.split(",")
+
+    user_data = []
+    for user in data:
+        user_data.append(user.split(','))
+
+    users = []
+    for user in user_data:
+        current_user = {}
+        for i in range(len(headers)):
+            current_user[headers[i]] = user[i]
+        users.append(current_user)
+
+    return users, headers
+
+def save_users(users, headers):
+    output = ""
+    output += ",".join(headers) + "\n"
+
+    for i in range(len(users)):
+        if i != len(users) - 1:
+            output += ",".join(list(users[i].values())) + "\n"
+        else:
+            output += ",".join(list(users[i].values()))
+
+    with open("users.csv", "w") as file:
+        file.write(output)
+
 
 # Function for logging in
-def login():
+def login(users):
     username = input("Enter your username: ")
     password = input("Enter your password: ")
 
     # Calls the is_valid function to return true if valid username, false if not
-    if is_valid(username, password):
+    if is_valid(username, password, users):
         print(f"Welcome {username}.")
     else:
         print("Invalid username or password.")
 
 # Function for signing up
-def signup():
+def signup(all_users):
     username = input("Select a username: ")
 
     # If the username exists, ask for a new username
+    users = []
+    for user in all_users:
+        users.append(user['username'])
+
     while username in users:
         print("Username already exists")
         username = input("Select a username: ")
@@ -45,50 +72,63 @@ def signup():
         answer = input("Answer: ")
 
         # Add the newly created user to the users dictionary
-        users[username] = {
+        all_users.append({
+            "username": username,
             "password": password,
             "question": question,
             "answer": answer
-        }
+        })
 
         # Display a success message to the user
         print("Signed up successfully.")
+    return all_users
     
 
 
 
 # Function to check if username/password is valid
-def is_valid(username, password):
+def is_valid(username, password, users):
     '''Function to check if a valid username and password has been entered'''
-    if username in users:
-        if password == users[username]["password"]:
-            return True
+    # if username in users:
+    #     if password == users[username]["password"]:
+    #         return True
+    # return False
+    for user in users:
+        if username == user['username']:
+            if password == user['password']:
+                return True
     return False
 
 # Function for forgotten password
-def reset():
+def reset(all_users):
     username = input("Enter your username: ")
+
+    users = []
+    for user in all_users:
+        users.append(user['username'])
 
     # If a valid username is entered continue, else print user does not exist
     if username in users:
-        answer = input(users[username]["question"])
+        index = users.index(username)
+        answer = input(all_users[index]["question"])
 
         # Check to see if answer entered matches answer in dictionary
-        if answer == users[username]["answer"]:
+        if answer == all_users[index]["answer"]:
             password = input("Enter a new password")
             password2 = input("Verify your password: ")
 
             # Verify password was entered correctly
             if password != password2:
                 print("The passwords do not match")
-                return
+                return all_users
             else:
-                users[username]["password"] = password
+                all_users[index]["password"] = password
                 print("Password updated!")
+                return all_users
         # If answer does not match, tell the user and return (leave function)
         else:
             print("Answer does not match security question.")
-            return
+            return all_users
     else:
         print("User does not exist")
 
@@ -110,18 +150,21 @@ def main():
 
     # while True loop to keep the program running
     while True:
+        users, headers = get_users()
         choice = menu()
 
         # Check to see what the user entered and call the appropriate function
         if choice == "1" or choice == "login":
-            login()
+            login(users)
         elif choice == "2" or choice == "signup":
-            signup()
+            users = signup(users)
         elif choice == "3" or choice == "reset":
-            reset()
+            users = reset(users)
         elif choice == "4" or choice == "exit":
+            save_users(users, headers)
             break
         else:
             print(f"Invalid choice: {choice}.")
+        save_users(users, headers)
 
 main()
