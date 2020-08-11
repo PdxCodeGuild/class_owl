@@ -13,7 +13,6 @@ Thanksgiving -- Nov 26, 2020
 - Anthony Wallace, Instructor
   - anthony@pdxcodeguild.com
 - Irron Williams, TA
-- Brandon Gonzalez, TA
   
 ## Python labs assigned
 * Lab 02 -- Madlib
@@ -34,6 +33,10 @@ Thanksgiving -- Nov 26, 2020
 * Lab 17 -- Palindrome Anagram
 * Lab 18 -- Peaks and Valleys (Optional)
 * Lab 19 -- Blackjack Advice
+* Lab 20 -- Credit Card Validation
+* Lab 22 -- ARI
+* Lab 23 -- Contact List
+* Lab 25 -- ATM
 
 ## Odds and Ends
 An Illustrated (and Musical) Guide to Map, Reduce, and Filter Array Methods  
