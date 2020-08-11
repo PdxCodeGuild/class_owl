@@ -5,7 +5,7 @@ def get_users():
         text = file.read().split('\n')
     
     #text = text.split('/n')
-    headers =text[0]
+    headers = text[0]
     headers = headers.split(",")
     data = text[1:]
     
@@ -14,11 +14,12 @@ def get_users():
         user_data.append(user.split(','))
     users = []
     for user in user_data:
+        current_user = {}
         for i in range(len(headers)):
-            users.append({
+            current_user[headers]
 
-                
-            })
+
+            
                 
          
 

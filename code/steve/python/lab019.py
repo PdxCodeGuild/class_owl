@@ -1,1 +1,4 @@
-print('hello')
+# Blackjack Advice
+import random
+
+card_value = ()
