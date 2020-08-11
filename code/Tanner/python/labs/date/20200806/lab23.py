@@ -22,5 +22,5 @@ def getC():
     return contacts
 
 getC()
-
+ 
 print(getC())
