@@ -12,18 +12,26 @@ class ATM:
     def check_balance(self):
 
         self.transactions('checked balance')
-        pass
+        
+    def check_withdrawal(self, amount):
+        if self.balance - amount >0 and amount != 0:
+            return True
+        else:
+            return False
 
     # Withdraws from the balance and adds to history
     def withdraw(self, amount):
-        if self.balance - amount >= 0 and amount != 0:
+        if self.check_withdrawal(amount):
             self.balance -= amount
             self.transactions('withdrew', amount)
+            print(f'\n${amount} successfully withdrawn!\n')
+
         elif amount == 0:
             self.transactions('withdrew', '0')
         else:
-            print('Insufficient Funds')
+            print('\nInsufficient Funds!\n')
             self.transactions('failed to withdraw funds due to insufficient funds.')
+            
         
 
 
@@ -36,6 +44,7 @@ class ATM:
             self.transactions('deposited', '0')
         else:
             self.transactions('deposited', amount)
+            print(f'\n${amount} deposited successfully!\n')
         
 
     # appends the transactions to the history list
@@ -49,7 +58,7 @@ class ATM:
         else:
             self.history.append(f'User {action} ${value}')
 
-        pass
+    
 
 # Main function
 def atm():
@@ -103,21 +112,23 @@ Please make a selection:
             atm_object.check_balance()
 
         elif sel == '2':
-            amount = input('Select amount to withdraw: ')
+            amount = input('\nSelect amount to withdraw: ')
             while not amount.isdigit():
                 print('Whole dollar amounts only!')
-                amount = input('Select amount to withdraw: ')
+                amount = input('\nSelect amount to withdraw: ')
 
             atm_object.withdraw(int(amount))
+            
 
         elif sel == '3':
 
-            amount = input('Select amount to deposit: ')
+            amount = input('\nSelect amount to deposit: ')
             while not amount.isdigit():
                 print('Whole dollar amounts only!')
-                amount = input('Select amount to deposit: ')
+                amount = input('\nSelect amount to deposit: ')
 
             atm_object.deposit(int(amount))
+            
 
         elif sel == '4':
             
