@@ -9,7 +9,7 @@
 # the last player with chips left. He/she does not roll the dice, and wins the center pot. 
 # If he/she chooses to play another round, he/she does not roll 3, he/she keeps his pot and plays with that.
 
-import time
+
 import random
 
 LCR_DIE = ['L','C','R','1','2','3']
@@ -41,8 +41,6 @@ class LCR_player:
         else:
             return False
     
-def winner(self):
-    pass
     
 
 def lcr_game():
@@ -62,23 +60,30 @@ def lcr_game():
         y = LCR_player(x)
         class_players.append(y)
         
-    out = 0
+    # out = 0
     ender = True
     while ender:
         out = 0
-        if pot == 3*len(class_players):
-            break
+        main_out = 0
+        # if pot == 3*len(class_players):
+        #     break
 
         for x in range(len(class_players)):
-
-            print(class_players[x])
-            if out == len(class_players)-1:
-                print('End')
-                ender = False
-                break
+            
+            for z in class_players:
+                if z.out():
+                    out += 1
+            
+                if out == len(class_players)-1:
+                    print('End')
+                    ender = False
+                    break 
+            if ender == False:
+                break    
+                    
             
             elif class_players[x].out():
-                out +=1
+                main_out +=1
                 continue
             
             else:
@@ -86,7 +91,7 @@ def lcr_game():
 
                 for die in y:
                     if class_players[x].out():
-                        out += 1
+                        # out += 1
                         break
                     elif die == 'C':
                         class_players[x].chips -= 1
@@ -104,18 +109,28 @@ def lcr_game():
                     out +=1
                 
             
-            if out == len(class_players)-1:
-                print('End')
-                ender = False
-                break
+            # if out == len(players)-1:
+            #     print(out)
+            #     ender = False
+            #     break
 
             
             print(class_players[x],y)       
             print(f'Pot: {pot}')
             # print(y)
 
-    # for x in class_players:
-    #     print(x)
+            # input()
+    
+            for x in class_players:
+                print(x)
+            print(out)
+            # input()
+    for x in class_players:
+        if x.out():
+            continue
+
+        else:
+            print(f'Winner: {x}')
         
         
 
