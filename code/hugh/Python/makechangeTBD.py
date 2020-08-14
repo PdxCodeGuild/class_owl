@@ -10,3 +10,8 @@ Have the user enter the total number in pennies, e.g. for $1.36, the user will e
 Version 2
 Have the user enter a dollar amount (1.36), convert this to the total in pennies.
 '''
+coinage = input('What denomination (coinage) is desired?  ')
+amount = ('How much needs to be converted in US dollars?  ')
+
+def coin_conver(coinage,amount):
+    coinage = coinage *
