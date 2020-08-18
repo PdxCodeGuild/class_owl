@@ -34,13 +34,13 @@ cereals = {
 #         print(cereals)
 
 
-for key in cereals:
-    # print(key)
-    # print(cereals[key])
-    # print(f"{key}: {cereals[key]}")
+# for key in cereals:
+#     # print(key)
+#     # print(cereals[key])
+#     print(f"{key}: {cereals[key]}")
 
 # print(cereals.keys())
-  print(cereals.values())
+# print(cereals.values())
 # print(cereals.items())
 
 for key, value in cereals.items():
