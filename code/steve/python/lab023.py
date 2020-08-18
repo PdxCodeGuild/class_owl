@@ -46,14 +46,18 @@ def add_record(contacts, new_user, headers):
     return contacts
 
 
-def retrieve_contact(headers, contacts):
+def retrieve_contact(headers, contacts): # Not done
+    name = input('Please select a contact name to lookup: ')
+    for key in contacts:
+        if key.value == name:
+            print()
+    
+
+
+def update_contact(headers, contacts, new_user): # Not done
     pass
 
-
-def update_contact(headers, contacts, new_user):
-    pass
-
-def delete_contact(headers, contacts):
+def delete_contact(headers, contacts): # Not done
     pass
 
 def menu():
@@ -81,11 +85,7 @@ def main():
         """
         choice = input(menu_display)
 
-    # print(contacts)
-    # new_user = get_records()
-    # print(new_user)
-    # contacts = add_record(contacts, new_user, headers)
-    # print(contacts)
+
         if choice == "1":
             new_user = get_records()
             contacts = add_record(contacts, new_user, headers) 
@@ -95,8 +95,10 @@ def main():
             new_user = get_records()
             update_contact(headers, contacts, new_user)
         elif choice == "3":
+            
             retrieve_contact(contacts, headers)
         elif choice == "4":
+            print('Please select a contact name to delete: ')
             delete_contact(contacts, headers)
         elif choice == "5":
             print('Goodbye')

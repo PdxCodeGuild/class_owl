@@ -1,12 +1,12 @@
 
 
-#transactions = ()
+transactions = ()
 
 class Balance_properties:
     def __init__(self):
         self.balance = 0
-        self.tranactions = ()
-
+        
+    
     def check_balance(balance, self):
         print(f'Your current balance is: ${balance}. ')
 
@@ -19,19 +19,19 @@ class Balance_properties:
 
     def check_withdrawal(amount, balance, self):
         if balance >= amount:
-            return True    
+            return True  
+        else:
+            return False  
             # else:
             #     return ''
 
     def withdraw(amount, balance, self, transactions): 
-        if check_withdrawal() == True:
-            balance = balance - amount      
-            return balance, transactions.append(f'User withrew ${amount}. New balance is, ${balance}. ')
-        else:
-            print(f'Transaction would overdraw your account by ({balance} - {amount})')     
+        balance = balance - amount      
+        return balance, transactions.append(f'User withrew ${amount}. New balance is, ${balance}. ')
+           
                     
             
-    def menu():
+    def menu(self):
 
         print("Welcome to the ATM")
         while True:
@@ -39,7 +39,8 @@ class Balance_properties:
             1) Check your Balance
             2) Make a Deposit
             3) Make a withdrawal
-            4) view Transactions
+            4) View Transactions
+            5) Exit
             """
             choice = input(menu_display)
         return choice
@@ -53,7 +54,20 @@ def main():
             check_balance(balance)
         elif choice == 2:
             amount = int(input('How much would you like to deposit today?'))
-            deposit(balance, amount)
+            balance = deposit(balance, amount)
+            print(f'This is your new balance: ${balance}')
+        elif choice == 3:
+            amount = int(input('How much would you like to withdraw today?'))
+            if check_withdrawal == True:
+                balance = withdraw(amount, balance, transactions)
+            else:
+                print(f'Transaction would overdraw your account by ({balance} - {amount})')  
+        elif choice == 4:
+            print(f'here is your transaction history \n {transactions}')
+        elif choice == 5:
+            Break
+
+
 
         
 

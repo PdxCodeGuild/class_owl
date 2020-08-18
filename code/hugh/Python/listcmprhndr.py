@@ -65,3 +65,12 @@ numbers = '133425453'
 
 intnumbslist = [int(num) for num in numbers]
 print(intnumbslist)
+
+'''REPL = read evaluate print loop'''
+
+def dictionizer(numbers, target):
+    numbdict = {numbers,target}
+    for i in range(len(numbers)):
+       numbdict.update(dict(list(i) + list(numbers))
+
+print(dictionizer(numbers,20))
