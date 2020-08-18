@@ -30,7 +30,7 @@ class ATM:
             print("You have insufficient funds")
 
     def transaction_history(self):
-        result = self.check_balance()
+        
         print(self.transactions)
     
 
@@ -46,7 +46,7 @@ def main():
             amount = int(input("How much do you wish to withdrawal"))
             The_Atm.withdrawal_amount(amount)
         elif choice == "check balance":
-            print(The_Atm.balance)          
+            print(The_Atm.check_balance())          
         elif choice == "history":
             The_Atm.transaction_history()
         
