@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #7E8287;
+}
+
+.main {
+    width: 75vw;
+    margin: 0 auto;
+    /*display: flex;*/
+    align-items: center; 
+    justify-content: center;
+    border-radius: 10%;
+}
+a {
+    color: #E5E059;
+}
+
+img{
+    /*float: right; */
+}
+
+p{
+    margin: 12px;
+}
+
+.homes {
+    list-style: ":>"
+}
