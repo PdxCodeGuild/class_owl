@@ -1,0 +1,26 @@
+html{
+   box-sizing: border-box;
+
+}
+
+*,*:before, *:after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(245, 216, 174);
+}
+.main{
+    
+}
+.header{
+    left: 10px;
+    font-size: 50px;
+    position: sticky;
+   
+    
+   
+}
+
+.header-2{
+    position: sticky;    
+}
