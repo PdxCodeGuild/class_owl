@@ -1,26 +1,38 @@
-html{
-   box-sizing: border-box;
-
-}
-
-*,*:before, *:after{
-    box-sizing: inherit;
+*{
     margin: 0;
     padding: 0;
-    background-color: rgb(245, 216, 174);
-}
-.main{
+  }
+  body {
+      
+    background-color: rgb(226, 188, 130);
+  }
+  
+  
+  .header{
     
-}
-.header{
+    font-display: bold;
+    background-color: lightyellow;
     left: 10px;
     font-size: 50px;
     position: sticky;
-   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
-   
-}
+  }
+  .author {
+    font-size: 20px;
 
-.header-2{
-    position: sticky;    
-}
+  }
+
+  .cards-major{
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .card{
+      top: 50px;
+      background-color: #944903;
+      color:white;
+  }
