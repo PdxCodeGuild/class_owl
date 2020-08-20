@@ -13,7 +13,12 @@ Thanksgiving -- Nov 26, 2020
 - Anthony Wallace, Instructor
   - anthony@pdxcodeguild.com
 - Irron Williams, TA
-  
+
+## HTML/CSS labs assigned
+* Lab 01 -- bio
+* Lab 02 -- blog
+* CSS Diner
+
 ## Python labs assigned
 * Lab 02 -- Madlib
 * Lab 03 -- Grading
