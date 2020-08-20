@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mindy Kaling</title>
-    
-    <!--CSS Section  -->
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"> 
     <style>
         
-}       
+      
         body{
             background-color: #dae5eb;
         }
@@ -16,21 +15,72 @@
             height: 60vh;
             border: solid cornsilk;
             border-radius: 10px;
+            box-shadow: 8px 6px 13px black;
             
         }
         .image{
             display: flex;
             justify-content: center;
-            
+            /* float: right; */
         }
+        
         .main{
+            width:75vw;
+            align-items: center;
+            text-align:center;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            border:3px solid #f6f0fa;
+            margin: 20px auto;
+            border-radius: 15%;
+            background: linear-gradient(
+                0deg,
+                white 15px,
+                silver);
         }
 
-        .header{
-            pass
+        
+        a{  
+            color: purple;
+            display:flex;
+            justify-content: center;
         }
+        
+        a:hover{
+            background:linear-gradient(
+                red, orange, yellow, green,
+                blue, indigo, violet
+            );
+
+            color: white;
+
+        }
+        .main2{
+            background: white;
+            width: 60vw;
+            border-width: 5px;
+            border-style: groove;
+            flex-direction: column; 
+            text-align: center;
+            justify-content: center;
+            justify-items: center;
+            margin: 20px auto;
+            border-radius: 13px;
+            
+        }
+        .l{
+            margin: auto;
+            width: 200px;
+            list-style: "<>";
+        }
+
+        #quote{
+            font-size: 29px;
+            font-family: 'Sacramento', cursive;
+        
+        }
+        
 
     
     </style>
@@ -43,12 +93,12 @@
 
         </div>
 
-        <div class="header">
-            <h3> Mindy Kaling: </h3>
-        </div>
-
-    
+        <!-- <div class="bio-body">
+        </div> -->
+        
+        
         <div class= "main">
+            <h3> Mindy Kaling: </h3>
             <br>
             <p id="Bio"> Mindy Kaling, born Vera Mindy Chokalingam,
              is an American actress, comedian, screenwriter, television producer, 
@@ -60,23 +110,25 @@
 
         </div>
         
-        <div>
+        <div class="link">
             <a href="https://en.wikipedia.org/wiki/Mindy_Kaling"> This is a link to Mindy's info!</a>
 
         </div>
         
     
 
-    <div>
-        <p>This is a list of the places Mindy has lived:</p>
-
-        <ul>
-            <li>Cambridge, Massachusetts</li>
-            <li>Brooklyn, New York</li>
-            <li>Los Angeles, California</li>
+    <div class="lists">
+        <div class="main2">
+            <p>This is a list of the places Mindy has lived:</p>
+            <ul class = "l">
+                <li>Cambridge, Massachusetts</li>
+                <li>Brooklyn, New York</li>
+                <li>Los Angeles, California</li>
+                
+            </ul>
+        </div>
             
-        </ul>
-
+        
     </div>
     
     <div>
