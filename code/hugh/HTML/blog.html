@@ -1,0 +1,113 @@
+<!--- <DOCTYPE html>
+    npm install @material/elevation
+    @use "@material/elevation";
+    <html lang='en'>
+        <head>
+            <meta charset="UTF-8">
+            <meta name='blog'>
+        </head>
+    </html>
+    <div class = "mdc-elevation--z25">
+        <header>
+            <li> "Hugh's Blog"</li>
+        </header>
+    </div>
+    <button class="mdc-button mdc-button--raised">
+        <div class="mdc-elevation-overlay"></div>
+        <div class="mdc-button__ripple"></div>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">favorite</i>
+        <span class="mdc-button__label">Font Icon</span>
+    </button>
+</DOCTYPE>
+--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hugh Movie Reviews</title>
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="#">Owl Movies</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Genre</a>
+        <a class="nav-link" href="#">Popular</a>
+      </div>
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <h1 class="display-4 text-center">Hello, parliament!</h1>
+    <p class="lead text-center">Movies for your late night viewing pleasure.</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg float-right" href="#" role="button">Learn more</a>
+  </div>
+  <div class="container">
+    <div class="row">
+  <div class="card" style="width: 18rem;">
+    <img src="https://m.media-amazon.com/images/M/MV5BNGViZWZmM2EtNGYzZi00ZDAyLTk3ODMtNzIyZTBjN2Y1NmM1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX182_CR0,0,182,268_AL_.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Movie Titles will Go Here</h5>
+      <p class="card-text">Movie reviews will go here. Need to add scoring, total score, and link to full text if there is one (maybe a mouse over expanded text box?)</p>
+      <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <!--- <img src="https://image.shutterstock.com/image-photo/owl-funny-eyes-bird-600w-1458541661.jpg" class="card-img-top" alt="..."> --->
+    <div class="card-body">
+      <h5 class="card-title">Who? 2</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+   <!--- <img src="https://wp.stanforddaily.com/wp-content/uploads/2020/04/Tootsie-Roll-Pop.jpg" class="card-img-top" alt="..."> --->
+    <div class="card-body">
+      <h5 class="card-title">Who?</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <!--- <img src="https://image.shutterstock.com/image-photo/common-barn-owl-tyto-albahead-600w-379547776.jpg" class="card-img-top" alt="..."> --->
+    <div class="card-body">
+      <h5 class="card-title">Who?</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <!--- <img src="https://image.shutterstock.com/image-photo/common-barn-owl-tyto-albahead-600w-379547776.jpg" class="card-img-top" alt="..."> --->
+    <div class="card-body">
+      <h5 class="card-title">Who?</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <!--- <img src="https://image.shutterstock.com/image-photo/common-barn-owl-tyto-albahead-600w-379547776.jpg" class="card-img-top" alt="..."> --->
+    <div class="card-body">
+      <h5 class="card-title">Who?</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

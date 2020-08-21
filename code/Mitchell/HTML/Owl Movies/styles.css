@@ -1,0 +1,11 @@
+body {
+    --color-primary: blue
+}
+
+.btn {
+    background-color: var(--color-primary);
+}
+
+.btn:hover {
+    background-color: #474747;
+}

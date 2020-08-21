@@ -1,0 +1,49 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 { font-size: 75px;
+    text-align: center;
+}
+
+h3 { 
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.james {
+    font-size: 35px;
+    display:flex;
+    font-family: 'Dancing Script', cursive;
+}
+
+.brow {
+    font-size: 35px;
+    display:flex;
+    font-family: 'Dancing Script', cursive;
+}
+
+.tats {
+    font-size: 35px;
+    display:flex;
+    font-family: 'Dancing Script', cursive;
+}
+
+body{
+    background-color: #D5ACA3;
+}
+
+.main {
+    width: 75vw;
+    margin: 0 auto;
+    /*display: flex;*/
+    align-items: center; 
+    justify-content: center;
+    border-radius: 10%;
+    
+}
+
+p{
+    margin: 12px;
+}
