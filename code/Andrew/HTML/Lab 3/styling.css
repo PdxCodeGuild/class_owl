@@ -1,0 +1,30 @@
+body{
+    background:#edfffa;
+}
+
+.buttons{
+    /* justify-content: center !important; */
+    /* margin: auto !important; */
+}
+
+.body-p{
+    /* box-shadow: 1px 1px 2px 1px black; */
+    background-color: #fffde6;
+    width: 45vw;
+    border: 2px groove black;
+    border-radius: 12px;
+    }
+
+img{
+    border-radius:20px;
+}
+.top-one{
+    /* border-radius:20px; */
+}
+
+.main3{
+    /* box-shadow: 1px 1px 2px 1px black; */
+    border: 2px solid black;
+    
+    
+}
