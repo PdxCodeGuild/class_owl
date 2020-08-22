@@ -10,6 +10,8 @@ h1 {
 .first {
     background-color: darkseagreen;
     margin: auto;
+    position: relative;
+    text-align: center;
     width: 250px;
     height: 250px;
     border-radius: 20%;
@@ -22,8 +24,8 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 20%;
-    text-align: center;
 }
+   
 
 .dog {
     background-color: paleturquoise;
@@ -31,7 +33,18 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 20%;
+    text-align: middle;
+    
+    /* width: 250px;
+    height: 250px;
+    border-radius: 20%;
+    display: block;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    overflow: hidden;
+    line-height: 200px; */
+    
 
 }
 
