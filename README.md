@@ -15,9 +15,10 @@ Thanksgiving -- Nov 26, 2020
 - Irron Williams, TA
 
 ## HTML/CSS labs assigned
-* Lab 01 -- bio
-* Lab 02 -- blog
+* Lab 01 -- Bio
+* Lab 02 -- Blog
 * CSS Diner
+* Lab 03 -- Company Home Page
 
 ## Python labs assigned
 * Lab 02 -- Madlib
