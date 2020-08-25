@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Lovett Law</title>
+</head>
+<body>
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper grey lighten-1">
+          <img class="logoimage hide-on-med-and-down" src="FinalLogoBelun.png">
+          <a href="index.html" class="brand-logo black-text">Lovett Law</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">clear_all</i></a>
+          <ul class="menubar right hide-on-med-and-down">
+            <li><a href="practiceareas.html" class="blue-grey-text darken-2">practice areas</a></li>
+            <li><a href="blogs.html" class="blue-grey-text darken-2">blogs</a></li>
+            <li><a href="about.html" class="blue-grey-text darken-2">about</a></li> 
+          </ul>
+        </div>
+    </nav>
+    </div>
+
+    <ul class="sidenav collapsible" id="mobile-demo">
+        <img class="logoimage" src="FinalLogoBelun.png">
+        <li><a href="practiceareas.html" class="blue-grey-text darken-2">practice areas</a></li>
+        <li><a href="blogs.html" class="blue-grey-text darken-2">blogs</a></li>
+        <li><a href="about.html" class="blue-grey-text darken-2">about</a></li>
+    </ul>
+
+    <h2 class="header tagline center-align">Next Generation Law</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col s6 m6 l6">
+                <div class="card">
+                        <div class="card-image">
+                            <img src="Mitchell06x.jpg">
+                        </div>
+                </div>
+            </div>
+        <div class="col s6 m6 l6"> 
+            <div>
+                <p class="flow-text lovettlawpitch">Lovett Law delivers honest fast pact counsel to provide clients with efficient legal strategies
+                    to protect their interests and to reach their goals.</p>
+                <span><button><p class="freeconsult">Call for a Free Consult Today!</p></button></span>
+            </div>
+        </div></div>
+        
+        
+
+    </div>
+    
+    <div class="container indexboxes center-align">
+        <div class="row">
+
+            <div class="col s8 m6 l6">
+                <div class="card practiceareascard">
+                    <div class="card-image">
+                        <img class="responsive-img" src="Stock2.jpg">
+                        <span class="card-title light-blue lighten-4 black-text">Probate and Estates</span>
+                    </div>
+                </div>
+            </div>
+   
+
+            <div class="col s8 m6 l6">
+                <div class="card practiceareascard">
+                    <div class="card-image">
+                        <img class="responsive-img" src="Stock4.jpg">
+                        <span class="card-title light-blue lighten-4 black-text">Small Business</span>
+                    </div>
+                </div>
+            </div>
+
+      
+            <div class="col s8 m6 l6">
+                <div class="card practiceareascard">
+                    <div class="card-image">
+                        <img class="responsive-img" src="Stock1.jpg">
+                        <span class="card-title light-blue lighten-4 black-text">Divorce</span>
+                    </div>
+                </div>
+            </div>
+      
+            <div class="col s8 m6 l6">
+                <div class="card practiceareascard">
+                    <div class="card-image">
+                        <img class="responsive-img" src="Stock5.jpg">
+                        <span class="card-title light-blue lighten-4 black-text">Family Law</span>
+                    </div>
+                </div>
+            </div> 
+
+        </div>
+    </div>
+
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating pulse btn-large blue lighten-4">
+        <i class="large material-icons">phone</i>
+        </a>
+        <ul>
+        <li><a href="tel:7063315349" class="btn-floating blue-grey lighten-1"><i class="material-icons">phone</i></a></li>
+        <li><a href = "mailto:mitch.lovett@gmail.com" class="btn-floating blue-grey lighten-4"><i class="material-icons">email</i></a></li>
+        </ul>
+    </div>
+
+
+    <footer class="page-footer grey lighten-1">
+        <div class="footer-copyright black-text">
+            © 2020 Lovett Law LLC
+               <ul>
+                <li class="footernav"><a href="disclaimer.html">disclaimer</a></li>
+                <li class="footernav"><a href="connect.html">connect</a></li>
+                <li class="footernav"><a href="abouthtml">about</a></li>
+             </ul> 
+        </div>
+      </footer>
+
+
+
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {});
+  });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.scrollspy');
+    var instances = M.ScrollSpy.init(elems, options);
+    });  
+    </script>
+
+</body>
+</html>

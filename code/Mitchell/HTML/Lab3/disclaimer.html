@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Lovett Law</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper grey lighten-1">
+          <a href="index.html" class="brand-logo black-text">Lovett Law</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">clear_all</i></a>
+          <ul class="menubar right hide-on-med-and-down">
+            <li><a href="about.html" class="blue-grey-text darken-2">practice areas</a></li>
+            <li><a href="blogs.html" class="blue-grey-text darken-2">blogs</a></li>
+            <li><a href="about.html" class="blue-grey-text darken-2">about</a></li> 
+          </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="practiceareas.html" class="blue-grey-text darken-2">practice areas</a></li>
+        <li><a href="blogs.html" class="blue-grey-text darken-2">blogs</a></li>
+        <li><a href="about.html" class="blue-grey-text darken-2">about</a></li>
+    </ul>
+
+
+    <img class="responsive-img" src="AtlantaSky.jpg">    
+    <div class="card large grey lighten-2">
+       <div class="cardcontent flow-text">
+        “Lovett Law” references Lovett Law, LLC, a limited liability company formed under Georgia law.  The information provided on this website is solely for informational purposes and does not constitute legal advice. This website does not form nor is intended to form, a client-attorney relationship between the viewers of the website and Lovett Law, LLC. It is recommended that you seek the advice of an attorney prior to acting on any material read from this site or any other website.
+Information on this website is not guaranteed to be correct, nor up to date.  Further, the information on this website does not reflect the opinions clients nor attorneys under Lovett Law, LLC.  
+This site references other internet resources which are meant to be aids to you and such references do not mean Lovett Law endorses, or is affiliated with, any such resource. 
+       </div>
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating pulse btn-large blue lighten-4">
+        <i class="large material-icons">phone</i>
+        </a>
+        <ul>
+        <li><a href="tel:7063315349" class="btn-floating blue-grey lighten-1"><i class="material-icons">phone</i></a></li>
+        <li><a href = "mailto:mitch.lovett@gmail.com" class="btn-floating blue-grey lighten-4"><i class="material-icons">email</i></a></li>
+        </ul>
+    </div>
+
+
+    <footer class="page-footer grey lighten-1">
+        <div class="footer-copyright">
+          <div class="container black-text">
+            © 2020 Lovett Law LLC
+          <a class="grey-text text-lighten-4 right" href="#!">
+               <ul>
+                <li class="footernav center"><a href="disclaimer.html">disclaimer</a></li>
+                <li class="footernav center"><a href="connect.html">connect</a></li>
+                <li class="footernav center"><a href="about.html">about</a></li>
+             </ul> 
+          </a>
+          </div>
+        </div>
+      </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {});
+  });
+
+    </script>
+</body>
+</html>
