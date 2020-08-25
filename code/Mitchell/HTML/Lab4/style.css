@@ -1,0 +1,51 @@
+h1 {
+    font-family: Lekton;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar > ul {
+    display: flex;
+    justify-content: center;
+}
+
+.navselection {
+    padding: 2px;
+    font-family: Lekton;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+}
+
+.navselection:hover {
+    display: flex;
+    align-self: flex-end;
+    font: rgb(51, 46, 46);
+}
+
+
+footer, img:after{
+    font-family: Lekton;
+    text-transform: uppercase;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+}
+img {
+    max-width: 88%;
+    height: auto
+    
+    
+}
+
+.picture > img {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
