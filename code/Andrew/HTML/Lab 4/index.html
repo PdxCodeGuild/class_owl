@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌯Burrito Chime🌯</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="left">
+        <img src="https://www.seriouseats.com/2020/07/20200706-chorizo-egg-refried-bean-breakfast-burrito-daniel-gritzer-30.jpg" alt="Yum! Burrito.jpg">
+        <div class="name">
+            <h2>Welcome to <b>🌯Burrito Chime🌯</b></h2>
+            🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯<br>
+            🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯
+        </div>
+        <img src="https://www.seriouseats.com/2020/07/20200706-chorizo-egg-refried-bean-breakfast-burrito-daniel-gritzer-30.jpg" alt="Yum! Burrito.jpg">
+
+    </div>
+
+        
+    <div class=" Order-form">
+
+        <form action="https://webhook.site/2ffc7aed-7315-481f-8821-4d5232e640a2" method="POST">
+            <div class="burrito-choices">
+
+                <div class="tortilla card">
+                    <h4>Tortilla:</h4>
+                    
+                    <div class="ocd">
+                        <input id = "wheat" name="tortilla" type="radio" checked>
+                            <label for="wheat"> Wheat</label>
+                    </div>
+                    <div class="ocd">
+                        <input id = "white" name = "tortilla" type="radio">
+                            <label for="white"> White</label>
+                    </div>
+                    <div class="ocd">
+                        <input id = "spinach" name = "tortilla" type="radio">
+                            <label for="spinach"> Spinach</label>
+                    </div>
+                    <div class="ocd">
+                        <input id = "corn" name = "tortilla" type="radio">
+                            <label for="corn"> Corn</label>
+                    </div>
+                </div>
+                
+                <div class="rice card">
+                    <h4>Rice:</h4>
+                    
+                    <div class="ocd">
+                        <input type="radio" name = "rice" id="white-rice" checked>
+                            <label for="white-rice"> White Rice</label>
+                    </div>
+
+                    <div class="ocd">
+                        <input type="radio" name = "rice" id="brown-rice">
+                            <label for="brown-rice"> Brown Rice</label>
+                    </div>
+                </div>
+
+                <div class="beans card">
+                    <h4>Bean:</h4>
+                    
+                    <div class="ocd">
+                        <input type="radio" name = "beans" id="black-beans" checked>
+                            <label for="black-beans"> Black Beans</label>
+                    </div>
+                    <div class="ocd">
+                        <input type="radio" name = "beans" id="pinto-beans">
+                            <label for="pinto-beans"> Pinto Beans</label>
+                    </div>
+                </div>
+                
+                <div class="meats card">
+                    <h4>Protein:</h4>
+                    
+                    <div class="ocd">
+                        <input id = "carnitas" name="protein" type="radio" checked>
+                            <label for="carnitas"> Carnitas</label>
+                    </div>
+                    <div class="ocd">
+                        <input id = "chicken" name = "protein" type="radio">
+                            <label for="chicken"> Chicken</label>
+                    </div>
+                    <div class="ocd">
+                        <input id = "sofritas" name = "protein" type="radio">
+                            <label for="sofritas"> Sofritas</label>
+                    </div>
+                    <div class="ocd">
+                        <input id = "none" name = "protein" type="radio">
+                            <label for="none"> None</label>
+                    </div>
+            </div>
+            
+            <div class="addons card">
+                <div class="ocd">
+                    <input type="checkbox" name="additionals" id="sour">
+                        <label for="sour">Sour Cream</label>
+                </div>
+                <div class="ocd">
+                    <input type="checkbox" name="additionals" id="cheese">
+                        <label for="cheese">Cheese</label>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        <div class= "stylin" style="margin: 4px 0 10px 0px;">
+            
+        </div>
+
+
+
+            <div class="just-why">
+                <div class="top">
+
+                    <div class="ident card">
+                        <input required type="text" name="user" id="user-name" placeholder="Username">
+                        <label for="user-name">Enter a Username</label>
+                        <input required type="password" name="pass" id="pword" placeholder="Password">
+                        <label for="pword">Enter a password</label>
+                        <input type="text" name="name" id="names" placeholder="Will Budl" pattern="\D\D\D+ \D\D\D+">
+                        <label for= "names">Enter First and Last name</label>
+                    </div>
+                    
+                    <div class="noneed card">
+                        
+                        <input type="email" name="emails" id="e-mail" placeholder="e.mail@google.com">
+                            <label for="e-mail">Enter e-mail</label>
+                        <input type="tel" name="telep" id="telep" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <label for="telep">Enter a phone number</label>
+                        <input type="date" name="b-day" id="birth">
+                            <label for="birth">Enter Date of birth</label>
+                        <input type="text" name="ssn" id="ssn" placeholder="123-45-6789" pattern="\d{3}-\d{2}-\d{4}">
+                            <label for="ssn">Enter SSN</label>
+                    </div>
+                    
+                    <div class="address card">
+                        <input type="text" name="street" id="street" placeholder="1600 Pensylvania Ave">
+                            <label for="street"> Enter Street Address</label>
+                        <input type="text" name="city-state" id="city-state" placeholder="Portland, OR, 97214" pattern="\w+, [A-Z]{2}, \d{5}">
+                            <label for="city-state">Enter City, State and Zipcode</label>
+                    </div>
+                </div>
+                
+                <div class="bottom">
+                    <input class="lone-button" type="submit">
+                    <input type="reset" value="Reset Form">
+                </div>
+            </div>
+                
+            
+                
+                
+                
+                
+                
+            </form>
+
+
+
+    </div>
+
+
+</body>
+</html>
