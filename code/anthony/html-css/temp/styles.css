@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.one {
+  background-color: blue;
+  height: 250px;
+  width: 250px;
+  margin: 20px auto;
+}
+
+.two {
+  background-color: blueviolet;
+  height: 250px;
+  width: 250px;
+  font-size: 32px;
+}
+
+header{
+  background-color: black;
+  height: 120px;
+  color: white;
+  padding: 50px;
+}

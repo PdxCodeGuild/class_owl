@@ -1,0 +1,7 @@
+img{
+    border-radius:20px;
+}
+
+#fb-link :hover{
+    color: yellow;
+}

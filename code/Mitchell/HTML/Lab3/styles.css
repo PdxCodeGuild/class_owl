@@ -1,0 +1,154 @@
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+.footernav {
+    display: inline;
+    margin: 0 5px;
+}
+
+.footernav a {
+    color: black;
+}
+.cardcontent {
+    display: flex;
+    justify-content: center;
+    margin: 24px;
+}
+
+.logoimage {
+    width: 56px;
+    height: auto;
+    margin: 5.6px 10px;
+    
+}
+
+.brand-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    
+}
+
+ul > li {
+    font-family: 'Lora', serif;
+    text-transform: uppercase;
+    
+}
+
+.menubar > li:hover {
+    text-decoration: underline;
+}
+
+.page-footer {
+    opacity: 0.6;
+}
+
+.card-title {
+    font: bolder;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+}
+
+.practiceareascard:hover {
+    opacity: .7;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.lovettlawpitch {
+    margin: 8px;
+}
+
+.table-of-contents > li {
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+ul > li {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+
+}
+.brand-logo {animation: brand-logomove .7s; }
+  @keyframes brand-logomove {
+    from { margin-top: -200px; }
+    to { margin-top: 0; }}
+
+.tagline {animation: taglinemove 1s;}
+    @keyframes taglinemove {
+        from {margin-left: -800px;}
+        to {margin-left: 0;}}
+
+.indexboxes {
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    margin: 0 80px;
+    
+}
+
+span > p {
+    margin: 10px 90px 10px 100px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.aboutimg {
+    width: 368px;
+    height: auto;
+    margin: 5.6px 10px;
+    
+}
+
+.lovettlawpitch {
+    margin: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.freeconsult {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    box-sizing: border-box;
+}
+.sidenav > img {
+    margin: 5px 120px;
+}
+ 
+.scheduler {
+    display: flex;
+    margin: 50px;
+}
+
+.messagebox {
+    display: flex;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; 
+    text-transform: uppercase;
+}

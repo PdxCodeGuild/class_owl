@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Connect Lovett Law</title>
+</head>
+<body>
+<!--Top Navigation Pane and Small Screen Navigation Pane-->
+<div class="navbar-fixed">
+  <nav>
+      <div class="nav-wrapper grey lighten-1">
+        <img class="logoimage hide-on-med-and-down" src="BelunLogoFree.png">
+        <a href="index.html" class="brand-logo black-text">Lovett Law</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">clear_all</i></a>
+        <ul class="menubar right hide-on-med-and-down">
+          <li><a href="practiceareas.html" class="blue-grey-text darken-2">practice areas</a></li>
+          <li><a href="blogs.html" class="blue-grey-text darken-2">blogs</a></li>
+          <li><a href="about.html" class="blue-grey-text darken-2">about</a></li> 
+          <li><a href="connect.html" class="blue-grey-text darken-2">connect</a></li>
+        </ul>
+      </div>
+  </nav>
+  </div>
+
+  <ul class="sidenav collapsible" id="mobile-demo">
+      <img class="logoimage" src="BelunLogo3.jpg">
+      <li><a href="practiceareas.html" class="blue-grey-text darken-2">practice areas</a></li>
+      <li><a href="blogs.html" class="blue-grey-text darken-2">blogs</a></li>
+      <li><a href="about.html" class="blue-grey-text darken-2">about</a></li>
+      <li><a href="connect.html" class="blue-grey-text darken-2">connect</a></li>
+  </ul>
+<!--End of Navigation Pane Headings -->
+
+<!--Form for users to email Lovett Law-->
+
+  <div class="scheduler">
+    <div class="row">
+
+      <div class="formfillable col s12 m6 l6">
+        <?=$thankYou ?>
+
+        <form method="post" action="contact.php">
+            <div class="row">
+            <label>Name:</label>
+            <input name="sender">
+
+            <label>Phone:</label>
+            <input name="phone">
+            </div>
+
+            <label>Email address:</label>
+            <input name="senderEmail">
+
+            <label class="messagebox">Briefly describe your concern:</label>
+            <textarea rows="5" cols="20" name="message"></textarea>
+
+            <input class= "submitbutton" type="submit" name="submit">
+        </form>
+        <p class="flow-text center-align">Note: Contacting Lovett Law, through email, phone, or the above does not create an attorney-client relationship. Do not send confidential
+          infromation to any attorney until you receive confirmaiton that an attorney-client relationship exists.</p>
+        </div> 
+
+      <div class="col s12 m6 l6">
+        <div class="card reachout">
+            <div class="card-panel light-blue lighten-4"> 
+                    <hr3 class="card-title light-blue lighten-4 black-text">Request Consultation</hr3>
+                    <p class="flow-text">To make communication as simple as possible, Lovett Law offers the following contact options:</p>
+                    <a href="tel:7063315349" class="btn-floating blue-grey lighten-1"><i class="material-icons">phone</i></a><p class="flow-text">Reach out by phone at (706) 331-5349.</p>
+                    <a href = "mailto:mlovett@mitchelllovett.com" class="btn-floating blue-grey lighten-4"><i class="material-icons">email</i></a><p class="flow-text">Email mlovett@mitchelllovett.com</p>  
+                    <p class="flow-text">Meet us in person or schedule a Video Conference.</p> Hours: 8:30 a.m. - 5:30 p.m.
+            </div>
+        </div>
+    </div>
+
+    <h3>Free Consultation</h3>
+      <p>Upon receiveing your information, or if you call Lovett Law during regular hours, you will have a brief intake converstaion to
+        determine if Lovett Law is the appropriate firm for your legal matter. If so, you will be offered a free phone consultation or virtual consult to discuss your 
+        legal issue and goals.</p>
+
+    </div>
+  </div>
+
+<!--Action bar for bottom right corner of the screen. Links to Email and Phone-->
+
+<div class="fixed-action-btn">
+  <a class="btn-floating pulse btn-large blue lighten-4">
+  <i class="large material-icons">phone</i>
+  </a>
+  <ul>
+  <li><a href="tel:7063315349" class="btn-floating blue-grey lighten-1"><i class="material-icons">phone</i></a></li>
+  <li><a href = "mailto:mlovett@mitchelllovett.com" class="btn-floating blue-grey lighten-4"><i class="material-icons">email</i></a></li>
+  </ul>
+</div>
+
+<!--Footer Class -->
+
+
+<footer class="page-footer grey lighten-1">
+  <div class="footer-copyright black-text">
+      © 2020 Lovett Law LLC
+         <ul>
+          <li class="footernav"><a href="disclaimer.html">disclaimer</a></li>
+          <li class="footernav"><a href="connect.html">connect</a></li>
+          <li class="footernav"><a href="abouthtml">about</a></li>
+       </ul> 
+  </div>
+</footer>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {});
+  });
+
+    </script>
+</body>
+</html>

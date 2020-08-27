@@ -1,5 +1,11 @@
+body {
+  --color-primary: aqua;
+  --make-things-spaced: center;
+}
+
+
 .btn {
-  background-color: orange;
+  background-color: var(--color-primary);
 }
 
 .btn:hover {
