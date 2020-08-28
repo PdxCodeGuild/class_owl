@@ -30,7 +30,7 @@ button {
 }
 
 .daily_blog {
-    display: grid;
+    display: flex;
     justify-content: center;
     grid-template-columns: 1fr 1 fr;
 }
