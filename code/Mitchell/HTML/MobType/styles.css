@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2  {
+    text-align: center;
+    margin: 4px 0;
+    color: #2d4858;
+    background: center no-repeat url('https://img.pngio.com/png-freeuse-banners-transparent-medieval-illustration-medieval-banner-png-820_230.png');
+    background-size: cover;
+}
+
+body {
+    background: bottom no-repeat url("https://i.pinimg.com/originals/58/f8/5d/58f85dba72c1a344a9da2da92cff6026.jpg");
+    background-size: 300px;
+    height: 100vh;
+}
+
+.species {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1px;
+    padding: 5px;
+    background-color: #EE6f81;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+}
+
+.namesake {
+    grid-column: 2 / 3;
+    grid-row:   1 / 2;
+    background: center no-repeat url("https://i.redd.it/l1z0ngfjiuw21.jpg");
+    background-size: contain;
+    border: 4px double rosybrown;
+}
+
+.origin {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background: center no-repeat url("https://i.redd.it/gw545rbrqdy21.jpg");
+    background-size: contain;
+    justify-content: space-between;
+    display: flex;
+    border: 4px inset #EE6f81;
+}
+
+.origin > label {
+    padding: 6px;
+    width: 30%;
+}
+.origin > textarea {
+    width: 30%;
+}
+
+.stats {
+    grid-column: 1 / 2;
+    background: url("https://i.kym-cdn.com/photos/images/facebook/001/808/289/34d.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 4px inset #EE6f81;
+}
+
+h4 {
+    text-align: center;
+}
+
+.weaponsofchoice {
+    background: no-repeat center url("https://4.bp.blogspot.com/-j1VcmTtEi4w/UddQfSvB9MI/AAAAAAAABKM/VcOU0wOvOtQ/s1600/wendigo2.jpg");
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    border: 4px groove;
+}
+
+.characterclass {
+    background: right no-repeat url("https://meekbarbarian.com/wp-content/uploads/2018/02/brownie-art-original-724x1024.jpg");
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 2px dashed;
+}
