@@ -1,0 +1,110 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-background: #8da9c4;
+    --color-text: #eef4ed;
+    --color-primary: #134074;
+    --color-secondary: #13315c;
+    --color-accent: #f5ab33;
+}
+
+body {
+    background-color: var(--color-text);
+    padding: 2rem;
+}
+
+header {
+    border-bottom: 2px solid var(--color-secondary);
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--color-accent);
+    margin-bottom: .75rem;
+}
+
+p{
+    margin-bottom: 1.5rem;
+}
+
+div.main div:nth-child(odd) {
+    background-color: var(--color-secondary);
+    color: var(--color-text);    
+}
+
+div.main div{
+    padding: .5rem;
+}
+
+aside {
+    display: none;
+}
+
+footer {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    padding: .5rem;
+}
+
+footer a{
+    color: var(--color-accent);
+}
+
+
+@media (min-width: 800px){
+    section {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer {
+        grid-column: 1 / 3;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 1200px){
+    body{
+        font-size: 1.35rem;
+        padding: 0;
+        background: center url(https://i.picsum.photos/id/914/1200/1200.jpg?blur=8&grayscale=&hmac=QXZwTsiBeEWCNA4Yy4LnKf__lv58COo0bcJ5Lo2ClkE);        
+        background-size: cover;
+    }
+    section {
+        max-width: 900px;
+        background-color: #eef4eda1;
+        padding: 1rem;
+    }
+
+    .main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .participation {
+        background-color: #eef4eda1;
+    }
+
+    .requirements{
+        background-color: #eef4eda1;
+        grid-column: 1 / 4;
+    }
+
+    footer {
+        grid-column: 1 / 4;
+    }
+
+    div.main div:nth-child(odd){
+        background-color: #13407486;
+    }
+}
+

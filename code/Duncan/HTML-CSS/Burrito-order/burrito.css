@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    color: greenyellow;
+}
+
+img {
+    width: 500px;
+
+}
+
+.pinto {
+    width: 100px;
+    
+}
+
+.Beans {
+    display: flex;
+    flex-direction: column;
+    
+}
