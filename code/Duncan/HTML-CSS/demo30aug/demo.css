@@ -1,0 +1,25 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    padding: 2rem;
+    background: url(https://picsum.photos/800?grayscale&blur=3);
+}
+
+header{
+    border-bottom: 2px solid red;
+    text-align: center;
+}
+
+h1,h2,h3,h4,h5{
+    color: blue;
+    margin-bottom: .75rem;
+}
+
+p{
+    margin-bottom: 1.5rem;
+}
