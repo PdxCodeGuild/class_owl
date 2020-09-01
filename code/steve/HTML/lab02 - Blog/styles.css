@@ -1,49 +1,54 @@
-
-* {
+*, *::before, *::after{
+    /* Targets all elements. This will reset everything to zero 
+    so the browsers default settings won't be displayed on the page
+    this includes the before and after states of all elements */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-h1 { font-size: 75px;
+:root {
+    --color-background: #E6FDFF;
+    --color-primary: #DBF9F4;
+
+    --color-secondary: #D9D7DD;
+    --color-accent: #B07BAC;
+    --color-text: #5F7367;
+
+
+}
+body {
+    background-color: var(--color-background);
     text-align: center;
+    padding: 3px;
+    max-width: 700px;
 }
 
-h3 { 
-    text-align: center;
-    font-family: 'Dancing Script', cursive;
+@media (min-width: 800px){
+
+    body{
+        max-width: 1000px;
+        padding: 10px;
+        color: var(--color-text);
+        /* sets the color of the font */
+    }
+   
+    .james {
+        display: flex;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.5rem;
+    }
+
+    .brow{
+        display: flex;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.5rem;
+    }
+
+    .tats{
+        display: flex;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.5rem;
+    }
 }
 
-.james {
-    font-size: 35px;
-    display:flex;
-    font-family: 'Dancing Script', cursive;
-}
 
-.brow {
-    font-size: 35px;
-    display:flex;
-    font-family: 'Dancing Script', cursive;
-}
-
-.tats {
-    font-size: 35px;
-    display:flex;
-    font-family: 'Dancing Script', cursive;
-}
-
-body{
-    background-color: #D5ACA3;
-}
-
-.main {
-    width: 75vw;
-    margin: 0 auto;
-    /*display: flex;*/
-    align-items: center; 
-    justify-content: center;
-    border-radius: 10%;
-    
-}
-
-p{
-    margin: 12px;
-}

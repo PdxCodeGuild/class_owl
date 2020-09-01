@@ -1,0 +1,70 @@
+@keyframes bounce{
+  20% {
+    transform: translateY(-10px)
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-30px);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes rainbow {
+  20% {
+    background-color: blue;
+  }
+  40% {
+    background-color: green;
+  }
+  60% {
+    background-color: yellow;
+  }
+  80% {
+    background-color: orange;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+
+.box{
+  height: 400px;
+  width: 400px;
+  background-color: bisque;
+
+  transition: 4s cubic-bezier(0.93,-0.02, 1, 1);
+  /* animation-name: bounce;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite; */
+}
+
+/* .box:hover{
+  background-color: magenta;
+  transform: translateX(800px);
+} */
+
+/* .box:active{
+  background-color: turquoise;
+} */
+
+.btn {
+  transition: 2s;
+  background-color: violet;
+  animation: rainbow 8s ease infinite alternate-reverse;
+  display: block;
+}
+
+.btn:hover{
+  transform: translate(300px, 200px)
+}
+
+.btn:focus{
+  height: 200px;
+  width: 200px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS demo</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main">
+    Here is some content
+  </div>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Class Owl</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="badges.html">About</a></li>
+        <li><a href="collapsible.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content container">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Card Title</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia eum illum, eius dolorem, non illo delectus sequi repellat voluptatibus laboriosam obcaecati aut dolores temporibus soluta? Exercitationem architecto ipsam esse consequatur!Neque vel nobis exercitationem accusamus, voluptates error aliquid rem modi tempore, illum provident soluta mollitia ex alias? Quas, saepe accusamus fugiat ex in tempore, harum recusandae velit odio assumenda cum.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Card Title</span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati cum eum earum sed voluptatibus aut tempora quod vero ipsa molestias fugit adipisci repudiandae magnam praesentium ea, cupiditate odio modi a?</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Card Title</span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quaerat veritatis officiis explicabo earum non iste quos voluptate pariatur ea doloribus suscipit, voluptatibus necessitatibus? Quas.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.dropdown-trigger');
+      var instances = M.Dropdown.init(elems, {alignment: 'left'});
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+body {
+  --color-primary: aqua;
+  --make-things-spaced: center;
+}
+
+
+.btn {
+  background-color: var(--color-primary);
+}
+
+.btn:hover {
+  background-color: #474747;
+}

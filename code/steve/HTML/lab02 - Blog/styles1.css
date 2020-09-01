@@ -1,0 +1,78 @@
+
+*, *::before, *::after{
+    /* Targets all elements. This will reset everything to zero 
+    so the browsers default settings won't be displayed on the page
+    this includes the before and after states of all elements */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+--color-background: #DBF9F4;
+--color-primary: #E6FDFF;
+--color-secondary: #D9D7DD;
+--color-accent: #B07BAC;
+--color-text: #5F7367;
+
+
+}
+body {
+    background-color: var(--color-background);
+    text-align: center;
+    padding: 3px;
+}
+
+
+
+
+@media (min-width: 600px){
+
+    /* body{
+        max-width: 1199;
+        margin: 0 auto;
+    } */
+
+    h1 { font-size: 75px;
+        text-align: center;
+    }
+
+    h3 { 
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .james {
+        font-size: 35px;
+        display:flex;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .brow {
+        font-size: 35px;
+        display:flex;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .tats {
+        font-size: 35px;
+        display:flex;
+        font-family: 'Dancing Script', cursive;
+    }
+
+
+
+    .main {
+        width: 75vw;
+        margin: 0 auto;
+        /*display: flex;*/
+        align-items: center; 
+        justify-content: center;
+        border-radius: 10%;
+        
+    }
+
+    p{
+        margin: 12px;
+    }
+
+}
