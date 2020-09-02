@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outdoors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header header-home main-grid" >
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="outdoor.svg" alt="company logo" class="logo">
+            </a>
+            <button class="open-nav" aria-label="open-navigation">&#9776;</button>
+            <nav class="nav ">
+                <button class="close-nav" aria-label="Close navigation">&times;</button>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero main-grid" >
+            <h1 class="her-title">The outdoors <span class="accent-color"> is super </span>outdoorsy for you.</h1>
+            <p class="hero-subtitle">All your outdoor stuff in one giant place called Earth. Come out and enjoy all we have to offer, but pick up your trash.  </p>
+            <a href="contact.html" class="btn btn-primary">Contact</a>
+        </section>
+        <section class="info main-grid">
+            <div class="col">
+                <h2 class="section-title section-title-center">Earth</h2>
+                <p>The Rock, Dirt, Sand, and <strong>Stucture</strong> of our product. </p>
+            </div>
+            <div class="col">
+                <h2 class="section-title section-title-center">Fire</h2>
+                <p>The <strong>Destructive Force</strong> that equalizes all things on our facility </p>
+            </div>
+            <div class="col">
+                <h2 class="section-title section-title-center">Water</h2>
+                <p>The <strong>Lifeforce</strong> of our place.</p>
+            </div>
+
+        </section>
+    </main>
+    <footer class="footer main-grid">
+        <div class="footer-main">
+            <img src="outdoor.svg" alt="" class="footer-logo">
+            <p class="footer-text">providing the best living experience</p>
+            <p class="footer-fineprint">&copy; Planet Earth.co 2020</p>
+        </div>
+        <ul class="social-list">
+            <li class="social-item"><a href="" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="social-item"><a href="" class="social-link"><i class="fab fa-twitter"></i></a></li>
+            <li class="social-item"><a href="" class="social-link">Myspace</a></li>
+        </ul>
+    </footer>
+    <script>
+        const closebutton = document.querySelector(".close-nav")
+        const openbutton = document.querySelector(".open-nav")
+        const nav = document.querySelector(".nav")
+
+        function closenav() {
+            nav.classList.remove("navigation-open")
+        }
+        function openNav(){
+            nav.classList.add("navigation-open")
+        }
+        closebutton.addEventListener("click", closenav)
+        openbutton.addEventListener("click", openNav)
+
+
+
+    </script>
+</body>
+</html>
