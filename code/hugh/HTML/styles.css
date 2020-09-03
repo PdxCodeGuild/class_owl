@@ -11,7 +11,7 @@
     --color-secondary: #13315c;
     --color-pop: #815ed4;
     --color-umber: #ec724c;
-    --background-pic: url("bgwbajasubtle.jpg");
+    --background-pic: url("images/bajapalps.jpg");
     }
 
 body{
@@ -21,6 +21,7 @@ body{
     background-color:var(--color-secondary);
     color: var(--color-text);
 }
+
 
 header{
     border-bottom: 2px solid var(--color-pop);
@@ -43,6 +44,7 @@ p{
 div.main {
     max-width: fit-content;
     max-height: fit-content;
+    background-image: url("images/dewit.svg")
 }
 
 aside{
