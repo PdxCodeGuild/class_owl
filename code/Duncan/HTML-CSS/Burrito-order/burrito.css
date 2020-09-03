@@ -1,28 +1,166 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQj4ppQ2RKJr0IUXig7f9mZ7F_JawgMP67Txw&usqp=CAU);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
 }
 header {
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /* grid-template-columns: 1fr; */
     align-items: center;
+    justify-items: center;
+    grid-column: 1/5;
     background-color: red;
-    color: greenyellow;
+
+    height: 200px;
+    font-size: 30px;
+    color: gold;
+    
+    
+}
+
+h1{
+    display: grid;
+    justify-self: center ;
 }
 
 img {
     width: 500px;
+    grid-column: 1/2;
+    
+}
+
+fieldset{
+    background-color: lightblue;
+    display: flex;
+    justify-content: right;
 
 }
 
+.personal{
+    display: grid;
+    grid-column: 4/4;
+}
+
 .pinto {
+   
+    width: 100px;
+    
+    
+}
+
+.black-beans {
+    
+    width: 100px;
+}
+
+.greenB{
+    
     width: 100px;
     
 }
 
 .Beans {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-column: 1/3;
+    background-color: rgb(158, 73, 16);
+    justify-content: start;
     
+
+}
+/* .beans{
+    display: grid;
+    justify-content: space-evenly; */
+    
+/* } */
+
+.tortillas{ 
+    display: grid;
+    grid-column: 1/3;
+    background-color: khaki;
+    
+
+}
+
+.flour{
+    width: 100px;
+}
+
+.corn{
+    width: 100px;
+}
+
+.spinach{
+    width: 100px;
+}
+
+.Meats{
+    display: grid;
+    grid-column: 1/3;
+    background-color: black;
+    color: cornsilk;
+    margin: 0 0 1em;
+    
+    
+
+}
+.meat-choice{
+    display: flex;
+    justify-content: center;
+    
+
+    
+}
+
+ {
+
+}
+
+.carnitas{
+    width: 100px;
+}
+
+.carne-asada{
+    width: 100px;
+}
+
+.pollo{
+    width: 100px;
+}
+
+.barbacoa{
+    width: 100px;
+}
+
+.toppings{
+    display: grid;
+    grid-column: 3/5;
+    grid-row: 3/5;
+    background-color: green;
+    justify-content: start;
+    
+}
+
+h3{
+    font-size: 30px;
+}
+
+.Queso{
+    width: 20%;
+}
+
+.sour-creme{
+    width: 20%;
+}
+
+.guac{
+    width: 20%;
+}
+
+.cart{
+    display: grid;
+    background-color: grey;
+    font-size: 50px;
 }
