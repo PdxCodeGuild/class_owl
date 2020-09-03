@@ -65,16 +65,3 @@ def main ():
     print(f'2011 Stats{data1}\n,2012 Stats{data2}\n,2013 Stats{data3}\n,2014 Stats{data4}')
 
 main()
-
-
-
-
-
-
-# Most common specific crime
-
-# Rarest Crimes
-
-# Year with most crimes
-
-# Pull out special characters
