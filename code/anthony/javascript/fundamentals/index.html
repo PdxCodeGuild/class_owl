@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+
+    <label for="make">Make</label>
+    <input id="make" type="text">
+
+    <label for="model">Model</label>
+    <input id="model" type="text">
+
+    <label for="year">Year</label>
+    <input id="year" type="number" min="1900" max="2021">
+
+    <label for="color">Color</label>
+    <input id="color" type="text">
+
+    <button id="submitButton" onclick="updateUser()">Submit</button>
+
+</body>
+</html>

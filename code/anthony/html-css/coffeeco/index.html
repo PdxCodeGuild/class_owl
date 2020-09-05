@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffe Co</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header header-home main-grid">
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="./images/logo.svg" alt="company log" class="logo">
+            </a>
+            <button class="open-nav" aria-label="Open Navigation">&#9776;</button>
+
+            <nav class="nav">
+                <button class="close-nav" aria-label="Close Navigation">&times;</button>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero main-grid">
+            <h1 class="hero-title">The only coffee company <span class="accent-color">on a mission from God</span>, to bring you the flavors of the heavens.</h1>
+            <p class="hero-subtitle">We are a coffee shop that strives to provided quality coffee to the land. We have vegan, gluten, and soy-free treats! Come on by and say hello.</p>
+            <a href="contact.html" class="btn btn-primary">Contact</a>
+        </section>
+        <section class="info main-grid">
+            <div class="col">
+                <h2 class="section-title section-title-center">Smooth</h2>
+                <p>Destined to bring you the <strong>abosolute peak</strong> in caffeine delivery. Our coffee beans are <strong>unmatched</strong> in quality and flavor.</p>
+            </div>
+            <div class="col">
+                <h2 class="section-title section-title-center">Flavorful</h2>
+                <p>With our proven flavor extraction system, we guarantee the <strong>best cup of coffee</strong> you have ever tasted.</p>
+            </div>
+            <div class="col">
+                <h2 class="section-title section-title-center">Our Promise to You</h2>
+                <p>We are so confident in our brewing aproach we <strong>guarantee a smile</strong>. If your first cup does not make your tastebuds implode from flavor, it's on us.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer main-grid">
+        <div class="footer-main">
+            <img src="./images/logo.svg" alt="coffee logo" class="footer-logo">
+            <p class="footer-text">Providing you with the best coffee experience.</p>
+            <p class="footer-fineprint">&copy; Coffee Co. 2020</p>
+        </div>
+        <ul class="social-list">
+            <li class="social-item">
+                <a href="" class="social-link"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li class="social-item">
+                <a href="" class="social-link"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="social-item">
+                <a href="" class="social-link"><i class="fab fa-instagram"></i></a>
+            </li>
+        </ul>
+    </footer>
+
+    <script>
+        const closeButton = document.querySelector('.close-nav')
+        const openButton = document.querySelector('.open-nav')
+        const nav = document.querySelector('.nav')
+
+        function closeNav() {
+            nav.classList.remove('navigation-open')
+        }
+
+        function openNav(){
+            nav.classList.add('navigation-open')
+        }
+
+        closeButton.addEventListener('click', closeNav)
+        openButton.addEventListener('click', openNav)
+
+
+    </script>
+</body>
+</html>
