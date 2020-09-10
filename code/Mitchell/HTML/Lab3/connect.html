@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
 
+<!--Third pary style imports-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+<!--End of third party style imports -->
 
+    <link rel="icon" href="BelunLogoFree.png">
     <link rel="stylesheet" href="styles.css">
     <title>Connect Lovett Law</title>
+
+    <!--Metan Tags and Information-->
+    <meta name="description" content="Reach Mitchell Lovett by email or phone to schedule a free consultation">
+    <meta author="Mitchell Lovett">
+    <!--End of Meta Tags and Informaiton-->
 </head>
 <body>
 <!--Top Navigation Pane and Small Screen Navigation Pane-->
 <div class="navbar-fixed">
   <nav>
       <div class="nav-wrapper grey lighten-1">
-        <img class="logoimage hide-on-med-and-down" src="BelunLogoFree.png">
+        <img class="logoimage" src="BelunLogoFree.png">
         <a href="index.html" class="brand-logo black-text">Lovett Law</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">clear_all</i></a>
         <ul class="menubar right hide-on-med-and-down">
@@ -47,7 +55,7 @@
       <div class="formfillable col s12 m6 l6">
         <?=$thankYou ?>
 
-        <form method="post" action="contact.php">
+        <form method="post" action="connect1.php">
             <div class="row">
             <label>Name:</label>
             <input name="sender">
@@ -62,8 +70,9 @@
             <label class="messagebox">Briefly describe your concern:</label>
             <textarea rows="5" cols="20" name="message"></textarea>
 
-            <input class= "submitbutton" type="submit" name="submit">
+            <input class= "submitbutton" type="submit" name="submit" value="submit">
         </form>
+
         <p class="flow-text center-align">Note: Contacting Lovett Law, through email, phone, or the above does not create an attorney-client relationship. Do not send confidential
           information to any attorney until you receive confirmation that an attorney-client relationship exists.</p>
         </div> 
