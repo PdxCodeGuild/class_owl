@@ -1,0 +1,26 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #de6fa1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    height: 100px;
+    width: 300px;
+    border: none;
+    background: #efefef;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.table {
+    font-size: 2rem;
+}
