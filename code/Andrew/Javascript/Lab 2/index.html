@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="main.js"></script>
+    <title>Password Generator</title>
+    <style>
+        .hiders{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Password Generator!</h1>
+    <label for="passLen"> Enter the Desired length of the Password<br></label>
+    <input id="passLen" placeholder="16 Max" type="number" min= "0" max= "16" value="0">
+    
+    <button id="passBtn">Generate!</button>
+    <p id="resultPassword"></p>
+
+    <h4 class="hiders hide" >Verify The Password works:</h4>
+    <input id =" reInput1" class = "hiders hide" placeholder ="Password" type="text">
+    <input id = "reInput2" class = "hiders hide" placeholder ="Password" type="password">
+
+    
+</body>
+</html>
