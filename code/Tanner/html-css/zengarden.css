@@ -1,0 +1,27 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-background: #8da9c4;
+    --color-text: #eef4ed;
+    --color-primary: #134074;
+    --color-secondary: #13315c;
+}
+
+body{
+    background-color: var(--color-text);
+    padding: 3rem;
+
+}
+
+header{
+    background-color: var(--color-primary);
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: red;
+}
