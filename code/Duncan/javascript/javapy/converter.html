@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <h1 id="Convert_Units">Lets Convert some Units to Meters</h1>
+    
+    
+    <label for="Units">Select a unit to convert</label>
+    <select name="units" id="unit_selector">
+        <option value="">--Choose an Option--</option>
+        <option value="Feet">Feet</option>
+        <option value="Miles">Miles</option>
+        <option value="Kilometers">Kilometers</option>
+        <option value="Yards">Yards</option>
+        <option value="Inches">Inches</option>
+        <option value="Meters">Meters</option>
+    </select>
+    
+    
+    <label for="Num">Amount you want to Convert</label>
+    <input type= "number" id = "Amount" name = "Amount">
+    
+    <button id = "Uconvert">Convert me </button>
+
+    <h1 id="converted"></h1>
+    <script src="converter.js"></script>
+</body>
+</html>
