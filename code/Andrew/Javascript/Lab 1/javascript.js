@@ -29,6 +29,7 @@ btn.addEventListener("click", function(){
     
     else{
         alert("Enter a Valid Grade!")
+        grade.value = ""
     }
 
     if (gradeAlpha) {

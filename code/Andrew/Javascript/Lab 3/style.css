@@ -1,0 +1,40 @@
+body{
+    text-align: center;
+    background: purple;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    margin: auto;
+    width: 65%;
+    height: 70vh;
+    background: lightcyan;
+}
+
+
+#answer{
+    margin: auto;
+    padding: 2rem;
+}
+#asked{
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+
+}
+#asked> {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+footer{
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

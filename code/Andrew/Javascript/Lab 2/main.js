@@ -37,6 +37,9 @@ btn.addEventListener("click", function() {
 
 })
 
+
+
+
 verifyBtn.addEventListener('click',function(){
     console.log(result.innerText)
 
@@ -49,10 +52,19 @@ verifyBtn.addEventListener('click',function(){
         
         body.appendChild(header)
         header.style.color = "green"
+       
+
     }
     else{
-        console.log(reIn1.value)
-        console.log(reIn2.value)
+        let header = document.createElement("h1")
+        let hB = document.createTextNode("Passwords do not match!")
+        header.appendChild(hB)
+        
+        body.appendChild(header)
+        header.style.color = "red"
+
+        reIn1.value = ""
+        reIn2.value = ""
         console.log(result.innerText)
     }
     
