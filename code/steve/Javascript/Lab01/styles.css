@@ -1,0 +1,33 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+        background: #de6fa1;
+
+    }
+
+#program_letterGrade{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#program_magicEightBall{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#program_emoticonGenerator{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

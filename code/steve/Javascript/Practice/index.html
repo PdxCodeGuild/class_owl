@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <script src="main.js"></script>
+
+
+    <label for="make">Make</label>
+    <input id="make" type="text">
+    <label for="model">Model</label>
+    <input id="model" type="text">
+    <label for="year">Year</label>
+    <input id="year" type="number" min="1900" max="2021">
+    <label for="color">Color</label>
+    <input id="color" type="text">
+
+    <button id="submitButton" onclick="updateUser()">Submit</button>
+
+
+
+
+
+
+    <script>
+
+    const make = document.querySelector('#make')
+    const model = document.querySelector('#model')
+    const year = document.querySelector('#year')
+    const color = document.querySelector('#color')
+    const submitButton = document.querySelector('#submitButton')
+
+    
+    function updateUser() {
+
+        let user = {
+
+            make: "",
+            model: "",
+            year: "",
+            color: ""
+        }
+
+        user.make = make.value
+        user.model = model.value
+        user.year = year.value
+        user.color = color.value
+
+        let output = `
+        <table>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Color</th>
+            </tr>
+            <tr>
+                <td>${user.make}</td>
+                <td>${user.model}</td>
+                <td>${user.year}</td>
+                <td>${user.color}</td>
+            </tr>    
+        </table>
+    `
+    document.write(output)
+    }
+    
+
+
+
+
+
+    //let vehicle = {
+    //    make: "Ford",
+    //    model: "Bronco",
+    //    year: "2021",
+    //    color: "yellow"
+    //}
+
+    //let userMake = prompt("Enter the make")
+    //let userModel = prompt("Enter the model")
+    //let userYear = prompt("Enter the year")
+    //let userColor = prompt("Enter the color")
+
+
+
+    
+
+    </script>
+
+    
+</body>
+</html>
