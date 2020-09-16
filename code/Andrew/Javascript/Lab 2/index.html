@@ -13,20 +13,22 @@
     </style>
 </head>
 <body>
+    <main>
+        <h1>Password Generator!</h1>
+        <label for="passLen"> Enter the Desired length of the Password<br></label>
+        <input id="passLen" placeholder="16 Max" type="number" min= "0" max= "16" value="0">
+        
+        <button id="passBtn">Generate!</button>
+        <p id="resultPassword"></p>
 
-    <h1>Password Generator!</h1>
-    <label for="passLen"> Enter the Desired length of the Password<br></label>
-    <input id="passLen" placeholder="16 Max" type="number" min= "0" max= "16" value="0">
-    
-    <button id="passBtn">Generate!</button>
-    <p id="resultPassword"></p>
+        <div id="output">
+            <h4 class="hiders hide" >Verify The Password works:</h4>
+            <input id = "reInput1" class = "hiders hide" placeholder ="Password" type="text">
+            <input id = "reInput2" class = "hiders hide" placeholder ="Password" type="text">
+            <button id="verify" class="hiders hide">Verify</button>
+            <h1 id=" verifierOutput"></h1>
+        </div>
 
-    <div id="output">
-        <h4 class="hiders hide" >Verify The Password works:</h4>
-        <input id = "reInput1" class = "hiders hide" placeholder ="Password" type="text">
-        <input id = "reInput2" class = "hiders hide" placeholder ="Password" type="text">
-        <button id="verify" class="hiders hide">Verify</button>
-        <h1 id=" verifierOutput"></h1>
-    </div>
+    </main>
 </body>
 </html>

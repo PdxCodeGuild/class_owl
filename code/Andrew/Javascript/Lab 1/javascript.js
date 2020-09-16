@@ -4,6 +4,20 @@ let result = document.querySelector("#result")
 let btn = document.querySelector("#evaluate")
 
 
+grade.focus()
+
+window.addEventListener('keyup', function(event){
+    if (event.key == "Enter"){
+        
+        
+        btn.click()
+        
+    
+    
+    }
+   
+})
+
 btn.addEventListener("click", function(){
     
     let gradeNum = grade.value
@@ -35,7 +49,11 @@ btn.addEventListener("click", function(){
     if (gradeAlpha) {
         
         result.innerText = `Your grade: ${gradeAlpha}`
-        result.style.color = "red"
+        result.style.color = "white"
+    
+        setTimeout( ()=>{ grade.value = ""}, 500)
+        setTimeout( ()=>{ result.innerText = ""}, 2000)
+        grade.focus()
     }
 
 

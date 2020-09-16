@@ -29,12 +29,15 @@ const ANSARR = [
 
 let ques = []
 let counter = 0
+
+question.focus()
+
+
 const remover = function() {
-    answer.innerText=""
+    answer.innerTex = ""
 }
 
 askButton.addEventListener('click', function() {
-    console.log(counter)
     ques.push(question.value)
     let randInd = Math.floor(Math.random()*(ANSARR.length))
     
@@ -44,16 +47,34 @@ askButton.addEventListener('click', function() {
     answer.style = 'text-align: center; font-size: 2rem;'
     question.value = ""
     
+    
     setTimeout(remover, 1500)
     if (counter <=5){
         let liChild = document.createElement('li')
+        liChild.classList.add('removed')
         let textEl = document.createTextNode(`${ques[counter]}`)
             liChild.appendChild(textEl)
             asked.appendChild(liChild)
             counter += 1
-        console.log(asked.children.length, "children")
+        
     }
-  
+    else{
+        let listChildren = document.getElementsByClassName("removed")
+        let copyList =[...listChildren]
+
+        for (x of copyList){
+            x.remove()
+            
+        }
+        let liChild = document.createElement('li')
+        liChild.classList.add('removed')
+        let textEl = document.createTextNode(`${ques[counter]}`)
+        liChild.appendChild(textEl)
+        asked.appendChild(liChild)
+        ques = []
+        counter = 0 
+          
+    }
 
 
     

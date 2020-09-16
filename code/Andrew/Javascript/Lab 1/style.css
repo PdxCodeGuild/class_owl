@@ -1,0 +1,40 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+}
+
+
+body{
+    display: flex;
+    justify-content: space-around;
+    background-color: teal;
+    
+}
+
+#header{
+    background-color: white;
+    text-align: center;
+    border-bottom: 4px inset gray;
+}
+
+main{
+    margin: 1rem 0;
+    text-align: center;
+    padding: .5rem;
+    
+}
+
+#result{
+    margin: 2rem;
+    font-size: x-large;
+    font-weight: 900;
+    text-decoration: underline;
+}
+#holder{
+    border: 2px solid salmon;
+    border-top: unset;
+    height: 100vh; 
+    width: 70%;
+    background-color: rgb(48, 160, 149);  
+}

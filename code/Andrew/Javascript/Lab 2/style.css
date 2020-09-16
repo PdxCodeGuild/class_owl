@@ -1,3 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     text-align: center;
+    background-image: url("Hacking_password_illustration.jpg");
+    background-size: contain;
+    background-position: top left;
+
+
+}
+
+main{
+    height: 100vh;
+    background-color: whitesmoke;
+    width: 70%;
+    margin: auto;
+    font-size: 1rem;
+    
+    
+}
+button{
+    margin: 1rem;
+    
 }
