@@ -1,0 +1,39 @@
+*, *::before, *::after{
+    /* Targets all elements. This will reset everything to zero 
+    so the browsers default settings won't be displayed on the page
+    this includes the before and after states of all elements */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
+.bannerimage {
+    width: 100%;
+    height: 200px;
+    margin: 5.6px 10px;
+    justify-content: stretch;
+    
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+
+}
+
+.logos{
+    size: 100px;
+}
+
