@@ -14,11 +14,16 @@ Thanksgiving -- Nov 26, 2020
   - anthony@pdxcodeguild.com
 - Irron Williams, TA
 
+## JavaScript labs assigned
+* Labs 01-03 -- Pick 3
+
 ## HTML/CSS labs assigned
 * Lab 01 -- Bio
 * Lab 02 -- Blog
 * CSS Diner
 * Lab 03 -- Company Home Page
+* Lab 04 -- Burrito Order Form
+* Lab 05 -- Personal Portfolio
 
 ## Python labs assigned
 * Lab 02 -- Madlib
