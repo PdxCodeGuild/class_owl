@@ -1,0 +1,52 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-color: beige;
+}
+
+
+
+#intro{
+    font-size: 50px;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.todo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 15%;
+    top: 30%;
+}
+
+#create{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    left: 47%;
+    top: 15%;
+    background-color: blue;
+    color: whitesmoke;
+}
+
+#del{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    left: 49%;
+    bottom: 70%;
+    background-color: red;
+    color: white;
+}
