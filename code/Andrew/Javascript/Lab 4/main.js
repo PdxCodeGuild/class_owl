@@ -6,11 +6,35 @@ let completedItems = document.querySelector("#completedItems")
 
 const addItems = function(event){
     console.log(inputItem.value)
-    let toAdd = document.createElement("input type=checkbox")
+    let listNode = document.createElement("li")
+    let toAdd = document.createElement("button")
+    listNode.classList.add("doList")
 
-    let toAddItem = document.createTextNode(inputItem.value)
-    toAdd.appendChild(toAddItem)
-    addedItems.appendChild(toAdd)
+    toAdd.innerHTML = "<span>&#10003;</span>"
+    toAdd.classList.add('doneBtn')
+
+    toAdd.addEventListener('click', function(){
+
+        this.innerText =''
+        let complete = this.parentNode.innerText
+        let liComp = document.createElement('li')
+        liComp.innerHTML = `<strike> ${complete} </strike>`
+        completedItems.appendChild(liComp)
+        this.parentElement.remove()
+
+
+    })
+
+    listNode.innerText= `${inputItem.value}`
+    
+    listNode.addEventListener('dblclick', function(){ 
+        console.log(this)
+        this.remove()
+    })
+    
+    listNode.appendChild(toAdd)
+    
+    addedItems.appendChild(listNode)
     
 
 
