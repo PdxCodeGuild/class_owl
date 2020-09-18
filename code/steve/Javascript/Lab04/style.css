@@ -1,0 +1,59 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 32px;
+    background: #A27E8E;
+    padding: 3rem;
+
+}
+
+.form{
+    border: 2px solid;
+    border-radius: 6px;
+    margin: 1rem 2 rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+br {
+    size: 16px;
+}
+
+
+input {
+    font-size: 32px;
+    padding: .25rem;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(235, 235, 235);
+}
+
+button {
+    font-size: 24px;
+    padding: .25rem;
+    border: solid;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #A2A79E;
+}
+
+.card {
+    border-radius: 8px;
+    background-color: rgb(225, 136, 136);
+    padding: .5rem;
+    font-size: 24px;
+    
+    
+}
