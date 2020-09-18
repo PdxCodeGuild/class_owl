@@ -1,0 +1,22 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 32px;
+    background: #A27E8E;
+    padding: 3rem;
+
+}
+
+.whlinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
