@@ -1,0 +1,32 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body{
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(117, 186, 241); */
+    background: linear-gradient(45deg, rgb(117, 186, 241)-85%, rgb(250, 212, 255))
+}
+
+main{
+    background-color: rgb(250, 212, 255);
+    margin: 0 .5rem;
+    padding: .5rem;
+    height: 100vh;
+    text-align: center;
+}
+
+main >*{
+    margin: .25rem;
+    padding: .25rem;
+    border-bottom: 1px solid black;
+
+}
+
+#sitePicker{
+    border: 4px outset black;
+    border-radius: 4px;
+}
