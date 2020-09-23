@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,700&family=Indie+Flower&family=Ranchers&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🦉 Class Owl Says</h1>
+    </header>
+    <main>
+        <div class="scoreboard">
+            <div class="scores">
+                <p id="round">Round: </p>
+                <p id="high-score">High Score: </p>
+                <p id="player-score">Player Score: </p>
+            </div>
+            <button id="new-game" class="score-btn">New Game</button>
+        </div>
+        <div class="gameboard">
+            <div id="green" class="panel top-left"></div>
+            <div id="red" class="panel top-right"></div>
+            <div id="yellow" class="panel bottom-left"></div>
+            <div id="blue" class="panel bottom-right"></div>
+            <button id="start-game" class="start-btn">Start</button>
+        </div>
+    </main>
+</body>
+</html>

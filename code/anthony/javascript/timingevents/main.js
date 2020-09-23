@@ -25,9 +25,9 @@ function sayHello() {
 // })
 
 
-let interval = setInterval(sayHello, 100)
-stop.addEventListener('click', function(){
-    clearInterval(interval)
-    console.log(`Stopped interval: ${interval}`)
-    window.location = 'https://google.com'
-})
+// let interval = setInterval(sayHello, 100)
+// stop.addEventListener('click', function(){
+//     clearInterval(interval)
+//     console.log(`Stopped interval: ${interval}`)
+//     window.location = 'https://google.com'
+// })
