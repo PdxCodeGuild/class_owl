@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: cornflowerblue;
+}
+main{
+    background: white;
+    border-bottom: 4px outset rgb(214, 205, 205);
+}
+.middle{
+    width: 70%;
+    background-color:rgb(243, 243, 243);
+    margin: 2rem auto;
+    border-radius: 3px;
+    padding: .5rem;
+    text-align: center;
+    text-justify: center;
+}
+
+#quote{
+    word-wrap: normal;
+    padding: .25rem;
+    margin: .25rem;
+    font-style: italic;
+}
+#author{
+    font-size: .8rem;
+    margin: .25rem 0 0 0;
+}
+h2{
+    margin: 0 .25rem;
+    padding: .1rem;
+}
+#getQuote{
+    margin: .25rem;
+    border-radius: 4px;
+    border: unset;
+    background-color: rgb(250, 231, 153);
+    padding: .4rem;
+
+}
