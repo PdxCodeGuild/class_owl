@@ -1,0 +1,62 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background: grey;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+#part1{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 10px;
+    background-color: silver;
+    justify-content: center;   
+ 
+}
+
+#part1 > button{
+    width: 120px;
+    padding: 3px;
+}
+
+#part1 > p{
+    max-width: 600px;
+    padding: 3px;
+   
+    font-size: large;
+    
+}
+
+#part2{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 10px;
+    background-color: silver;
+    justify-content: center;
+}
+
+#part2 > button{
+    width: 120px;
+    padding: 3px;
+}
+
+#part2 > p{
+    max-width: 600px;
+    padding: 3px;
+   
+    font-size: large;
+}

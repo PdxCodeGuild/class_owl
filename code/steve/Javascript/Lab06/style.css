@@ -1,0 +1,73 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+body{
+    background-color: #395756;
+}
+
+
+h1{
+    text-align: center;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+ 
+}
+#clock {
+    font-family: 'Orbitron', sans-serif;
+    color: #88f4ae;
+    font-size: 80px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: black;  
+    border: 1px solid rgb(233, 224, 224); 
+    border-radius: 10px;
+    
+}
+
+#space{
+    
+    height: 200px;
+}
+
+
+#stopwatch {
+    background-color: black;  
+    border: 1px solid rgb(233, 224, 224);
+    padding: 20px;
+    border-radius: 10px;
+    justify-items: center;
+} 
+  #stopWatchTime {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    color: #88f4ae;
+    text-align: center;
+  }
+
+  #stopWatchReset {
+    width: 25%;  
+    padding: 10px;
+    background: #555151;
+    border: 0;
+    color: rgb(0, 0, 0);
+    flex-direction: row;
+  }
+
+  #stopWatchGo{
+    width: 25%;  
+    padding: 10px;  
+    background: #555151;
+    border: 0;
+    color: rgb(0, 0, 0);
+
+  }
