@@ -44,7 +44,7 @@ p{
 div.main {
     max-width: fit-content;
     max-height: fit-content;
-    background-image: url("images/dewit.svg")
+    background-image: url("./images/dewit.svg")
 }
 
 aside{

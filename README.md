@@ -16,6 +16,10 @@ Thanksgiving -- Nov 26, 2020
 
 ## JavaScript labs assigned
 * Labs 01-03 -- Pick 3
+* Lab 04 -- Todo
+* Lab 05 -- Random Redirector
+* Lab 06 -- Clock
+* Lab 07 -- Quote API
 
 ## HTML/CSS labs assigned
 * Lab 01 -- Bio

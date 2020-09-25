@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\Python"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "HTML"
+	}
+}
