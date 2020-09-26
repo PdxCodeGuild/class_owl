@@ -10,13 +10,26 @@
 <body>
     <main>
         <h2>Random quotes:</h2>
-        <button id="getQuote"> Get Quote</button>
+        <hr>
+        <div class='btn-group'>
+            <button id="getQuote"> Get Quote</button>
+            <div class="selecter">
+                <label for="theme">Quote Theme</label>
+                <select name="theme" id="adderValue">
+                    <option value="">None</option>
+                    <option value="funny"> Funny</option>
+                    <option value="cool">Cool</option>
+                    <option value="inspirational">Inspirational</option>
+                    <option value='art'>Art</option>
+                </select>
+            </div>
+        </div>
     </main>
     <div class="middle">
         <q id="quote">
             To hide an empty box before the quote is hiding the ugly truth.
         </q>
-        <p id="author">-Abraham Lincoln</p>
+        <p id="author">-Abraham Lincoln (Probably)</p>
 
     </div>
 
