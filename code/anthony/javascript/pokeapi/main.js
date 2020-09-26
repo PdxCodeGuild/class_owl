@@ -11,8 +11,8 @@ let weight = document.querySelector('#weight')
 
 searchBtn.addEventListener('click', async function(){
     // console.log(searchInput.value)
-
-    let response = await axios.get(API + searchInput.value)
+    let url = `https://pokeapi.co/api/v2/pokemon/${searchInput.value}`
+    let response = await axios.get(url, headers)
     let data = response.data
 
     image.src = data.sprites.front_default
