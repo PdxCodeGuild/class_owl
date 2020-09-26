@@ -1,0 +1,22 @@
+
+
+:-main{
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+
+.quotes {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.quote{
+    font-size:  1.25rem;
+}
+
+.quote > span{
+    color: red;
+}
