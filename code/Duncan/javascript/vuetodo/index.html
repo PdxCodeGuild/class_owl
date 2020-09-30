@@ -7,13 +7,31 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css" integrity="sha512-6eqPOYQmUqGh2hFSAKha1dbQlMq1OaxityCVG80dkvGmmLdsAdrAUkgBKDV4fpAT/xOUdkB6uupudSbCwyoJPQ==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js" integrity="sha512-nqIFZC8560+CqHgXKez61MI0f9XSTKLkm0zFVm/99Wt0jSTZ7yeeYwbzyl0SGn/s8Mulbdw+ScCG41hmO2+FKw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="app">
         <header>
-            <h1 class="title container">TODO LIST</h1>
+            <h1 class="title has-text-centered ">TODO LIST</h1>
         </header>
-
+        <div class="control">
+            <input v-model="i" class="input" type="text" placeholder="Text input">
+            <div class="control">
+                <button v-on:click = "addItem()" class="button is-primary">Submit</button>
+              </div>
+              <div class="card" v-for="(i, index) in toList">
+                 <div class="card-content">
+                  <div class="content" v-bind:class="{fin: i.isFin}" >
+                    {{i.i}}
+                  </div>
+                </div>
+                <footer class="card-footer">
+                  <a  class="card-footer-item" >Save</a>
+                  <a  class="card-footer-item"v-on:click="done(index)">Done</a>
+                  <a  class="card-footer-item" v-on:click = "del(index)" >Delete</a>
+                </footer>
+              </div>
+          </div>
 
 
 
