@@ -10,59 +10,64 @@
     <script defer src="main.js"></script>
 </head>
 <body>
-    <main id="app">
+    <main id="app" v-on:keypress.13="addToList()">
         
         <div class="input-items">
 
-            <h5>Input Things that need to be done</h5>
-            <input v-model ='inputItem' type="text" placeholder="Whatcu Want Done Son?">
-            
-            <button v-on:click = "addToList()">Add to list</button>
-            
-            <br>
-            {{inputItem}}
+            <h3>Input things that need to be done:</h3>
+            <input v-model ='inputItem' type="text" placeholder="Whatchu Want Done Son?">
+            <div>
 
-
-
-        </div>
-        
-        <div class="ocd">
-
-            <header>
-                <h3>To do:</h3>
-                <ul v-for="(item,index) in toDoObject">
-                    <li>
-                        <div>
-                            - {{index}} {{item.inputItem[0]}}</li>
-                            <button v-on:click="completeItem(index)"> Test</button>
-                        </div>
-                    </li>
-                </ul>
-            
-            
-            </header>
-            
-            
-            
-            
-            
-            <div class="done">
-                <h3>To done!</h3>
-                <ul>
-                    <li>
-                        
-                    </li>
-                </ul>
-                
-                
+                <button v-on:click = "addToList()">Add to list</button>
+                <button v-on:click= "clearAll()">Clear</button>
             </div>
+
+
+        </div>
+        
+        <div >
+
+            <header class="ocd">
+                
+                <div class="to-do">
+
+                    <h3>To do:</h3>
+                    <ul v-for="(item,index) in toDoObject">
+                        <li>
+                            <div class="todo-item">
+                                {{item.inputItem[0]}}
+                                <button v-on:click="completeItem(index)"> &checkmark;</button>
+                                <button v-on:click="removeItem(index)"> X</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                
+            
+                
+                
+                
+                
+                <div class="to-done">
+
+                    <h3>To done:</h3>
+                    <ul v-for = "(item,index) in toDoneObject">
+                        <li>
+                            <div class="todo-item">
+
+                                <s>{{item}}</s><button v-on:click="removeDoneItem(index)">X</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                    
+            </header>
+                
         </div>
             
             
-            <footer></footer> 
             
-        
-        
         
     </main>
 </body>

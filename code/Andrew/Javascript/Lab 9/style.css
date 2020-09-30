@@ -1,3 +1,99 @@
-ul{
+*,*::before, *::after{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: honeydew;
+}
+
+#app{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100vh;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+#app> .input-items{
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0.25rem auto;
+    padding: .25rem;
+    border: 1px solid black;
+}
+.input-items> *{
+    padding: .25rem;
+    margin: .1rem ;
+
+}
+
+.ocd{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: auto;
+    height: 500px;
+    overflow: hidden;
+}
+
+.to-do{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.to-do >ul{
+    display: flex;
+    justify-content: right;
     list-style: none;
+    border: 1px solid black;
+    background-color: blanchedalmond;
+}
+ul{
+    border: 5px solid black;
+}
+li>*{
+    margin: .25rem;
+    /* border: 1px solid blue; */
+    padding: .25rem;
+    /* align-items: center; */
+    display: flex;
+    justify-items: right;
+}
+.input-items> button{
+    width: 50px;
+    height: 30px;
+    font-size: .5rem;
+}
+
+
+.todo-item{
+    padding: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+}
+
+.todo-item> *{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 .25rem;
+}
+
+
+
+.to-done >ul{
+    flex-direction: row;
+    list-style: none;
+    border: 1px solid black;
+    background-color: blanchedalmond;
 }

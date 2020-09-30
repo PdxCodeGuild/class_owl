@@ -8,9 +8,12 @@ let prg = new Vue({
         apiUrl: 'https://api.teleport.org/api/cities/',
         city: '',
         linkTo:'',
-        dataBody: ""
-
-
+        nicks: [],
+        
+        dataBody: "",
+        mayor:'',
+        lng:'',
+        lat:''
     },
     methods:{
         getResp(){
@@ -22,37 +25,51 @@ let prg = new Vue({
             .then(function(response){
                 return response.json()
             })
+            .catch(function(opps){
+                console.log('does this work?')
+            })
             .then(function(data){
-                // console.log(data)
-                // console.log(data._embedded["city:search-results"][0].matching_full_name)
-                prg.city = data._embedded["city:search-results"][0].matching_full_name
-                prg.linkTo = data._embedded["city:search-results"][0]._links["city:item"].href
                 
-                // console.log(prg.linkTo)
+                if(data.count ===0){
+                    
+                        return prg.city = 'No Such City Found!'
+                        
+
+                    }
+                    prg.nicks = data._embedded["city:search-results"][0].matching_alternate_names
                 
-                let b = fetch(prg.linkTo)
-                .then(function(response){
-                    return response.json()
-                })
-                .then(function(data){
-                    console.log(data.location.latlon.latitude)
-                    // console.log(data._links["city:urban_area"].href)
-                    let c = fetch(data._links["city:urban_area"].href)
+                    console.log(prg.nicks)                    
+
+                    prg.city = data._embedded["city:search-results"][0].matching_full_name
+                    prg.linkTo = data._embedded["city:search-results"][0]._links["city:item"].href
+                    
+                    // console.log(prg.linkTo)
+                    
+                    let b = fetch(prg.linkTo)
                     .then(function(response){
                         return response.json()
                     })
                     .then(function(data){
-                        // console.log(data)
-
-                        for (item in data){
-                            prg.dataBody = data['mayor']
-                            // console.log(item, data[item])
-                        }
-
+                        console.log(data.location.latlon.latitude)
+                        prg.lng = data.location.latlon.longitude
+                        prg.lat = data.location.latlon.latitude
+                        // console.log(data._links["city:urban_area"].href)
+                        let c = fetch(data._links["city:urban_area"].href)
+                        .then(function(response){
+                            return response.json()
+                        })
+                        .then(function(data){
+                            // console.log(data)
+                            
+                            for (item in data){
+                                prg.dataBody = data['mayor']
+                                // console.log(item, data[item])
+                            }
+                            
+                        })
+                        
+                        
                     })
-                
-                
-                })
 
 
             })
@@ -63,7 +80,7 @@ let prg = new Vue({
         updateThings(){
             this.city = ''
             this.dataBody =''
-
+            this.lng=this.lat =''
 
         }
 

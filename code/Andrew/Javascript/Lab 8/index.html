@@ -26,14 +26,14 @@
         <hr>
         <hr>
         <main>
-            
+            <h3>Enter A City:</h3>
             <div>
-                <button v-on:click = "getResp()">Test</button>
+                <button v-on:click = "getResp()">Enter City</button>
                 
+                
+                <button v-on:click = "updateThings()">Clear</button>
+                <input v-model= "city" type="text" placeholder="Portland, OR">
             </div>
-            
-            <button v-on:click = "updateThings()">Update</button>
-            <input v-model= "city" type="text">
         </main>
         
         
@@ -46,12 +46,21 @@
                 <h4>City: &nbsp;&nbsp; {{city}} </h4>
                 <hr>
                 <p>Mayor: {{dataBody}} </p>
-                
-
+                <p>Longitude: {{lng}}</p>
+                <p>Latitude: {{lat}}</p>
             </div>
         
         
         </footer>
+        <h3>Nick Names</h3>
+        <div class="tester" v-for= "item in nicks">
+            <p>
+                {{item['name']}}
+
+            </p>
+
+
+        </div>
         
     </div>
 </body>
