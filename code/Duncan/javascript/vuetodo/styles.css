@@ -1,3 +1,14 @@
 .fin{
     text-decoration: line-through;
 }
+
+#btnc{
+    text-align: center;
+}
+.card{
+    width: 50%;
+    font-size: 2rem;
+}
+.input{
+    font-size: 2rem;
+}

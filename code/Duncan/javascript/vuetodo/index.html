@@ -14,10 +14,10 @@
         <header>
             <h1 class="title has-text-centered ">TODO LIST</h1>
         </header>
-        <div class="control">
-            <input v-model="i" class="input" type="text" placeholder="Text input">
-            <div class="control">
-                <button v-on:click = "addItem()" class="button is-primary">Submit</button>
+        <div class="control mx-6 px-6">
+            <input v-model="i" class="input is-rounded is-primary has-text-centered" type="text" placeholder="Text input">
+            <div class="control" id="btnc">
+                <button v-on:click = "addItem()" class="button is-primary"  >Submit</button>
               </div>
               <div class="card" v-for="(i, index) in toList">
                  <div class="card-content">
@@ -26,7 +26,7 @@
                   </div>
                 </div>
                 <footer class="card-footer">
-                  <a  class="card-footer-item" >Save</a>
+                  
                   <a  class="card-footer-item"v-on:click="done(index)">Done</a>
                   <a  class="card-footer-item" v-on:click = "del(index)" >Delete</a>
                 </footer>
