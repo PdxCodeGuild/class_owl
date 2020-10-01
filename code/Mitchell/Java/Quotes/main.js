@@ -1,22 +1,39 @@
+let quoteBtn = document.getElementById('get-quotes')
+let quoteDiv = document.getElementById('quotes')
+let filter = document.getElementById('filter')
+let nextBtn = document.getElementById('next-page')
+let backBtn = document.getElementById('back-page')
+let pageNumber = 1
 
-let getQuotes = document.querySelector('#get-quotes')
-let getQuotes = document.querySelector('#randomQuote')
-let getQuotes = document.querySelector('#randomQuote')
-let getQuotes = document.querySelector('#author')
 
-#author
+nextBtn.addEventListener('click', function(){
+    pageNumber++
+})
 
-getQuotes.addEventListener('click', async function (){
-    let llama = {
+backBtn.addEventListener('click', function(){
+    if (pageNumber > 1){
+        pageNumber--
+    }
+})
+
+quoteBtn.addEventListener('click', async function(){
+    const api_key = '13f208366c4e6a4a0e9a64bed11bfd58'
+    let filterText = filter.value
+    const base_url = 'https://favqs.com/api/quotes/?filter=${filterText}&page=${pageNumber}'
+
+    let owl = {
         headers: {
-            Athorization: 'Token token="13f208366c4e6a4a0e9a64bed11bfd58"'
+            Authorization: 'Token token=${api_key}'
         }
     }
-    let response = await fetch('http://favq.com/api/qotes', llama)
-    let data = await response.json()
 
-    let i = Math.floor(Math.random() * data.quotes.length)
+    let response = await axios.get(base_url, owl)
+    let data = response.data
+    let quotes = data.quotes
+    let quotesList = ''
+    for (let quote of quotes){
+        quotesList += '<q class="quote">${quote.body} <span>${quote.author}</span></q>'
+    }
 
-    console.log(data.quotes[i].body)
-    console.log(data.quotes[i].author)
+    quoteDiv.innerHTML = quotesList
 })
