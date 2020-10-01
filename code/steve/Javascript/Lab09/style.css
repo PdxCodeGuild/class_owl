@@ -1,0 +1,20 @@
+
+body{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+
+}
+body > h3 {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+}
+
+
+.completed{
+    color: green;
+    text-decoration: line-through;
+}

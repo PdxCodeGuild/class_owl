@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Todo List</title>
+    <!-- Add your styles here! -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css" integrity="sha512-8bKh9RpTTQf+EOCSqu/jiAhcUlb5BpcWy0eXEijSX7yode10sZLU3dLBcmoaj15chLpVb+/TY0Z6SL//d4lVAQ==" crossorigin="anonymous" />
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>ToDo App</h1>
+        </header>
+        <div id="add-task">
+            <input v-model="task" placeholder="Task" class="input is-primary" type="text"  name="task" id="task">
+            <button id="add-task" v-on:click="addTask()" >Add TuDo</button>
+        </div>
+        <div class="card" v-for='(task, index) in todoList'>
+            <header class="card-header">
+              <p class="card-header-title">
+                <h3>To Do Item</h3>
+              </p>
+            </header>
+            <div class="card-content" v-bind:class="{completed: task.completed}">
+                    {{task.title}}
+               
+              <div class="content"></div>
+            </div>
+            <footer class="card-footer">
+              <a v-on:click='task.completed=!task.completed' class="card-footer-item">Completed</a>
+              <a v-on:click='remove(index)' class="card-footer-item">Delete</a>
+            </footer>
+          </div>
+    </div>
+
+    <!-- Include Vue from a CDN of your choice, I chose unpkg -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Include your code here... -->
+    <script src="main.js"></script>
+</body>
+</html>
