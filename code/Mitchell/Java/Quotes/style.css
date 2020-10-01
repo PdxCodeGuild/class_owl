@@ -1,0 +1,10 @@
+main {
+    max-width: 1000px;
+
+}
+
+.quotes {
+    display: flex;
+    flex-direction: column;
+    
+}

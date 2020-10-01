@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote City</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
     <script defer src="main.js"></script>
 </head>
 <body>
     <h2>"Quote"</h2>
-    <button class="get-quotes" id="get-quotes">Get Quote </button>
-    <div class="quotes" id="quotes">
-        
-    </div>
+    <main>
+        <div class="controls">
+            <input type="text" id="filter" placeholder="Enter a filter">
+            <button class="get-quotes" id="get-quotes">Get Quote </button>
+            <button id="next-page">Next</button>
+            <button id="back-page">Back</button>
+            </div>
+        <div class="quotes" id="quotes">
+    </div></main>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Todo List</title>
+    <!-- Add your styles here! -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <h1>Timmy's Topsy Turvy Task Table</h1>
+        <div>
+            <input v-model="message" type="text" name="gobble" id="gobble">
+            <button id="addtask" v-on:click="addtask()">Submit</button> 
+        </div>
+        <h4>Task</h4>
+        <div class="card">
+            <div v-for="(todo, index) in TuDoList" class="dummyToDo">
+                <p v-bind:class="{complete:todo.completed}">
+                    {{todo.task}}
+                </p>
+                <button v-on:click="todo.completed=true">Complete</button>
+                <button v-on:click="deleteTask(index)" class="delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Vue from a CDN of your choice, I chose unpkg -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- Include your code here... -->
+    <script src="main.js"></script>
+</body>
+</html>
