@@ -11,8 +11,6 @@ It should support the following functions at a minimum:
 - \+ \- \* \\ (basic arithmetic)
 - backspace
 
-Each button should be a component (there should not be any `<button>`s in your root component). For many buttons you can use multiple instances of a common component, i.e. each digit button can use the same component and emit its value to the app root.
-
 HINT: You'll probably want root `data` attributes to store the current total, subtotal (screen display), and current operation. Some of your listener methods will change the total, some the subtotal, and some the operation.
 
 ## Optional
