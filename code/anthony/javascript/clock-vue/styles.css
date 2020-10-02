@@ -1,0 +1,26 @@
+body{
+    font-family: 'Orbitron', sans-serif;
+}
+
+.showClock{
+    display: block;
+    animation-name: showClock;
+    animation-duration: 2s;
+}
+.showStopWatch{
+    display: block;
+    animation-name: showStopWatch;
+    animation-duration: 2s;
+}
+.hidden{
+    display: none;
+}
+
+@keyframes showClock{
+    from {transform: translateX(-100px); filter: opacity(0);}
+    to {transform: translateX(0); filter: opacity(1);}
+}
+@keyframes showStopWatch{
+    from {transform: translateX(100px); filter: opacity(0);}
+    to {transform: translateX(0); filter: opacity(1);}
+}

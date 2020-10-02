@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"> 
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="selector has-text-centered">
+            <button class="button is-outlined is-primary" v-on:click="showClock()">Clock</button>
+            <button class="button is-outlined is-primary" v-on:click="showStopWatch()">StopWatch</button>
+        </div>
+        <div class="clock is-size-1 has-text-centered" v-bind:class="{showClock: clock, hidden: !clock}">
+            {{padStart(hours%12)}}:{{padStart(minutes)}}:{{padStart(seconds)}}{{meridies}}
+        </div>
+        <div class="stopwatch is-size-1 has-text-centered" v-bind:class="{showStopWatch: stopWatch, hidden: !stopWatch}">
+            <div class="timer">
+                {{stopHour}}:{{stopMinute}}:{{stopSecond}}:{{stopMili}}
+            </div>
+            <div class="controls">
+                <button class="button" v-on:click="startStopWatch()">Start</button>
+                <button class="button" v-on:click="lapStopWatch()">Lap</button>
+                <button class="button" v-on:click="resetStopWatch()">Reset</button>
+                <button class="button" v-on:click="stopTimer()">Stop</button>
+            </div>
+            <div class="laps">
+                <h4 v-for="lap in lapTimes">
+                    {{lap.hours}}:{{lap.minutes}}:{{lap.seconds}}:{{lap.milliseconds}}
+                </h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
