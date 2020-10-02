@@ -1,4 +1,4 @@
-# Lab 12: Vue Calculator
+# Lab 10: Vue Calculator
 
 Let's build a simple calculator in Vue. You can use a CSS framework if you wish, or you can style things yourself. Find some examples of calculators on [Google](https://www.google.com/search?q=calculator+screenshot&rlz=1C1CHBF_enUS752US752&source=lnms&tbm=isch&sa=X&ved=0ahUKEwie2JG15M3WAhUQ-mMKHUdsCnkQ_AUICigB&biw=1536&bih=772&dpr=1.25).
 
