@@ -20,6 +20,8 @@ Thanksgiving -- Nov 26, 2020
 * Lab 05 -- Random Redirector
 * Lab 06 -- Clock
 * Lab 07 -- Quote API
+* Lab 09 -- Vue Todo
+* Lab 10 -- Vue Calculator
 
 ## HTML/CSS labs assigned
 * Lab 01 -- Bio
