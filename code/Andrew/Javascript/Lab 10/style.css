@@ -1,0 +1,104 @@
+*,*::before,*::after{
+    margin:0;
+    padding:0;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+.intro{
+    text-align: center;
+}
+.etcha{
+    border: 5px solid black;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 10px;
+    background-color: red;
+}
+
+header{
+    text-align: end;
+    width:200px;
+    height:50px;
+    border: 1px solid black;
+    margin: .25rem auto;
+    background-color: rgb(218, 208, 200);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+#innerBody{
+    border: 1px solid black;
+    width: 75%;
+    margin: 3rem auto;
+    padding: .1rem;
+    background-color: white;
+    border-radius: 4px;
+
+}
+.numberBtns{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 .25rem;
+}
+.numberBtns > *{
+    padding: .25rem;
+    border-radius: 4px;
+}
+
+.operators{
+    display: flex;
+    justify-content: space-evenly;
+}
+.operators> *{
+    padding: .25rem;
+    border-radius: 4px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+.scroll1{
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    position: relative;
+    top:30px;
+    left:20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: inset 0px 0px 0px 5px rgba(0,0,0,0.3);
+}
+.scroll2{
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    position: relative;
+    left: 400px;
+    bottom: 45px;
+    border-radius: 50%;
+    border:2px solid black;
+    box-shadow: inset 0px 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+.shakeItOff{
+    animation: shakeIt;
+    animation-timing-function: ease-in-out;
+    animation-duration: 500ms;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+
+@keyframes shakeIt {
+    0%{transform: translateY(75px);}
+    80%{transform: translateY(-25px);}
+    100%{transform: translateY(0);}
+
+
+}

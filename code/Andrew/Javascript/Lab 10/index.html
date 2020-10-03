@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc-u-later!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.3.0/math.js" integrity="sha512-lZJm/YdR3fMJqOXSOkxEznhQ9UpRvMh23TS1WvlbzI+BMF1mar/RT/4/rN8oCi1rV49WqzJ0OR6Jvu4+YE4LgQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div id="app"  v-on:keypress.enter='inputMod(0)'>
+        <h2 class="intro">Calculator</h2>
+        
+        <main class="etcha" v-bind:class="{shakeItOff:clearIt}">
+            <header>
+                {{input}}
+            </header>
+
+            <div id="innerBody">
+                <div class="numberBtns">
+                    <button v-on:click="inputMod(0)">0</button>
+                    <button v-on:click="inputMod(1)">1</button>
+                    <button v-on:click="inputMod(2)">2</button>
+                    <button v-on:click="inputMod(3)">3</button>
+                    <button v-on:click="inputMod(4)">4</button>
+                    <button v-on:click="inputMod(5)">5</button>
+                    <button v-on:click="inputMod(6)">6</button>
+                    <button v-on:click="inputMod(7)">7</button>
+                    <button v-on:click="inputMod(8)">8</button>
+                    <button v-on:click="inputMod(9)">9</button>
+                    <button v-on:click="negatizer()">+/-</button>
+                </div>
+                
+                <div class="operators">
+                    <button v-on:click="inputMod('*')">X</button>
+                    <button v-on:click="inputMod('/')">/</button>
+                    <button v-on:click="inputMod('/100')">%</button>
+                    <button v-on:click="inputMod('+')">+</button>
+                    <button v-on:click="inputMod('-')">-</button>
+                    <button v-on:click="calcEval()">Enter</button>
+                    <button v-on:click="backspace()">Backspace</button>
+                    <button v-on:click='clear()'>Clear</button>
+                </div>
+                    
+                    
+                    
+                
+            </div>
+            <footer>
+                <div class="scroll1"></div>
+                
+                
+                <div class="scroll2"></div>
+
+
+
+            </footer>
+            
+            
+            
+            
+            
+            
+            
+        </main>
+    </div>
+</body>
+</html>
