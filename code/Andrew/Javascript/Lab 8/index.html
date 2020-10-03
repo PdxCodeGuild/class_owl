@@ -52,14 +52,17 @@
         
         
         </footer>
-        <h3>Nick Names</h3>
+        
+        <h3> <u>Nicknames</u></h3>
         <div class="tester" v-for= "item in nicks">
             <p>
                 {{item['name']}}
 
             </p>
+            <div >
+                <img v-bind:src='urlImg' alt="">
 
-
+            </div>
         </div>
         
     </div>

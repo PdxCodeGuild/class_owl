@@ -13,7 +13,8 @@ let prg = new Vue({
         dataBody: "",
         mayor:'',
         lng:'',
-        lat:''
+        lat:'',
+        urlImg: null
     },
     methods:{
         getResp(){
@@ -38,8 +39,8 @@ let prg = new Vue({
                     }
                     prg.nicks = data._embedded["city:search-results"][0].matching_alternate_names
                 
-                    console.log(prg.nicks)                    
-
+                    // console.log(prg.nicks)                    
+                    // console.log(data)
                     prg.city = data._embedded["city:search-results"][0].matching_full_name
                     prg.linkTo = data._embedded["city:search-results"][0]._links["city:item"].href
                     
@@ -59,13 +60,21 @@ let prg = new Vue({
                             return response.json()
                         })
                         .then(function(data){
-                            // console.log(data)
+                            console.log(data)
                             
                             for (item in data){
                                 prg.dataBody = data['mayor']
                                 // console.log(item, data[item])
                             }
-                            
+                            let tempImg = fetch(data._links["ua:images"].href)
+                            .then(function(response){
+                                return response.json()
+                            })
+                            .then(function(data){
+                                console.log(data)
+                                this.urlImg = data.photos[0].image.web
+                                console.log(urlImg)
+                            })
                         })
                         
                         
@@ -91,5 +100,14 @@ let prg = new Vue({
 })
 
 
+// Vue.component('apiImg', {
+//     data: function () {
+//       return {
+//         imgSrc: app.urlImg
+//       }
+//     },
+//     template: '<img src="imgSrc">'
+//   })
 
+// let tester = new Vue({ el: '#imgtest' })
 
