@@ -1,0 +1,67 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-image: radial-gradient(circle at top right, rgb(4, 20, 62));
+    padding-left: 1rem;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.gameboard {
+    height: 1000px;
+    width: 1000px;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scores {
+    width: 80%;
+    display: flex;
+    flex-direction: row,;
+    justify-content: space-evenly;
+}
+
+.scores > p {
+
+    width: 100%;
+}
+
+.top-left{
+    background-color: blue;
+}
+
+.top-right {
+    background-color: red;
+}
+
+.bottom-left {
+    background-color: yellow;
+}
+
+.bottom-right {
+    background-color: green;
+}
+
+.start-btn {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+
+}
