@@ -1,0 +1,103 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 24px;
+}
+
+header {
+    background-image: radial-gradient(circle at top right, rgb(4, 20, 62) 0%, rgb(4, 20, 62) 28%,rgb(49, 29, 62) 28%, rgb(49, 29, 62) 45%,rgb(94, 38, 62) 45%, rgb(94, 38, 62) 63%,rgb(138, 47, 62) 63%, rgb(138, 47, 62) 100%);
+    padding: 1rem;
+}
+
+h1 {
+    font-family: 'Grandstander', cursive;
+    font-weight: 700;
+    color: white;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Indie Flower', cursive;
+}
+
+.scores {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.score-btn {
+    border: none;
+    font-family: 'Indie Flower', cursive;
+    font-size: .8rem;
+    cursor: pointer;
+    padding: .3rem;
+    background: rgb(4, 20, 62);
+    color: #fff;
+    align-self: flex-end;
+}
+
+.gameboard {
+    width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: .25rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.start-btn {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.panel {
+    height: 300px;
+    width: 300px;  
+    cursor: pointer;
+}
+
+.panel:hover{
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, .3);
+}
+
+.top-left {
+    background: green;
+    border-radius: 100% 0 0 0;
+}
+
+.top-right {
+    background: red;
+    border-radius: 0 100% 0 0;
+}
+
+.bottom-left {
+    background: yellow;
+    border-radius: 0 0 0 100%;
+}
+
+.bottom-right {
+    background: blue;
+    border-radius: 0 0 100% 0;
+}
+
+.current {
+    box-shadow: inset 0px 0px 10px 4px rgb(247, 10, 255);
+    border: 4px solid rgb(247, 10, 255);
+}
