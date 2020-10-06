@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js" integrity="sha512-nqIFZC8560+CqHgXKez61MI0f9XSTKLkm0zFVm/99Wt0jSTZ7yeeYwbzyl0SGn/s8Mulbdw+ScCG41hmO2+FKw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id= "app">
+        <h2>Random quotes:</h2>
+        <hr>
+        <div class='btn-group'>
+            <div>
+                <h3 v-if="thing">Please Make a Valid Selection</h3>
+                <button id="getQuote" @click= 'getQuoteBtn()'> Get Quote</button>
+                <button @click= 'turner(1)'>Next</button>
+                <button id="pager">Page#{{pages}}</button>
+                <button @click= 'turner(-1)'>Previous</button>
+                <button @click= 'quoteLst = []'>Clear</button>
+            </div>
+            <div id="special">
+                <special-button> test</special-button>
+            </div>
+
+
+            <div v-if='picker' class="selecter">
+                <label for="theme">Quote Theme</label>
+                <select v-model= "adderValue">
+                    <option value='invalid'>Please Select An Option</option>
+                    <option value="">None</option>
+                    <option value="funny"> Funny</option>
+                    <option value="cool">Cool</option>
+                    <option value="inspirational">Inspirational</option>
+                    <option value='art'>Art</option>
+                    <option value="pickOwn">Choose your Own</option>
+                </select>
+            </div>
+            <input v-else @change='getQuoteBtn()' v-model='adderValue' type="text" placeholder="Enter a theme">
+
+        </div>
+        <div v-for= "item in quoteLst">
+            <div class="card">
+                <q>{{item.body}}</q>
+                <p>{{item.author}}</p>
+            </div>
+            <hr>
+            
+        </div>
+      
+    </main>
+        
+</body>
+</html>
