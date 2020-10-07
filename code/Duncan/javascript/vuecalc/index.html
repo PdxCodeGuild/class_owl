@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.3.0/math.js" integrity="sha512-lZJm/YdR3fMJqOXSOkxEznhQ9UpRvMh23TS1WvlbzI+BMF1mar/RT/4/rN8oCi1rV49WqzJ0OR6Jvu4+YE4LgQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -11,80 +12,90 @@
 <body>
     <div id="app">
         <div class="box column  is-offset-2 is-8 ">
-            <div class="box has-text-right ">{{numbers}}</div>
+            <div class="box has-text-right " id="display">{{numbers}}</div>
             <div class="field is-grouped is-grouped-multiline  column is-offset-3 is-7 " id="btns">
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a  v-on:click="nums(1)" class="button is-size-3">
                     1
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a v-on:click="nums(2)" class="button is-size-3">
                     2
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a v-on:click="nums(3)" class="button is-size-3">
                     3
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a v-on:click="nums(4)" class="button is-size-3">
                     4
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a v-on:click="nums(5)" class="button is-size-3">
                     5
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a v-on:click="nums(6)" class="button is-size-3">
                     6
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a v-on:click="nums(7)" class="button is-size-3">
                     7
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a v-on:click="nums(8)" class="button is-size-3">
                     8
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a v-on:click="nums(9)" class="button is-size-3">
                     9
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
-                    +
+                  <a  class="button is-size-3" v-on:click="nums(0)">
+                    0
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a  class="button is-size-3" v-on:click="nums()">
+                    .                        
+                  </a>
+                </p>
+                <p class="control">
+                  <a  class="button is-size-3" v-on:click="nums()">
                     -
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
-                    x
+                  <a  class="button is-size-3" v-on:click="nums()">
+                    +
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a  class="button is-size-3" v-on:click="nums()">
                     /
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-3">
+                  <a  class="button is-size-3"v-on:click="nums()">
+                    x
+                  </a>
+                </p>
+                <p class="control">
+                  <a  class="button is-size-3"v-on:click="nums()">
                     %
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-size-1 column is-large">
+                  <a  class="button is-size-1 column is-large"v-on:click="nums()">
                     =
                   </a>
                 </p>
@@ -98,4 +109,4 @@
     </div>
     <script src="main.js"></script>
 </body>
-</html>
+<
