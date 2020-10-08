@@ -38,7 +38,10 @@ header >a{
 
 
 
+img{
+    transform: scale(.7);
 
+}
 
 
 
@@ -83,5 +86,5 @@ header >a{
 
 @keyframes dissapear {
     75%{ opacity: 1;}
-    100%{opacity: 0;}
+    100%{opacity: 0; z-index: 0;}
 }

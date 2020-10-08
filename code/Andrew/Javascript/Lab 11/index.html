@@ -14,7 +14,7 @@
         <h2>Random quotes:</h2>
         <hr>
         <div class='btn-group'>
-            <div>
+            <div class= 'choosers'>
                 <h3 v-if="thing">Please Make a Valid Selection</h3>
                 <button id="getQuote" @click= 'getQuoteBtn()'> Get Quote</button>
                 <button @click= 'turner(1)'>Next</button>
@@ -37,17 +37,28 @@
                     <option value="pickOwn">Choose your Own</option>
                 </select>
             </div>
-            <div  v-else  class="elser">
-                <input @change='getQuoteBtn()' v-model='adderValue' type="text" placeholder="Enter a theme">
-                <p>Hit enter when commplete</p>
+            <div  v-else  class="selecter">
+                <label for="searcher">Search by:</label>
+                <select v-model='selecter' name="searcher">
+                    <option value="">Keyword</option>
+                    <option value="author">Author</option>
+                    <option value="tag">Tag</option>
+                </select>
+                <input @change='getQuoteBtn()' v-model='adderValue' type="text" placeholder="Enter a search term">
+                <button>Search</button>
             </div>
 
         </div>
-        <div id='cardHolder' v-for= "item in quoteLst">
-            <div class="card">
-                <q>{{item.body}}</q>
-                <p>{{item.author}}</p>
-            </div>            
+        
+
+        <div v-if="pickedQuote" class="card"> <q>{{pickedQuote.body}}</q> <br> {{pickedQuote.author}}  </div>
+        <div v-else id='cardHolder' >
+           
+               <div v-for= "item in quoteLst" class="card" @click='focuser(item)'>
+                   <q>{{item.body}}</q>
+                   <p>{{item.author}}</p>
+               </div>           
+               
         </div>
       
     </main>

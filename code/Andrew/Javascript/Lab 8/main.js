@@ -14,7 +14,8 @@ let prg = new Vue({
         mayor:'',
         lng:'',
         lat:'',
-        urlImg: null
+        urlImg: null,
+        scores: ''
     },
     methods:{
         getResp(){
@@ -60,8 +61,9 @@ let prg = new Vue({
                             return response.json()
                         })
                         .then(function(data){
-                            console.log(data)
-                            
+                            console.log(data, 'here')
+                            prg.scores = data._links["ua:scores"].href
+                            console.log(prg.scores)
                             for (item in data){
                                 prg.dataBody = data['mayor']
                                 // console.log(item, data[item])
@@ -72,8 +74,8 @@ let prg = new Vue({
                             })
                             .then(function(data){
                                 console.log(data)
-                                this.urlImg = data.photos[0].image.web
-                                console.log(urlImg)
+                                prg.urlImg = data.photos[0].image.web
+                                
                             })
                         })
                         
@@ -81,6 +83,13 @@ let prg = new Vue({
                     })
 
 
+            })
+            let scrs = fetch(prg.scores)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                console.log(data)
             })
             
 
@@ -99,15 +108,4 @@ let prg = new Vue({
 
 })
 
-
-// Vue.component('apiImg', {
-//     data: function () {
-//       return {
-//         imgSrc: app.urlImg
-//       }
-//     },
-//     template: '<img src="imgSrc">'
-//   })
-
-// let tester = new Vue({ el: '#imgtest' })
 

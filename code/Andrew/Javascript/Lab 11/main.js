@@ -11,7 +11,10 @@ let app = new Vue({
         quoteLst: [],
         thing: false,
         picker: true,
-        count: ""
+        count: "",
+        selecter: '',
+        modder: '',
+        pickedQuote: null
     },
     methods:{
         getQuoteBtn: async function(){
@@ -22,7 +25,18 @@ let app = new Vue({
                 this.thing = false
             }
 
-            let filterText = this.adderValue? "&filter=" + this.adderValue + '&type=tag': ''
+            // + '&type=tag'
+
+            if (this.selecter){
+                this.modder = '&type=' + encodeURIComponent(this.selecter)
+            }
+
+            let filterText = this.adderValue? "&filter=" + this.adderValue: ''
+            if (this.modder){
+                filterText += this.modder
+            }
+            
+            
             let url = app.url +'?page=' + this.pages + filterText   
             
             let response = await axios.get(url,this.headerObj)
@@ -30,6 +44,9 @@ let app = new Vue({
             this.quoteLst = response.data.quotes
             this.picker = true
             this.adderValue = null
+            this.selecter = null
+            this.modder = null
+
             console.log(this.quoteLst)
             console.log(response)                 
         
@@ -49,6 +66,12 @@ let app = new Vue({
             else{
                 console.log('Nuh uh ah, didn\'t say the magic word!')
             }
+        },
+        focuser: function(item){
+            this.pickedQuote = item
+            setTimeout(function(){
+                app.pickedQuote = null
+            }, 3000)
         }
     },
     watch: {
