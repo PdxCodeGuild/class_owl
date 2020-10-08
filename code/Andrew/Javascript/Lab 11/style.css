@@ -6,3 +6,10 @@ h3{
     background: unset;
 }
 
+#cardHolder{
+    width: 200px;
+}
+.card{
+    width: 150px;
+
+}

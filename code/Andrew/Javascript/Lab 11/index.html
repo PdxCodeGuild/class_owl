@@ -22,9 +22,7 @@
                 <button @click= 'turner(-1)'>Previous</button>
                 <button @click= 'quoteLst = []'>Clear</button>
             </div>
-            <div id="special">
-                <special-button> test</special-button>
-            </div>
+            
 
 
             <div v-if='picker' class="selecter">
@@ -39,16 +37,17 @@
                     <option value="pickOwn">Choose your Own</option>
                 </select>
             </div>
-            <input v-else @change='getQuoteBtn()' v-model='adderValue' type="text" placeholder="Enter a theme">
+            <div  v-else  class="elser">
+                <input @change='getQuoteBtn()' v-model='adderValue' type="text" placeholder="Enter a theme">
+                <p>Hit enter when commplete</p>
+            </div>
 
         </div>
-        <div v-for= "item in quoteLst">
+        <div id='cardHolder' v-for= "item in quoteLst">
             <div class="card">
                 <q>{{item.body}}</q>
                 <p>{{item.author}}</p>
-            </div>
-            <hr>
-            
+            </div>            
         </div>
       
     </main>

@@ -1,13 +1,3 @@
-let a = Vue.component('special-button',{
-
-    data: function(){
-        return {count: 1}
-    },
-
-    template: '<button>{{count}}</button>' 
-})
-
-
 
 let app = new Vue({
     el: "#app",
@@ -74,11 +64,7 @@ let app = new Vue({
             }
         }
     },
-    component:{
-        'special-button': a
-    }
-   
-    
+       
 
 
 
