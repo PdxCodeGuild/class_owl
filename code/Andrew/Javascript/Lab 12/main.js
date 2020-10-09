@@ -15,13 +15,14 @@ let prg = new Vue({
         lng:'',
         lat:'',
         urlImg: null,
-        scores: ''
+        scores: '',
+        scoresObj: [],
+        dumpsterFire: true
     },
     methods:{
-        getResp(){
+        getResp: function(){
             this.apiUrl= 'https://api.teleport.org/api/cities/'
             this.apiUrl += this.city?  `?search=${encodeURIComponent(this.city)}`: `?search=portland` 
-            // console.log(this.apiUrl)
 
             let a = fetch(this.apiUrl)
             .then(function(response){
@@ -35,24 +36,22 @@ let prg = new Vue({
                 if(data.count ===0){
                     
                         return prg.city = 'No Such City Found!'
-                        
 
                     }
                     prg.nicks = data._embedded["city:search-results"][0].matching_alternate_names
                 
-                    // console.log(prg.nicks)                    
-                    // console.log(data)
+                    
                     prg.city = data._embedded["city:search-results"][0].matching_full_name
                     prg.linkTo = data._embedded["city:search-results"][0]._links["city:item"].href
                     
-                    // console.log(prg.linkTo)
+                    
                     
                     let b = fetch(prg.linkTo)
                     .then(function(response){
                         return response.json()
                     })
                     .then(function(data){
-                        console.log(data.location.latlon.latitude)
+                        
                         prg.lng = data.location.latlon.longitude
                         prg.lat = data.location.latlon.latitude
                         // console.log(data._links["city:urban_area"].href)
@@ -61,21 +60,27 @@ let prg = new Vue({
                             return response.json()
                         })
                         .then(function(data){
-                            console.log(data, 'here')
                             prg.scores = data._links["ua:scores"].href
-                            console.log(prg.scores)
+                            
                             for (item in data){
                                 prg.dataBody = data['mayor']
-                                // console.log(item, data[item])
                             }
                             let tempImg = fetch(data._links["ua:images"].href)
                             .then(function(response){
                                 return response.json()
                             })
                             .then(function(data){
-                                console.log(data)
-                                prg.urlImg = data.photos[0].image.web
                                 
+                                prg.urlImg = data.photos[0].image.web
+                                let scrs = fetch(prg.scores)
+                                .then(function(response){
+                                    return response.json()
+                                })
+                                .then(function(data){
+                                    
+                                    prg.scoresObj = data
+
+                                })
                             })
                         })
                         
@@ -84,26 +89,36 @@ let prg = new Vue({
 
 
             })
-            let scrs = fetch(prg.scores)
-            .then(function(response){
-                return response.json()
-            })
-            .then(function(data){
-                console.log(data)
-            })
+            
+            
             
 
         },
 
-        updateThings(){
+        updateThings: function(){
             this.city = ''
             this.dataBody =''
             this.lng=this.lat =''
+            this.apiUrl= ''
+            this.linkTo=''
+            this.nicks= []
+            this.urlImg= null
+            this.scores= ''
+            this.scoresObj= []
+        },
 
+        rounder: function(num){
+            return Number.parseFloat(num).toFixed(2)
         }
+        
 
-
-    }
+    },
+    created() {
+        setTimeout(function(){
+            prg.dumpsterFire = false
+        }, 5000)
+        
+    },
 
 
 })

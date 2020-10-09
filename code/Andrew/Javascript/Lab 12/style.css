@@ -1,0 +1,190 @@
+*, * ::before, * ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+/* Font Styles
+font-family: 'Montserrat', sans-serif;
+font-family: 'Sansita Swashed', cursive; */
+body{
+    background-color: rgb(255, 253, 253);
+}
+
+.hdr> h1{
+    margin: .25rem 0 0 .5rem;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.hdr> h4{
+    margin: 0 0 0 1.25rem;
+    color: rgb(141, 141, 141);
+    font-style: oblique;
+    font-family: 'Sansita Swashed', cursive;
+    text-decoration: double;
+}
+#test{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgb(152, 200, 255), #FFF);
+    
+}
+header >a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: flex-start;
+    margin: 1rem .75rem 0 0;
+    padding: .25rem;
+    border: black;
+    border-radius: 8px;
+    background: rgb(152, 200, 255);
+    text-align: center;
+    text-decoration: none;
+    height: 80%;
+}
+
+main{
+    /* border: 1px solid red; */
+    background:  rgb(253, 253, 253);
+    padding: 0 0 .1rem 0;
+    font-size: .8rem;
+
+}
+.selectors{
+    margin: .1rem 0 .25rem 7rem;
+    
+
+}
+.selectors> button{
+    border: 1px solid rgb(123, 185, 255);
+    border-radius: 4px;
+    padding: .1rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(82, 121, 165);
+    font-weight: 800;
+    cursor: pointer;
+
+}
+
+.selBtn:hover{
+    transform: scale(1.05);
+    
+}
+
+
+footer{
+    display: flex;
+    justify-content: space-around;
+}
+
+#dataBody{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    margin-top: .1rem;
+    background-color: white;
+    box-shadow: 7px 12px 21px -8px rgba(0,0,0,0.61);
+    border: 1px solid rgb(212, 212, 212);
+}
+#dataBody > p{
+    width: 50%;
+    text-align: center;
+    margin: 2px auto;
+}
+
+#dataBody> h4{
+    width: 60%;
+    padding: .1rem;
+    margin: auto;
+}
+
+.scores{
+    margin-top: .1rem;
+    width: 30%;
+    padding: .5rem;
+    font-size: .9rem;
+    box-shadow: 7px 12px 21px -8px rgba(0,0,0,0.61);
+    border: 1px solid rgb(212, 212, 212);
+}
+.scores> h4{
+    text-decoration: underline;
+}
+.scores > *{
+    padding: .1rem;
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.bottom{
+    margin-top: 1.5rem;
+    box-shadow: 0px 5px 14px -5px rgba(0,0,0,0.1);
+}
+.tester> *{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+
+.image{
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+img{
+    border: 1px solid rgb(152, 200, 255);
+    border-radius: 2px;
+    width: fit-content;
+}
+
+
+
+
+
+
+
+
+.intro ::after{
+    content: "Sick of the dumpster fire called the USA?";
+    color:  red;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    font-size: 10rem;
+    animation: dissapear 3s;
+    animation-fill-mode: forwards;  
+    z-index: 2;
+}
+.intro ::before{
+    content: "Find a better home!";
+    color:  blue;
+    display: block;
+    position: absolute;
+    justify-content: space-around;
+    
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    font-size: 10rem;
+    animation: dissapear 5s;
+    animation-fill-mode: forwards;  
+    z-index: 1;
+}
+
+
+@keyframes dissapear {
+    50%{ opacity: 1;}
+    100%{opacity: 0;}
+}
