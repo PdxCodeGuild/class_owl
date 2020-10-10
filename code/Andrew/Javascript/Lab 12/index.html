@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dumpster Fire 2020</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js" integrity="sha512-nqIFZC8560+CqHgXKez61MI0f9XSTKLkm0zFVm/99Wt0jSTZ7yeeYwbzyl0SGn/s8Mulbdw+ScCG41hmO2+FKw==" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;1,500&family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -17,14 +19,14 @@
             <div class="hdr">
             <h1>Find Quality Places to live!</h1>
             
-            <h4>and don't forget your dog!</h4>
+            <h4>and don't forget your <a href="https://www.petfinder.com/search/dogs-for-adoption//?distance=100" target="_blank">dog</a>!</h4>
         </div>
         
-        <a href="#"> Contact Us</a>
+        <a id= "sponser" href="https://teleport.org/" target="_blank"><img id='teleport' src="logo.e663724a.svg" alt=""> </a>
         
         </header>
         
-        <hr>
+        <!-- <hr> -->
         <hr>
         <main>
             <h3>Enter A City:</h3>
@@ -32,6 +34,9 @@
                 <button class ='selBtn' v-on:click = "getResp()">Enter City</button>
                 <button class ='selBtn' v-on:click = "updateThings()">Clear</button>
                 <input v-model= "city" type="text" placeholder="e.g Portland, OR">
+                <div class="quotes">
+                    {{quote}}
+                </div>
             </div>
             <h4>City: &nbsp;&nbsp; {{city}} </h4>
         </main>
@@ -49,7 +54,7 @@
             <div v-if="scores" class="scores" >
                 <h4 v-if="scores">Scores Out Of 10:</h4>
                 <ul>
-                    <li v-for= " (item) in scoresObj['categories']"> <b>{{item.name}}:</b> {{rounder(item['score_out_of_10'])}}  </li>
+                    <li v-for= "(item) in scoresObj['categories']"> <b> {{item.name}}:</b> {{rounder(item['score_out_of_10'])}}</li>
                 </ul>
             </div>
 

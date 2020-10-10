@@ -9,7 +9,6 @@ let prg = new Vue({
         city: '',
         linkTo:'',
         nicks: [],
-        
         dataBody: "",
         mayor:'',
         lng:'',
@@ -17,10 +16,16 @@ let prg = new Vue({
         urlImg: null,
         scores: '',
         scoresObj: [],
-        dumpsterFire: true
+        dumpsterFire: false,
+        quote: '',
+        headerObj:{headers:{Authorization: 'Token token="d61d1ae7ecaca320b07fa0335c15d8c1"'}
+        },
+        url: "https://favqs.com/api/quotes/?filter=",
+       
     },
     methods:{
         getResp: function(){
+            prg.quoter()
             this.apiUrl= 'https://api.teleport.org/api/cities/'
             this.apiUrl += this.city?  `?search=${encodeURIComponent(this.city)}`: `?search=portland` 
 
@@ -77,7 +82,7 @@ let prg = new Vue({
                                     return response.json()
                                 })
                                 .then(function(data){
-                                    
+                                    console.log(data)    
                                     prg.scoresObj = data
 
                                 })
@@ -105,21 +110,55 @@ let prg = new Vue({
             this.urlImg= null
             this.scores= ''
             this.scoresObj= []
+            this.quote=''
         },
 
         rounder: function(num){
             return Number.parseFloat(num).toFixed(2)
-        }
+        },
+
+        quoter: async function(){
         
+        quoteCity = prg.city.split(',')[0]
+            
+        let response1 = await axios.get(prg.url + encodeURIComponent(this.city),prg.headerObj)
+        console.log(response1.data.quotes[0].body)
+        if (response1.data.quotes[0].body !== 'No quotes found'){
+            prg.quote = response1.data.quotes[0].body + "  -" + response1.data.quotes[0].author 
+
+        }
+        else{
+            let a = fetch('https://api.taylor.rest/')
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+            prg.quote = data.quote
+        })
+
+        }
+
+    },
 
     },
     created() {
         setTimeout(function(){
-            prg.dumpsterFire = false
+            // prg.dumpsterFire = false
         }, 5000)
+        let a = fetch('https://api.taylor.rest/')
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+            prg.quote = data.quote
+        })
+
+        
         
     },
-
+   
 
 })
 
