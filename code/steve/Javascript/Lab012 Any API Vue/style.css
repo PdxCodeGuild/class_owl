@@ -1,0 +1,25 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+#head{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    background-color: hotpink;
+
+}
+
+img{
+    width: 100vw;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+}
