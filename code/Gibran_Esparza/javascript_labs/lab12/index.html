@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Any Vue API</title>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="main.js"></script> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+</head>
+<body>
+    <div id="app">
+        <header class="header"><img src="./sports.jpg_fit=scale" alt="sports_logo"></header>
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">FIRST & LAST NAME</span>
+            </div>
+            <input v-model="firstName" type="text" aria-label="First name" class="form-control">
+            <input v-model="lastName" type="text" aria-label="Last name" class="form-control">
+            <button  v-on:click="getPlayer()" type="button" class="btn btn-outline-primary">Submit</button>
+        </div>
+        <div v-if="description" class="card">
+            <div class="card-body">
+              <h3 class="card-title">{{title}}</h5>
+              <h5 class="card-subtitle mb-2 text-muted">{{subtitle}}</h6>
+              <p class="card-text">{{description}}</p>
+              <a :href="facebook" target="blank" class="cardlink">facebook</a>
+              <a :href="instagram" target="blank" class="cardlink2">instagram</a>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
