@@ -1,6 +1,4 @@
-
-
-
+## Raw Queries vs Query Builders vs ORM
 
 ## SQL Injection
 

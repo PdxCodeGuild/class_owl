@@ -1,218 +1,90 @@
 
-# User Management
 
-Many web applications have the ability for a user to 1) create an account, 2) log into and out of that account, and 3) view pages that are only accessible to logged-in users. For more info, read [here](https://docs.djangoproject.com/en/2.0/topics/auth/) and [here](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication).
+# Media Files
 
-
-## Users, Groups, and Permissions
-
-Start by looking at the users section of the admin interface. Here you can create users, groups, and assign permissions. A group is a collection of users which you can add and remove permisions from, so you don't have to go to each user to change their permissions. Django has many built-in permissions, but you can also define your own. For more information about these, look [here](https://docs.djangoproject.com/en/2.0/ref/contrib/auth/).
-
-## Creating & Editing Users
-
-You can create users programmatically using the 'create_user' function, which automatically creates a user and saves it. It's important to note that Django does not save passwords in 'plain text', only a hash of the password. This means you cannot retrieve a user's password, only check if the password you have is correct by putting it through the same hashing algorithm. You can read more about how Django manages passwords [here](https://docs.djangoproject.com/en/2.0/topics/auth/passwords/).
-
-```python
-from django.contrib.auth.models import User
-user = User.objects.create_user('jane', 'jane@gmail.com', 'janespassword')
-```
-
-You can also create users from within the admin panel, by clicking 'add' next to 'Users' under 'AUTHENTICATION AND AUTHORIZATION'.
+- [Overview](#overview)
+- [1: Specify the Save Location](#1-specify-the-save-location)
+- [2: Set up the Model](#2-set-up-the-model)
+- [3: Add a Route to Access the Files](#3-add-a-route-to-access-the-files)
+- [4: Test](#4-test)
+- [5: Render an Image](#5-render-an-image)
+- [6: Put a Form on your Page](#6-put-a-form-on-your-page)
+- [7: Add a View to Receive the Form and Save the Model](#7-add-a-view-to-receive-the-form-and-save-the-model)
 
 
-### Accessing Groups and Permissions
+## Overview
 
-The `User` model has two many-to-many fields: groups and permissions. You can access these on the User object using the ORM. Note that `user_permissions` only include permissions assigned to that individual user, and not permissions that user has as part of a group. However, `has_perm` will check if the given permission is among the group.
+Web applications often allow users to upload files. This document covers how to allow users to upload files and save them alongside our application on a server. If you're using cloud hosting, you may want to look at alternative ways of storing files which separate the files from the application. Look at the official docs for more info: [File Uploads](https://docs.djangoproject.com/en/3.1/topics/http/file-uploads/), [ImageField](https://docs.djangoproject.com/en/3.1/ref/models/fields/#django.db.models.ImageField), [FileField](https://docs.djangoproject.com/en/3.1/ref/models/fields/#django.db.models.FileField). You may also look at the different [mime types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types).
 
-- `user.groups.set([group_list])` set the groups
-- `user.groups.add(group, group, ...)` add to a group
-- `user.groups.remove(group, group, ...)` remove from group
-- `user.groups.clear()` remove from all groups
-- `user.user_permissions.set([permission_list])` set permissions
-- `user.user_permissions.add(permission, permission, ...)` add permissions
-- `user.user_permissions.remove(permission, permission, ...)` remove permissions
-- `user.user_permissions.clear()` clear all user permissions
-- `user.has_perm(permission_code)` check if a user has a permission, either in user_permissions or in one of their groups
+
+## 1: Specify the Save Location
+
+In your project's `settings.py`, set the following variables.
 
 ```python
-from django.contrib.auth.models import User, Group, Permission
-
-# add a user to a group
-group = Group.objects.get(name='commenters')
-user.groups.add(group)
-user.save()
-
-# add a permission to a group
-permission = Permission.objects.get(codename='change_comment')
-group.permissions.add(permission)
-group.save()
-
-# check if a user has a permission
-if user.has_perm('blog.add_comment'):
-    # ...
-
-
-# check if a user is in a group
-if user.groups.filter(name='commenters').exists():
-    # ...
+MEDIA_URL = '/uploaded_files/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
 ```
 
-### Using Default Model Permissions
-```py
-user.has_perm('app_name.command_model_name')
-# Note that app_name is the app_name you defined in app.urls.py.
-# 'command_model' needs to be all lowercase.
+## 2: Set up the Model
 
-# Example
-user.has_perm('todos.add_todo')
-user.has_perm('todos.change_todo')
-user.has_perm('todos.delete_todo')
-```
-
-### Changing Passwords
-
-You can change a user's password using `set_password` in Python or `changepassword` in the terminal. You can also change a user's password in the admin panel.
+Given the settings shown here, files will be saved to `<project name>/uploaded_files/images`.
 
 ```python
-from django.contrib.auth.models import User
-user = User.objects.get(username='jane')
-user.set_password('newpassword')
-user.save()
-``` 
-
-```
-python manage.py changepassword jane
+from django.db import models
+class MyModel(models.Model):
+    my_image = models.ImageField(upload_to='images/')
 ```
 
-## Authentication, Login, & Logout
+## 3: Add a Route to Access the Files
 
-To log a user in, we can use a form to post the username and password to a view. The `authenticate` function verifies their username and password are correct. If they are, it returns the user. If they aren't, it returns `None`. After verifying that the username and password match, we can log a user in using `login`.
+In your project's `urls.py`, add the following line at the bottom. This will give the user the ability to access the file statically. Note that there's built-in access restriction, so anyone with a valid link will be able to view and download the associated file.
 
 ```python
-from django.contrib.auth import authenticate, login
-
-def mylogin(request):
-    # retrieve the variables from the form submission
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        # redirect to a success page
-    else:
-        # return an 'invalid login' error message
+from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+urlpatterns = [
+   ...
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
-Logging out a user is even simpler.
+## 4: Test
+
+At this point, it's best to register your model with the admin panel, go to your admin panel, upload a file, make sure that the file appears in the directory you expected and that the link to the file works.
+
+## 5: Render an Image
+
+Once you have a few instances of your model saved, you can use the `url` property on the `ImageField` to render the image inside the template or create a link to it.
+
+```html
+<!-- display the image-->
+<img src="{{image.url}}"/>
+
+<!-- create a link -->
+<a href="{{image.url}}">{{image.name}}</a>
+```
+
+## 6: Put a Form on your Page
+
+If we want to let users upload images, we can create a form with `input` `type="file"`. Notice the `enctype` on the `form`.
+
+```html
+<form action="<myurl>" method="POST" enctype="multipart/form-data">
+    <!-- ... -->
+    <input type="file" name="my_image" accept="image/*" required>
+    <button type="submit">submit</button>
+</form>
+```
+
+## 7: Add a View to Receive the Form and Save the Model
 
 ```python
-from django.contrib.auth import logout
-
-def logout_view(request):
-    logout(request)
-    # redirect to a success page.
+from .models import MyModel
+def upload_image(request):
+    my_image = request.FILES['my_image']
+    model = MyModel(..., my_image=my_image)
+    model.save()
 ```
 
-## Authorization
-
-In other views, we can check if a user is logged in by checking the `is_authenticated` field.
-
-```python
-def otherview(request):
-    if request.user.is_authenticated:
-        # do something for authenticated users.
-    else:
-        # do something else for anonymous users.
-```
-
-If you want to restrict access to users with particular permissions, use `has_perm`.
-
-```python
-def otherview(request):
-    if request.user.has_perm('blog.add_comment'):
-        # do something for users with this permision
-    else:
-        # do something for everyone else
-```
-
-### @login_required
-
-Django comes with a built-in decorator which can check if a user is logged in. If the user is logged in, the execution of the view coninues unabated. If not, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-LOGIN_URL). You can read more [here](https://docs.djangoproject.com/en/2.0/topics/auth/default/#the-login-required-decorator).
-
-```python
-from django.contrib.auth.decorators import login_required
-
-@login_required
-def my_view(request):
-    ...
-```
-
-### @permission_required
-
-Like `@login_required`, if this fails, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-LOGIN_URL).
-You can read more [here](https://docs.djangoproject.com/en/2.0/topics/auth/default/#the-permission-required-decorator).
-
-```python
-from django.contrib.auth.decorators import permission_required
-
-@permission_required('polls.can_vote')
-def my_view(request):
-    ...
-```
-
-### @user_passes_test(f)
-
-The `@users_passes_test` decorator takes a function which is given a user. That function can then return `True` or `False` whether that user should be allowed in. Like the others, if this fails, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-LOGIN_URL). You can read more [here](https://docs.djangoproject.com/en/2.0/topics/auth/default/#limiting-access-to-logged-in-users-that-pass-a-test).
-
-
-```python
-from django.contrib.auth.decorators import user_passes_test
-
-def email_check(user):
-    return user.email.endswith('@example.com')
-
-@user_passes_test(email_check)
-def my_view(request):
-    ...
-```
-
-## Class-based Views and Mixins
-If you're using a class based view, such as extending Django's generic views, you *cannot use decorators*. (Why? Because decorators are *functions that wrap functions*, so you can't use them for classes.
-
-Instead, you can use **mixins**. The following mixins do the same things as the decorators above. Make sure to follow the syntax in how to use them.
-
-### LoginRequiredMixin
-```py
-from django.contrib.auth.mixins import LoginRequiredMixin
-
-class MyView(LoginRequiredMixin, View):
-    login_url = '/login/'
-    redirect_field_name = 'redirect_to'
-```
-
-### PermissionRequiredMixin
-```py
-from django.contrib.auth.mixins import PermissionRequiredMixin
-
-class MyView(PermissionRequiredMixin, View):
-    permission_required = 'polls.can_vote'
-    # Or multiple of permissions:
-    permission_required = ('polls.can_open', 'polls.can_edit')
-```
-
-### UserPassesTestMixin
-```py
-from django.contrib.auth.mixins import UserPassesTestMixin
-
-class MyView(UserPassesTestMixin, View):
-
-    def test_func(self):
-        return self.request.user.email.endswith('@example.com')
-```
-**test_func()** is the function your user has to pass. Make sure it is named **test_func()** for it to work with the mixin.
-
-
-## Extending the User Model
-
-If you want to have a custom user model, you should create one **when you start a project**. It's much more difficult to change once you already have users in your database. You can read more [here](https://docs.djangoproject.com/en/2.0/topics/auth/customizing/#auth-custom-user).
 
