@@ -7,6 +7,7 @@ let app = new Vue({
         subtitle:'',
         facebook:'',
         instagram:'',
+        banner:''
 
         
 
@@ -17,7 +18,7 @@ let app = new Vue({
            
            
             let response = await axios.get(url)
-            console.log(response)
+            console.log(response)  
         
 
             app.description = response.data.player[0].strDescriptionEN
@@ -25,6 +26,7 @@ let app = new Vue({
             app.subtitle = response.data.player[0].strTeam
             app.facebook = "https://" + response.data.player[0].strFacebook
             app.instagram = "https://www." + response.data.player[0].strInstagram
+            app.banner= response.data.player[0].strBanner
 
             this.firstName = ''
             this.lastName = ''

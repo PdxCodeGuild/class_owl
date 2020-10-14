@@ -14,7 +14,11 @@
 </head>
 <body>
     <div id="app">
-        <header class="header"><img src="./sports.jpg_fit=scale" alt="sports_logo"></header>
+        <div id="banner">
+            <div class="content">
+              <h1>A Players Guide</h1>
+            </div>
+          </div>
         <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">FIRST & LAST NAME</span>
@@ -25,12 +29,12 @@
         </div>
         <div v-if="description" class="card">
             <div class="card-body">
+              <img :src="banner" alt="">
               <h3 class="card-title">{{title}}</h5>
               <h5 class="card-subtitle mb-2 text-muted">{{subtitle}}</h6>
               <p class="card-text">{{description}}</p>
               <a :href="facebook" target="blank" class="cardlink">facebook</a>
               <a :href="instagram" target="blank" class="cardlink2">instagram</a>
-
             </div>
         </div>
     </div>
