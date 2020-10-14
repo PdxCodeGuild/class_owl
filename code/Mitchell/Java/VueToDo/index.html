@@ -3,33 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Todo List</title>
-    <!-- Add your styles here! -->
-    <link rel="stylesheet" href="style.css" />
+    <title>Tasks</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="main.js"></script>
 </head>
 <body>
-    <div id="app">
-        <h1>Timmy's Topsy Turvy Task Table</h1>
-        <div>
-            <input v-model="message" type="text" name="gobble" id="gobble">
-            <button id="addtask" v-on:click="addtask()">Submit</button> 
-        </div>
-        <h4>Task</h4>
-        <div class="card">
-            <div v-for="(todo, index) in TuDoList" class="dummyToDo">
-                <p v-bind:class="{complete:todo.completed}">
-                    {{todo.task}}
-                </p>
-                <button v-on:click="todo.completed=true">Complete</button>
-                <button v-on:click="deleteTask(index)" class="delete">Delete</button>
+    <main id="app" v-on:keypress.13="addTask()">
+        <class class="input-items"></class>
+            <h3>Task list maker</h3>
+            <input v-model ='userInput' type="text" placeholder="write task">
+            <div>
+                <button v-on:click = "addTask()">Add</button>
+                <button v-on:click= "omit()">Remove</button>
             </div>
         </div>
-    </div>
-
-    <!-- Include Vue from a CDN of your choice, I chose unpkg -->
-    <script src="https://unpkg.com/vue"></script>
-    <!-- Include your code here... -->
-    <script src="main.js"></script>
+        <div >
+                <div class="tasks">
+                    <h3>Tasks</h3>
+                    <ul v-for="(item,index) in tasks">
+                        <li>
+                            <div class="taskslist">
+                                {{item.userInput[0]}}
+                                <button v-on:click="taskDone(index)"> done </button>
+                                <button v-on:click="remove(index)"> omit </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="done">
+                    <h3>Complete</h3>
+                    <ul v-for = "(item,index) in completedTask">
+                        <li>
+                            <div class="taskslist">
+                                <s>{{item}}</s><button v-on:click="removeItem(index)">X</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </main>
 </body>
 </html>

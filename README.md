@@ -22,6 +22,8 @@ Thanksgiving -- Nov 26, 2020
 * Lab 07 -- Quote API
 * Lab 09 -- Vue Todo
 * Lab 10 -- Vue Calculator
+* Lab 11 -- Vue Quotes API
+* Lab 12 -- Vue Any API
 
 ## HTML/CSS labs assigned
 * Lab 01 -- Bio
