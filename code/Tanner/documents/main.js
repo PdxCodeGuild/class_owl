@@ -1,0 +1,1 @@
+let click = addEventListener(click, "hello")
