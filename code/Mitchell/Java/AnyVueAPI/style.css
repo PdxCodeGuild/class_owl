@@ -1,0 +1,12 @@
+h2 {
+    text-emphasis-color: red;
+    color: red
+}
+
+body {
+    background-image: url("https://i.pinimg.com/originals/31/0f/49/310f499a9827478cfe263a3432b1ef1d.jpg");
+    background-position: bottom; /* Center the image */
+    display: flex;
+    justify-content: center;
+   }
+

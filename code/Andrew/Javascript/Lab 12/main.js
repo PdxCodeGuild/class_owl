@@ -146,14 +146,14 @@ let prg = new Vue({
         setTimeout(function(){
             // prg.dumpsterFire = false
         }, 5000)
-        let a = fetch('https://api.taylor.rest/')
-        .then(function(response){
-            return response.json()
-        })
-        .then(function(data){
-            console.log(data)
-            prg.quote = data.quote
-        })
+        // let a = fetch('https://api.taylor.rest/')
+        // .then(function(response){
+        //     return response.json()
+        // })
+        // .then(function(data){
+        //     console.log(data)
+        //     prg.quote = data.quote
+        // })
 
         
         

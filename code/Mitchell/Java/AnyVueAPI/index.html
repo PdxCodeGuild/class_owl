@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have Yet to Decide</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <h2 class="info">Pokemon Number to Name? There are 932 of them! Write in a number and see who you draw!</h2>
+        <input v-model="ichooseyou"></input>
+        <button v-on:click="PokePull()" class="selected">I Choose ...</button>
+        <h2 class="pokeName">
+            {{pokeName}}
+        </h2>
+        
+    </div>
+</body>
+</html>
