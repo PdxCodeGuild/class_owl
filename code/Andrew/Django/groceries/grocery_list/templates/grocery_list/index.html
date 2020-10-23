@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'grocery_list/style.css' %}">
+</head>
+<body>
+
+    <div class="whole">
+        
+        
+        <div class="top">
+            <h2>Grocery List:</h2>
+            
+            <form action="{% url 'grocery_list:add_item' %}" method="post">
+                {%csrf_token%}
+                <input type="text" name="g_item" placeholder="Add Item" required>
+                
+                <input type="submit" value="Submit">
+            </form>
+            
+        </div>
+
+        <div class="item">
+
+            
+            {% for item in grocery_items%}
+            <div class="item-body"> 
+
+                <div class="item-body-text">
+                    <li>{{item.description}}
+                    </li>
+                    <p>
+                        
+                        <strong>Added:</strong>  <br>  {{item.created_date}}
+                    </p>
+                    
+                    {% if item.completed%}
+                    
+                    <p> <strong>Completed:</strong>  <br> {{item.completed_date}}</p>
+                    
+                    {% endif %}
+                    
+                </div>
+
+                <button><a class="completer" href="{% url 'grocery_list:completed_item' item.id %}">
+                    Complete</a>
+                </button>
+
+
+                <button> <a class="deleter" href="{% url 'grocery_list:delete_item' item.id %}">
+                    Delete</a>
+                </button>
+                
+
+                
+                
+                
+            </div>
+            {% endfor %}
+        </div>
+            
+            
+        </div>
+    </body>
+    </html>
