@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+</head>
+<body>
+    <h1>{{ message }}</h1> 
+
+    <form action="{% url 'grocery:save_Item' %}" method="post">
+        {% csrf_token %}
+        <label for="item">what want?</label>
+        <input id="item" type="text" name="grocery_item">
+        <input type="number" min="1" max="100" name="amount" placeholder="How many?">
+        <input type="submit">
+
+
+    </form>
+</body>
+</html>
