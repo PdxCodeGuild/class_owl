@@ -4,7 +4,7 @@ import random
 rpschoices = ['rock','paper','scissors']
 #funky function time
 def rpsfunktion(user_input,rps_choice):
-    rps_choice = rnadom.choice(rpschoices)
+    rps_choice = random.choice(rpschoices)
     if user_input == 'rock':
         if rps_choice == 'paper':
             print('You lost')
