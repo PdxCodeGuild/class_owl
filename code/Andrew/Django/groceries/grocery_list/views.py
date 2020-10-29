@@ -22,10 +22,12 @@ def index(request):
 def add_item(request):
     form = request.POST
     
-    grocery_item = Grocery_item(description = form['g_item'])
+    grocery_item = Grocery_item(description = form['g_item'], created_date = timezone.now())
 
     print(grocery_item)
-    grocery_item.save()
+    if grocery_item.description.strip() != "":
+        grocery_item.save()
+        
     return HttpResponseRedirect(reverse('grocery_list:index'))
 
 
