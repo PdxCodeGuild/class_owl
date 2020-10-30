@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+{% for hoot in hoots %}
+<div class="card blue-grey darken-1">
+    <div class="card-content white-text">
+      <span class="card-title">{{ hoot.title }}</span>
+      <p>{{  hoot.body }}</p>
+      <p>Likes: {{ hoot.likes }}</p>
+    </div>
+    <div class="card-action">
+      <a href="#">View Hoot</a> 
+    </div>
+</div>  
+{% endfor %}
+
+{% endblock %}
