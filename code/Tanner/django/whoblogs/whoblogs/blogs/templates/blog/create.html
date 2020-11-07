@@ -1,0 +1,28 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<div class="container">
+    <form action="{% url 'blog:create' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-field col s6">
+            <textarea name="title" id="title" type="text" class="validate" required></textarea>
+            <label for="title">Title</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea name="body" id="body" type="text" class="validate" rows="20" required style="resize: none; height: 40vh"></textarea>
+            <label for="body">Body</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea name="image" id="image" type="text" class="validate"></textarea>
+            <label for="image">Image URL</label>
+        </div>
+        <p>
+            <label>
+                <input type="checkbox" name="publish"/>
+                <span>Publish</span>
+            </label>
+        </p>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

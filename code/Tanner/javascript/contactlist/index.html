@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+        integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+        crossorigin="anonymous"></script>
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css"
+        integrity="sha512-6eqPOYQmUqGh2hFSAKha1dbQlMq1OaxityCVG80dkvGmmLdsAdrAUkgBKDV4fpAT/xOUdkB6uupudSbCwyoJPQ=="
+        crossorigin="anonymous" />
+
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Contacts App</h1>
+        </header>
+        <div id="add-contact-form">
+            <input placeholder="First Name" v-model="firstName" class="input is-primary" type="text" name="first-name"
+                id="first-name">
+            <input placeholder="last Name" v-model="lastName" class="input is-primary" type="text" name='last-name'
+                id='last-name'>
+            <input placeholder="Email" v-model="email" class="input is-primary" type="text" name="email" id="email">
+            <input placeholder="Phone Number" v-model="phone" class="input is-primary" type="text" name="phone-number"
+                id="phone-number">
+            <button id="add-contact" v-on:click="addContact()">Add Contact</button>
+        </div>
+        <main class="container">
+            <div class="card" v-for="(contact, index) in contacts">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        {{contact.name}}
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        {{contact.phone}}
+                        <br>
+                        {{contact.email}}
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a v-on:click="editContact(index)" class="card-footer-item">Edit</a>
+                    <a v-on:click='deleteContact(index)' class="card-footer-item">Delete</a>
+                </footer>
+            </div>
+        </main>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <input placeholder="First Name" v-model="firstName" class="input is-primary" type="text"
+                    name="first-name" id="first-name">
+                <input placeholder="last Name" v-model="lastName" class="input is-primary" type="text" name='last-name'
+                    id='last-name'>
+                <input placeholder="Email" v-model="email" class="input is-primary" type="text" name="email" id="email">
+                <input placeholder="Phone Number" v-model="phone" class="input is-primary" type="text"
+                    name="phone-number" id="phone-number">
+                <button id="add-contact" v-on:click="saveContact()">Save Contact</button>
+            </div>
+            <button v-on:click="toggleModal()" class="modal-close is-large" aria-label="close"></button>
+        </div>
+    </div>
+</body>
+
+</html>
