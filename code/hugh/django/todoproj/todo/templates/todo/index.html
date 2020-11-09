@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+</head>
+<body>
+    <h1>Welcome to the Get it Done App</h1>
+
+    <form action="{% url 'todo:save_todo' %}" method="post">
+        {% csrf_token %}
+        <label for="todo">What Do?</label>
+        <input id="todo" type="text" name="todo_task" />
+        <input type="number" min="0" max="10" name="priority" />
+        <input typer="Date" name="due_date" />
+        <input type="submit" />
+    </form>
+
+    <ul>
+        {% for todo in todos %}
+        <li>
+            <div>
+                <h3>{{ todo.task }} <a href="{% url 'todo:delete' todo.id %}">&times;</a></h3>
+                <p>Priority {{ todo.priority }}</p>
+                <a href="{% url 'todo:toggle_complete' todo.id %}">Completed: {{ todo.completed }}</a>
+                <p>Due Date: {{ todo.due_date }}</p>
+                </a>
+                    {% if todo.completed %}
+                    <p>Completed on {{ todo.date_completed }}</p>
+                    {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

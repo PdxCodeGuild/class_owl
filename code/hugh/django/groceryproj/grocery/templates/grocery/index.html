@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'grocery/styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery</title>
+    <link rel="stylesheet" href='C:\Users\hughw\Desktop\pdxcode\PDX Course\class_owl\code\hugh\django\groceryproj\grocery\templates\grocery\static\styles.css'
+</head>
+<body>
+    <h1>Welcome to the Grocery App! </h1>
+    <h2>Add groceries and quantities you need by which date and for which recipe!</h2>
+    <h6>Totally not a rip off of The ToDo App</h6>
+
+    <form action="{% url 'grocery:save_grocery' %}" method="post">
+        {% csrf_token %}
+        <label for="grocery">What Groceries would you like?</label>
+        <input id="grocery" type="text" name="grocery_task" />
+        <label for="gnumber">How many do you need?</label>
+        <input type="number" min="0" max="100" name="gnumber" />
+        <label for="recipe">What Recipe is this for?</label>
+        <input id="recipe" type="text" name="recipe" />
+        <input type="Date" name="due_date" />
+        <input type="submit" />
+    </form>
+
+    <ul>
+        {% for grocery in grocerys %}
+        <li>
+            <div>
+                <h3>{{ grocery.grocery_task }} <a href="{% url 'grocery:delete' grocery.id %}">&times;</a></h3>
+                <p>Number {{ grocery.gnumber }}</p>
+                <a href="{% url 'grocery:toggle_complete' grocery.id %}">Completed: {{ grocery.completed }}</a>
+                <p>Needed By Date: {{ grocery.due_date }}</p>
+                </a>
+                    {% if grocery.completed %}
+                    <p>Purchased on {{ grocery.date_completed }}</p>
+                    {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
