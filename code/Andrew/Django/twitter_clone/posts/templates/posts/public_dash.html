@@ -1,0 +1,28 @@
+{% extends 'posts/base.html' %}
+
+{% block title %}
+{{author}} Pubilc Dashboard
+{% endblock %}
+
+{% block content%}
+
+    <h2>This is the public dash</h2>
+    <p>
+        Current User Profile: {{ user}}
+    </p>
+
+    {% for chirp in chirps%}
+        {{chirp.message}}
+        
+        <div>
+            {{chirp.likes}}
+            {{chirp.created_at}}
+            {{chirps.user}}
+        </div>
+
+    {% endfor %}
+
+
+
+
+{% endblock %}

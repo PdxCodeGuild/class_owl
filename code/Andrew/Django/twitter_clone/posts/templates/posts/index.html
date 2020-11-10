@@ -1,0 +1,53 @@
+{% extends 'posts/base.html' %}
+{% load static%}
+
+
+{%block title%}
+Chirper
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<!-- <h2>Recent Tweets</h2> -->
+
+{% for chirp in chirps%}
+<div class="card">
+    <div class="chirp-message">
+        {{chirp.message}}
+    </div>
+    
+    <div class="chirp-info">
+        <p>
+            Author:
+                <a href="{% url 'posts:public_dash' chirp.id %}">
+                    {{chirp.user}}
+                </a>
+        </p>
+        
+        <p>
+            Likes:
+            {{chirp.likes}}    
+        </p>
+        <p>
+            {{chirp.created_at}}
+        </p>
+    </div>
+    <div class="card-buttons">
+        <button> 
+            <a href="{% url 'posts:likes' chirp.id %}?mood=like">Like</a>
+        </button>
+
+        <button>
+          <a href="{% url 'posts:likes' chirp.id %}?mood=dislike"> Dislike </a>
+        </button>
+    </div>
+
+
+</div>
+
+
+{% endfor %}
+{% endblock %}

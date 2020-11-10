@@ -1,0 +1,31 @@
+{% extends 'urlshr/base.html' %}
+
+{% block content%}
+
+<h3>Enter a URL to be shortened</h3>
+
+<form action="{% url 'urlshr:shorten' %} " method="POST">
+    {% csrf_token%}
+
+    <label for="url"></label>
+    <input type="text" name="url" id="url_input" pattern="((www.)?|)[\w]+.(com|org|edu|net|dev)" placeholder="www.likethis.com" required>
+    <input type="submit" value="Shorten!">
+
+</form>
+
+<ul>
+
+{% for url in urls%}
+
+<li>
+<p><a href="{% url 'urlshr:go_to_site' url.id%}" target ="_blank" > {{url.code}}:</a> &tridot;({{url.url}} | Visited: {{url.visited}}    )</p>
+
+</li>
+
+
+
+
+{% endfor %}
+
+</ul>
+{% endblock%}

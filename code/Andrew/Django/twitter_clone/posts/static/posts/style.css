@@ -1,0 +1,125 @@
+:root{
+    --color1: #a9cef4;
+    --color2: #36494e;
+    --color3: #000000;
+    --color4: #7ea0b7;
+    --color5: #597081;
+}
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background: rgb(239, 242, 255);
+}
+
+
+/* NAV BAR CSS */
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-bottom: 3px solid rgb(49, 49, 49);
+    background: var(--color1);
+}
+h2> a{
+    text-decoration: none;
+    color: var(--color2);
+}
+
+#logo{
+    margin: 1rem .25rem;
+    padding: .25rem;
+    color: var(--color2);
+    border: 1px solid black;
+    border-radius: 4px;
+    background: white;
+}
+nav{
+    display: flex;
+    padding: .25rem;
+    margin: 0.5rem;
+
+}
+nav >h5{
+    margin: 0.25rem;
+}
+
+h5 >a{
+    color: rgb(167, 109, 221);
+    text-decoration: none;
+    background: var(--color3);
+    border-radius: 4px;
+    padding: .25rem;
+}
+
+h5 :hover{
+    background: white;
+}
+
+
+/*  NAV BAR END */
+
+
+
+/* Base */
+.app{
+    margin: .1rem .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    
+}
+
+/* Base End */
+
+/* Index Page */
+
+.card{
+    border: 1px solid black;
+    background: rgba(240, 240, 240, 0.712);
+    width: 90%;
+    border-radius: 4px;
+    margin: auto;
+    padding: .25rem;
+    box-shadow: 7px 4px 5px 0px rgba(0,0,0,0.27);
+}
+
+.chirp-message{
+    border: 1px solid black;
+    width: 75%;
+    background: white;
+    height: 75px;
+    word-wrap: break-word;
+
+    margin: auto;
+    text-align: center;
+}
+
+.chirp-info{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.chirp-info>p >a{
+    text-decoration: none;
+    color: var(--color3)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Index Page End */

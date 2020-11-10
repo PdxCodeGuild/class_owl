@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'posts/style.css' %}">
+        <script defer src="{% static 'posts/main.js' %}"></script>
+    
+    
+    <title>{% block title%} {% endblock %}</title>
+</head>
+<body>
+    <div class="hero">
+        <div id="logo">
+            <h2>
+                <a href="{% url 'posts:index'%}">
+                    Definitely Not Twitter
+                </a>
+            </h2>
+        </div>
+        
+        <nav>
+            
+            <h5>
+                <a href="{% url 'posts:index' %}">
+                    Home
+                </a>
+            </h5>
+            {% if not user.is_authenticated%}
+            <h5>
+                <a href="{% url 'users:log_in' %}">
+                    Log In
+                </a>
+            </h5>
+            <h5>
+                <a href="{% url 'users:index'  %}">
+                    Sign Up
+                </a>
+            </h5>
+            
+            {% else%}
+            <h5>
+                <a href="{% url 'users:log_out' %}">
+
+                    Sign Out
+                </a>
+            </h5>
+            <h5>
+                <a href="{% url 'posts:dashboard' %}">
+                    Dashboard
+                </a>
+            </h5>
+            {% endif %}
+
+        </nav>
+    </div>
+    <div id="app" class="app">
+
+    {% block content%}
+    {% endblock %}
+
+    </div>
+    
+    
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
