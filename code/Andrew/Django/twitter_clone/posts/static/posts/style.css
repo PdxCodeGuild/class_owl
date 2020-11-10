@@ -69,9 +69,20 @@ h5 :hover{
 .app{
     margin: .1rem .5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr ;
-    
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+footer{
+    position: sticky;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.76);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+footer> *{
+    margin: 0 1rem;
+    color: black;
 }
 
 /* Base End */
@@ -80,10 +91,10 @@ h5 :hover{
 
 .card{
     border: 1px solid black;
-    background: rgba(240, 240, 240, 0.712);
+    background: var(--color4);
     width: 90%;
     border-radius: 4px;
-    margin: auto;
+    margin: .25rem auto;
     padding: .25rem;
     box-shadow: 7px 4px 5px 0px rgba(0,0,0,0.27);
 }
@@ -91,28 +102,144 @@ h5 :hover{
 .chirp-message{
     border: 1px solid black;
     width: 75%;
-    background: white;
-    height: 75px;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.788);
+    height: 100px;
     word-wrap: break-word;
-
     margin: auto;
     text-align: center;
+    padding: .25rem;
+    border-radius: 4px;
+    color: rgb(37, 37, 37);
+    
 }
 
 .chirp-info{
     display: flex;
     justify-content: space-evenly;
+    color: rgb(238, 238, 238);
 }
 
 .chirp-info>p >a{
     text-decoration: none;
-    color: var(--color3)
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.card-buttons{
+    display: flex;
+    justify-content: center;
+    
+}
+.card-buttons >a> button{
+    width: 60px;
+    border: 1px solid var(--color1);
+    border-radius: 2px;
+    margin: .25rem;
+    padding: .25rem;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+.card-buttons> a{
+    text-decoration: none;
+    color: var(--color3);
+    cursor: default;
+}
+
+
+/* Index Page End */
+
+
+/* Create User Index */
+
+.user-body{
+    grid-column: 1/4;
+    grid-row: 1/4;
+    height: 100vh;
+    padding: 1rem;
+}
+.error{
+    color: red;
+    margin: .5rem;
+    padding: .25rem;
+}
+.taken{
+    color: red;
+    margin: .5rem;
+    padding: .25rem;
+}
+.form{
+    border: 1px solid black;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: .2rem;
+    margin: 0 .5rem;
+    border-radius: 4px;
+    background: var(--color4);
+}
+
+form> *{
+    justify-content: space-evenly;
+    font-weight: bold;
+    color: black;
+    padding: .1rem;
+    margin: 2.5rem .25rem;
+    border-radius: 2px;
+    border: none;
+}
+
+
+/* Create User Index End */
+
+/* Private Dashboard */
+
+.chirp-dash{
+    border: 1px solid black;
+    border-radius: 2px;
+    background: rgb(64, 59, 90);
+    color: white;
+    width: 25%;
+    word-wrap: break-word;
+    margin: .25rem;
+}
+
+.chirp-dash> p{
+    border: 1px solid white;
+    text-align: center;
+    background: rgb(141, 130, 197);
+
+    width: 50%;
+    margin: .25rem auto;
+    padding: .25rem;
+}
+#submit{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+/* Private Dashboard End */
+
+
+/* Public Dash */
+
+.posts-body-public{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
+}
+.posts-body-public> *{
+    margin: 1rem;
 }
 
 
 
 
 
+/* Public Dash ENd */
 
 
 
@@ -120,6 +247,3 @@ h5 :hover{
 
 
 
-
-
-/* Index Page End */

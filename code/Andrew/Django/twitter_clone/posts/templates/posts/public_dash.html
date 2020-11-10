@@ -6,23 +6,38 @@
 
 {% block content%}
 
-    <h2>This is the public dash</h2>
-    <p>
-        Current User Profile: {{ user}}
-    </p>
+    <div class="posts-body-public">
 
-    {% for chirp in chirps%}
-        {{chirp.message}}
-        
-        <div>
-            {{chirp.likes}}
-            {{chirp.created_at}}
-            {{chirps.user}}
+        <div class="dash-hero">
+            <h2>This is {{author}}'s public dashboard</h2>
+
         </div>
 
-    {% endfor %}
+        <div class="chirps">
+
+            
+            {% for chirp in chirps%}
 
 
+                    <div class="chirp-dash">
 
+                        
+                        <p>
+                            {{chirp.message}}
+
+                        </p>
+                        <div class="chirp-info">
+                            <p>
+                                Likes: {{chirp.likes}}
+                            </p>
+                            <p>
+                                {{chirp.created_at}}
+                            </p>
+                        </div>
+                    </div>
+            {% endfor %}
+
+        </div>
+    </div>
 
 {% endblock %}

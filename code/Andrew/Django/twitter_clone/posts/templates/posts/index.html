@@ -36,13 +36,17 @@ Chirper
         </p>
     </div>
     <div class="card-buttons">
-        <button> 
-            <a href="{% url 'posts:likes' chirp.id %}?mood=like">Like</a>
-        </button>
+        <a href="{% url 'posts:likes' chirp.id %}?mood=like">
+            <button> 
+                Like
+            </button>
+        </a>
 
-        <button>
-          <a href="{% url 'posts:likes' chirp.id %}?mood=dislike"> Dislike </a>
-        </button>
+        <a href="{% url 'posts:likes' chirp.id %}?mood=dislike"> 
+            <button>
+              Dislike 
+            </button>
+        </a>
     </div>
 
 

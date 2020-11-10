@@ -8,7 +8,8 @@ from django.utils import timezone
 
 def index(request):
     
-    chirps = Chirp.objects.order_by('-created_at')
+    chirps = Chirp.objects.order_by('-created_at')[0:6]
+
     user = request.user
     context = {
         'chirps': chirps,
@@ -34,6 +35,9 @@ def create_post(request):
     form = request.POST
     user = request.user
     message = form['message']
+
+    if len(message) > 250:
+        return redirect('posts:dashboard')
 
     new_chirp = Chirp(user = user, message = message, created_at = timezone.now())
 

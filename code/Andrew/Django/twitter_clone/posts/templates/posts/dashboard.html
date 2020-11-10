@@ -6,50 +6,54 @@ Dashboard
 {% endblock%}
 
 {% block content%}
-
-<h1>THIS IS THE DASHBOARD</h1>
-
-<div class="inputs">
-    
-    <form action="{% url 'posts:create_post' %}" method="POST">
-        {% csrf_token %}
-        <textarea required maxlength="250" name="message" id="message" cols="40" rows="10" placeholder="Enter Your Chirp!" style="resize: none;" ></textarea>
-
-        <input type="submit" value="Chirp!">
+<div class="posts-body">
 
 
+    <h1>{{user}}'s Dashboard</h1>
 
-    </form>
+    <div class="inputs">
+        
+        <form action="{% url 'posts:create_post' %}" method="POST">
+            {% csrf_token %}
+            <textarea required maxlength="250" name="message" id="message" cols="40" rows="10" placeholder="Enter Your Chirp!" style="resize: none;" ></textarea>
+
+            <input id="submit" type="submit" value="Chirp!">
 
 
+
+        </form>
+
+
+    </div>
+
+    <div class="chirps">
+
+        {% for chirp in chirps%}
+            <div class="chirp-dash">
+
+                <p>
+                    {{chirp.message}}
+                </p>
+
+                <div class="chirp-info">
+
+                    <p> Likes: <span>{{chirp.likes}}</span></p>
+                    <p>{{chirp.created_at}}</p>
+                </div>
+                <div class="delete">
+                    <button>
+                        <a href="{% url 'posts:delete_post' chirp.id%}">
+                            Delete
+                        </a>
+                    </button>
+                </div>
+
+            </div>
+        {% endfor %}
+
+
+
+    </div>
 </div>
-
-<div class="chirps">
-
-    {% for chirp in chirps%}
-
-        {{chirp.message}}
-
-        <div>
-
-            <p> Likes: <span>{{chirp.likes}}</span></p>
-            <p>Posted by: {{chirp.user}} </p>
-            <p>{{chirp.created_at}}</p>
-        </div>
-        <div class="delete">
-            <button>
-                <a href="{% url 'posts:delete_post' chirp.id%}">
-                    Delete
-                </a>
-            </button>
-        </div>
-
-
-    {% endfor %}
-
-
-
-</div>
-
 
 {% endblock %}

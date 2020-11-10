@@ -6,12 +6,13 @@
 
 {% block content %}
 
-    <div>
-        <form action="" method="POST">
+    <div class="user-body">
+        <form class="form" action="" method="POST">
             {% csrf_token %}
 
             <label for="username"> Enter Username</label>
             <input type="text" name="username" id="username">
+            <label for="password"> Enter Password</label>
             <input type="password" name="password" id="password">
 
             <input type="submit" value="Log In">

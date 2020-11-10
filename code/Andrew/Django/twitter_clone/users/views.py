@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from .models import CreateUser
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -7,17 +8,28 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def create_user(request):
-
+    error = ''
+    taken = ''
     form = request.POST
-    username = form['username']
-    password = form['password']
-    email = form['email']
-    
-    print(username, password, email)
-    full_user = User.objects.create_user(username = username, password=password, email=email)
+    username = form.get('username')
+    password = form.get('password')
+    email = form.get('email')
 
-    print(full_user.password)
-    return redirect('users:log_in')
+    if username == None:
+        return render(request, 'users/index.html', {'error': 'Invalid Setup!'})
+
+    elif len(username)> 50 or len(password)>23 or password =='' or username == '':
+        return render(request, 'users/index.html', {'error': 'Invalid Setup!'})
+
+    is_taken = User.objects.get(username =username)
+    if is_taken == None:
+
+        full_user = User.objects.create_user(username = username, password=password, email=email)
+        return redirect('users:log_in')
+
+    return render(request, 'users/index.html', {'taken': 'Username is taken'})
+
+
 
 
 def index(request):
