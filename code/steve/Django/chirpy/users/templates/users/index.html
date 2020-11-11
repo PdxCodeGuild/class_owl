@@ -1,0 +1,37 @@
+
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+<h1>Welcome to Chirp! </h1>
+    <form action="{% url 'users:signup' %}" method="post" class = "container">
+        {% csrf_token %}
+        <label for="f_name"> First Name </label>
+        <input id="f_name" type="text" name="f_name" />
+
+        <label for="l_name"> Last Name </label>
+        <input id="l_name" type="text" name="l_name" />
+
+        <label for="email"> Email </label>
+        <input id="email" type="text" name="email" />
+
+        <label for="username"> Username </label>
+        <input id="username" type="text" name="username" />
+
+
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" />
+        
+
+        <label for="security_question">Security Question</label>
+        <input id="security_question" type="text" name="security_question" />
+
+        <label for="security_answer">Security Answer</label>
+        <input id="security_answer" type="text" name="security_answer" />
+
+        <input type="submit" value="Signup" class = "btn"/>
+        
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+<h1>Welcome to Chirp! </h1>
+    <form action="{% url 'users:login' %}" method="post" class = "container">
+        {% csrf_token %}
+       
+        <label for="username"> Username </label>
+        <input id="username" type="text" name="username" />
+
+
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" />
+        
+
+        <input type="submit" value="Login" class = "btn"/>
+        
+
+    </form>
+
+{% endblock %}
