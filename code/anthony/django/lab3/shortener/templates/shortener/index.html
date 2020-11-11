@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Shortener
+{% endblock %}
+
+
+{% block content %}
+<h1>Welcome to the shortener</h1>
+{% csrf_token %}
+<div class="form">
+  <input v-model="longURL" type="text">
+  <button @click="postURLS()">Shorten</button>
+</div>
+[[ message ]]
+
+<div v-for="redirect in redirects">
+  <h4><a :href="redirect.code + '/'" target="_blank" @click="redirect.count += 1">[[redirect.count]] --
+      [[redirect.code]] -- [[redirect.url]]</a>
+  </h4>
+</div>
+
+{% endblock %}

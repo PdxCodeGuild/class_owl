@@ -1,0 +1,26 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+{% for hoot in hoots %}
+<div class="row">
+  <div class="card blue-grey darken-1 col m6 offset-m3">
+    <div class="card-image">
+      <img src="{{ hoot.image }}">
+    </div>
+    <div class="card-content white-text">
+      <span class="card-title">{{ hoot.title }}</span>
+      <p>{{ hoot.body }}</p>
+      <p>Likes: {{hoot.likes}}</p>
+    </div>
+    <div class="card-action">
+      <a href="{% url 'blog:detail' hoot.id %}">View Hoot</a>
+      <a href="{% url 'blog:delete' hoot.id %}">Delete</a>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}
