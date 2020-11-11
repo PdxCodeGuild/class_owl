@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Hughter</title>
+</head>
+<body>
+    <h1>Welcome to Hughter! </h1>
+    <h2>Posts are limited to 24 char title and 70 character posts. Refine your speech.</h2>
+    <h6>Totally not a rip off of Twitter</h6>
+
+    <form action="{% url 'hught:save_hught' %}" method="post">
+        {% csrf_token %}
+        <label for="title">Title, limit 24char</label>
+        <input id="title" type="text" name="title" />
+        <label for="body">Post body, limit 70char</label>
+        <input id="body" type="text" name="body" />
+        <input type="submit" value="Click here to submit" />
+    </form>
+
+    <ul>
+        {% for hught in hughts %}
+        <li>
+            <div>
+                <h3>{{ hught.title }} <a href="{% url 'hught:delete_hught' hught_id %}">&times;</a></h3>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

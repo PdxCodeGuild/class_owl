@@ -14,7 +14,7 @@ def index(request):
 def save_grocery(request):
     form = request.POST
     
-    grocery = Grocery(grocery_task=form['grocery_task'], due_date=form['due_date'], recipe=form['recipe'])
+    grocery = Grocery(grocery_task=form['grocery_task'], due_date=form['due_date'], recipe=form['recipe'], )
     grocery.save()
 
     return HttpResponseRedirect(reverse('grocery:index'))

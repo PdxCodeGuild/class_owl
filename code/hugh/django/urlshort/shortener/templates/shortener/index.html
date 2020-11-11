@@ -1,0 +1,20 @@
+{% extends 'shortener/base.html' %}
+
+{% block title %}
+Shortener
+{% endblock %}
+
+{% block cdn %}
+<link rel="stylesheet" href=" ">
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to the URL Shortener</h1>
+{% csrf_token %}
+<div class='form'>
+    <input v-model='longURL' type="text">
+    <button v-on:click = "postURLS()">Submit URL</button>
+</div>
+
+[[message]]
+{% endblock %}
