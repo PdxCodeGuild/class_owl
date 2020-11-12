@@ -12,6 +12,10 @@ let app = new Vue({
             
            
             console.log(numbers)
+        },
+        eq: function(){
+            this.numbers = math.evaluate(this.numbers)
+            
         }
     },
 })

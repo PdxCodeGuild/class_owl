@@ -1,0 +1,23 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+<h1>Welcome to Chirp!</h1>
+
+{% for chirp in chirps %}
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                <span class="card-title">{{ chirp.user }}</span>
+                <p>{{ chirp.message }}</p>
+                </div>
+                <div class="card-action">
+                <a href="#">{{ chirp.likes }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
