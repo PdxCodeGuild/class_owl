@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+</head>
+<body>
+    <h1>Welcome to the jungle</h1>
+
+        <form action="">
+            {% csrf_token %}
+            <label for="todo">What to do?</label>
+            <input id=" type="text" name="todo_task">
+            <input type="submit">
+
+        </form>
+
+    <ul>
+        {% for todo in todos %} 
+        <li>
+            <div>
+            <h3>{{ todo.task }}</h3>
+            <p>Priority {{ todo.priority }}</p>
+            <p>Completed {{ todo.completed }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+   
+</body>
+</html>
