@@ -1,0 +1,58 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<div>
+  <p>You are on the Detail Page</p>
+  <div>
+    <div>
+      <span>{{ Conversation.title }}</span>
+      <div>
+        {% if Conversation.image %}
+        <img src="{{ Conversation.image }}" />
+        {% endif %}
+      </div>
+      <div>
+        <p>{{ Conversation.body }}</p>
+      </div>
+      <div>
+        <a href="{% url 'void:like' %}?opinion=like&interest=conversation&id={{Conversation.id}}">Likes: {{ Conversation.likes }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Comment Form -->
+<div>
+  <div>
+    <form action="{% url 'void:comment' Conversation.id %}" method="POST">
+      {% csrf_token %}
+      <div>
+        <div>
+          <input name="comment_body" id="comment_body" type="text" class="validate" required>
+          <label for="comment_body">Comment</label>
+        </div>
+        <input type="submit" value="Leave Comment">
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- All Comments -->
+{% for comment in Conversation.comment_set.all %}
+<div>
+  <div>
+    <div>
+      <p>{{ comment.body }}</p>
+      <p>{{ comment.author }}</p>
+    </div>
+    <div>
+      <p>{{ comment.posted_date }}</p>
+      <a href="{% url 'void:like' %}?opinion=like&interest=comment&id={{comment.id}}">Likes:
+        {{comment.likes}}</a>
+      <a href="{% url 'void:like' %}?opinion=dislike&interest=comment&id={{comment.id}}"></a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

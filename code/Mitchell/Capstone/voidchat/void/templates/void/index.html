@@ -1,0 +1,26 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<h1>VoidChat</h1>
+<p>You are on the Index Page</p>
+{% for conversation in conversations %}
+<div>
+  <div>
+    <div>
+      <span><a href="{% url 'void:detail' conversation.id %}">{{ conversation.title }}</a></span>
+      <div>
+        {% if conversation.image %}
+        <img src="{{ conversation.image }}" />
+        {% endif %}
+      </div>
+      <div>
+        <p>{{ conversation.body }}</p>
+      </div>
+      <div>
+        <a href="{% url 'void:like' %}?opinion=like&interest=conversation&id={{conversation.id}}">Likes: {{ conversation.likes }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

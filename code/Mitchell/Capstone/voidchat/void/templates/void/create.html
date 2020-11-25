@@ -1,0 +1,38 @@
+
+{% extends 'users/base.html' %}
+
+{% block content %}
+<div>
+  <p>You are on the Create Page</p>
+  <form action="{% url 'void:create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+  <h3>Recordings</h3>
+  <ol id="recordingsList"></ol>
+  <!-- inserting these scripts at the end to be able to use all the elements in the DOM --> 
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <div>
+      <input id="title" type="text" class="validate" name="title" required>
+      <label for="title">Topic</label>
+    </div>
+    <div>
+      <textarea id="body" type="text" class="validate" name="body" required></textarea>
+      <div id="controls">
+    </div>
+      <label for="body">Hashtags</label>
+    </div>
+    <div>
+      <input id="image" type="text" class="validate" name="image">
+      <label for="image">Photo</label>
+    </div>
+    <input id="voicefile" type="file" name="recording_file" accept="audio/*" required>
+    <p>
+      <label>
+        <input type="checkbox" name="publish" />
+        <span>Toss Into Void</span>
+      </label>
+    </p>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+{% endblock %}

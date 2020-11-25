@@ -1,0 +1,23 @@
+{% extends 'users/base.html' %}
+{% block content %}
+{% for conversation in conversations %}
+<div class="row">
+  <p>You are on the dashboard Page</p>
+  <div>
+    <div>
+      <img src="{{ conversation.image }}">
+    </div>
+    <div>
+      <audio controls><source type="audio/wav" src="../../uploaded_files/{{ conversation.voicefile }}"></audio>
+      <span>{{ conversation.title }}</span>
+      <p>{{ conversation.body }}</p>
+      <p>Likes: {{conversation.likes}}</p>
+    </div>
+    <div>
+      <a href="{% url 'void:detail' conversation.id %}">View Void</a>
+      <a href="{% url 'void:delete' conversation.id %}">Delete</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
