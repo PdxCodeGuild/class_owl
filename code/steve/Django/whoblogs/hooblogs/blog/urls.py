@@ -7,5 +7,7 @@ urlpatterns = [
     path('create/', views.create, name='create'),
     path('detail/<int:blog_id>/', views.detail, name='detail'),
     path('delete/<int:blog_id>/', views.delete_blog, name='delete'),
+    path('comment/<int:blog_id>/', views.comment, name='comment'),
+    path('like/', views.like, name='like')
 
 ]
