@@ -10,15 +10,15 @@
             <div class="card-image">
               {% if hoot.image %}
               <img src="{{ hoot.image }}">
-              {% endif %}
-              <span class="card-title">{{ hoot.title }}</span>    
+              {% endif %}  
                 </div>
                 <div class="card-content">
+                <span class="card-title"><a href="{% url 'blog:detail' hoot.id %}">{{ hoot.title }}</a></span>
                 <p>{{ hoot.body }}</p>
                 </div>
                 <div class="card-action">
-                <a href="#">Likes: {{ hoot.likes }}</a>
-                <a href="#">Dislikes:{{ hoot.dislikes }}</a>
+                <a href="{% url 'blog:like' %}?opinion=like&interest=hoot&id={{hoot.id}}">Likes: {{ hoot.likes }}</a>
+                <a href="{% url 'blog:like' %}?opinion=dislike&interest=hoot&id={{hoot.id}}">Dislikes:{{ hoot.dislikes }}</a>
             </div>
           </div>
         </div>

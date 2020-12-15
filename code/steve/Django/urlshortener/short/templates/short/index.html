@@ -1,0 +1,18 @@
+{% extends 'short/base.html' %}
+
+{% block content %}
+<form action="{% url 'short:shortener' %}" method="post">
+    {% csrf_token %}
+    <div class="long_url">
+        <div class="input-field col s6">
+            <input name="long_url" value="" id="url" type="text" class="validate">
+            <label class="active" for="url">Please Enter Long URL</label>
+            <div class="submit_button">
+                <button class="waves-effect waves-light btn-large">Convert to Short URL</button>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+{% endblock %}

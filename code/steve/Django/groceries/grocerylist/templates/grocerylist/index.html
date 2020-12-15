@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+</head>
+<body>
+    <h1>Simple Grocery List</h1>
+    <form action="{% url 'grocerylist:save_list_item' %}" method="post">
+        {% csrf_token %}
+        <label for="grocerylist">Item</label>
+        <input id="grocerylist" type="text" name="grocery_list_item">
+        <input type="submit" />
+
+    </form>
+    <ul>
+        {% for list_item in list_items %}
+        <li>
+            <div>
+                <!-- Get Item: <strong>{{ list_item.description }}</strong>
+                <p>Created Date: {{ list_item.created_date }}</p>
+                <p>Completed Date: {{ list_item.completed_date }}</p> -->
+                <h3>{{ list_item.description }} <a href="{% url 'grocerylist:delete' list_item.id %}">&times;</a> </h3>
+                <!-- <p>Priority: {{ todo.priority }}</p> -->
+                <a href="{% url 'grocerylist:toggle_complete' list_item.id %}">
+                    Completed: {{ list_item.completed }}
+                </a>
+                <p>Date Created: {{ list_item.created_date }}</p>   
+                
+                {% if list_item.completed %}
+                <p>Completed on {{ list_item.completed_date }}</p>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </li>
+</body>
+</html>

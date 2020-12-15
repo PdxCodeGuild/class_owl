@@ -40,8 +40,58 @@ def create(request):
 
     return render(request, 'blog/create.html')
 
+@login_required
 def detail(request, blog_id):
-    pass
+    hoot = Hoot.objects.get(pk=blog_id)
+    context = {
+        'hoot' : hoot
+    }
+    return render(request, 'blog/detail.html', context)
 
+@login_required
 def delete_blog(request, blog_id):
+    hoot = Hoot.objects.get(pk=blog_id)
+    user = request.user
+    if user == hoot.author:
+        hoot.delete()
+    return redirect('users:dashboard')
+
+@login_required
+def comment(request, blog_id):
+    hoot = Hoot.objects.get(pk=blog_id)
+    form = request.POST
+    body = form['comment_body']
+    comment = Comment(body=body, author=request.user, hoot=hoot, likes=0, dislikes=0)
+    comment.save()
+    return redirect('blog:detail', blog_id=blog_id)
+
+@login_required
+def like(request):
+    params = request.GET
+    opinion = params['opinion']
+    interest = params['interest']
+    id = params["id"]
+
+    if interest == 'comment':
+        comment = Comment.objects.get(pk=id)
+        if opinion == 'like':
+            comment.likes +=1
+        else:
+            comment.dislikes +=1
+        comment.save()
+        id = comment.hoot.id
+    elif interest == 'hoot':
+        hoot = Hoot.objects.get(pk=id)
+        if opinion == 'like':
+            hoot.likes += 1
+            hoot.total_likes +=1
+        else:
+            hoot.dislikes +=1
+            hoot.total_likes -= 1
+        hoot.save()
+
+    return redirect('blog:detail', blog_id=id)
+
+login_required
+def dislike(request):
     pass
