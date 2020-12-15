@@ -164,7 +164,7 @@ class Game:
 
 
 def main():
-    print("Welcome to blackjack!!! 🎲")
+    print("Welcome to blackjack!!!")
 
     while True:
         players = int(input("Enter the number of players: "))
